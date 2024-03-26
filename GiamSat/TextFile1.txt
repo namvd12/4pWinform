@@ -1,0 +1,14 @@
+﻿
+- Thêm Cấu hình lựa chọn ngôn ngữ
+17.8.
+- Them lenh yeu cau quet he thong khi nhan phim RUN
+- Điều chinh lai kich thuoc button theo chieu dai của ten 
+- Them file anh nen
+- Them phan kiem tra file Excel co bị trung ten hoac toa do khong
+
+18.8.
+- Them phan luu duong dan cac file mo gan nhat
+- Toi da luu 5 duong dan
+
+18.8.
+- Thêm tạo và lưu password

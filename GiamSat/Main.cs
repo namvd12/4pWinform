@@ -2977,6 +2977,10 @@ namespace GiamSat
 
         #endregion
 
+        public string GetTimeStamp()
+        {
+            return DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
@@ -2988,7 +2992,11 @@ namespace GiamSat
             for (int i = 0; i < iCount; i++)
             {
                 UpdateLedStatus(mlstItemInfor[i]);
-                db.UpdateDevice(mlstItemInfor[i].ID.ToString(), "Device_" + i, "Test", 0, (mlstItemInfor[i].Status.ToString()));
+                if (db.ReadDeviceStatus(mlstItemInfor[i].ID.ToString()) != mlstItemInfor[i].Status.ToString())
+                {
+                    db.UpdateDevice(mlstItemInfor[i].ID.ToString(), "Device_" + (i+1).ToString(), "Test", 0, (mlstItemInfor[i].Status.ToString()));
+                    db.UpdateDeviceStatus(mlstItemInfor[i].ID.ToString(), mlstItemInfor[i].Status.ToString(), GetTimeStamp());
+                }
             }
             timer1.Enabled = true;
         }

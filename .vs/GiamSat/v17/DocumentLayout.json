@@ -7,15 +7,19 @@
       "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\salam\\AppData\\Local\\Temp\\.vsdbgsrc\\cda66b89e45942cb7a3ddc1dfc8a99db793ff1bdbebb6df5901d7ff2756a366c\\StubHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|d:\\nam\\4p_system\\pc_app_control_device\\giamsat\\cauhinhthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\cauhinhthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\salam\\AppData\\Local\\Temp\\.vsdbgsrc\\cda66b89e45942cb7a3ddc1dfc8a99db793ff1bdbebb6df5901d7ff2756a366c\\StubHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\frmcreatepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -96,21 +100,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StubHelpers.cs",
-              "DocumentMoniker": "C:\\Users\\salam\\AppData\\Local\\Temp\\.vsdbgsrc\\cda66b89e45942cb7a3ddc1dfc8a99db793ff1bdbebb6df5901d7ff2756a366c\\StubHelpers.cs",
-              "ToolTip": "C:\\Users\\salam\\AppData\\Local\\Temp\\.vsdbgsrc\\cda66b89e45942cb7a3ddc1dfc8a99db793ff1bdbebb6df5901d7ff2756a366c\\StubHelpers.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAAwF4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T08:50:08.86Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "CauhinhThietbi.cs [Design]",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\CauhinhThietbi.cs",
+              "RelativeDocumentMoniker": "GiamSat\\CauhinhThietbi.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\CauhinhThietbi.cs [Design]",
+              "RelativeToolTip": "GiamSat\\CauhinhThietbi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T03:44:48.608Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Database\\DataBase.cs",
+              "RelativeDocumentMoniker": "GiamSat\\Database\\DataBase.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Database\\DataBase.cs",
+              "RelativeToolTip": "GiamSat\\Database\\DataBase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T07:19:43.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Ledblack32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\Ledblack32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\Ledblack32px.png",
@@ -120,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ledblack32px1.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px1.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px1.png",
@@ -130,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ledblack32px10.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px10.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px10.png",
@@ -140,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Main.cs [Design]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
               "RelativeDocumentMoniker": "GiamSat\\Main.cs",
@@ -152,7 +175,30 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
+              "RelativeDocumentMoniker": "GiamSat\\Main.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
+              "RelativeToolTip": "GiamSat\\Main.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAALQLAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T02:07:02.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StubHelpers.cs",
+              "DocumentMoniker": "C:\\Users\\salam\\AppData\\Local\\Temp\\.vsdbgsrc\\cda66b89e45942cb7a3ddc1dfc8a99db793ff1bdbebb6df5901d7ff2756a366c\\StubHelpers.cs",
+              "ToolTip": "C:\\Users\\salam\\AppData\\Local\\Temp\\.vsdbgsrc\\cda66b89e45942cb7a3ddc1dfc8a99db793ff1bdbebb6df5901d7ff2756a366c\\StubHelpers.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAAwF4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T08:50:08.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "LedGreen32px1.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\LedGreen32px1.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\LedGreen32px1.png",
@@ -162,37 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DataBase.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Database\\DataBase.cs",
-              "RelativeDocumentMoniker": "GiamSat\\Database\\DataBase.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Database\\DataBase.cs",
-              "RelativeToolTip": "GiamSat\\Database\\DataBase.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAAACIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T07:19:43.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Main.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
-              "RelativeDocumentMoniker": "GiamSat\\Main.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
-              "RelativeToolTip": "GiamSat\\Main.cs",
-              "ViewState": "AQIAAJkLAAAAAAAAAAAuwKsLAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T02:07:02.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EditImage32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\EditImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\EditImage32px.png",
@@ -202,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "frmCreatePassword.cs [Design]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\frmCreatePassword.cs",
               "RelativeDocumentMoniker": "GiamSat\\frmCreatePassword.cs",
@@ -212,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DeleteImage32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\DeleteImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\DeleteImage32px.png",
@@ -222,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ConnectImage32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ConnectImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ConnectImage32px.png",
@@ -232,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "audioStopImage32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\audioStopImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\audioStopImage32px.png",
@@ -242,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "audioStartImage32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\audioStartImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\audioStartImage32px.png",
@@ -252,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "AddItemImage32px.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\AddItemImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\AddItemImage32px.png",
@@ -262,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AddImage32px.png - PNG [32x32, 24 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\AddImage32px.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\AddImage32px.png",
@@ -272,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ledblack32px232.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px232.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px232.png",
@@ -282,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ledblack32px108.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px108.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px108.png",
@@ -292,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ledblack32px105.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px105.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px105.png",
@@ -302,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ledblack32px102.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px102.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px102.png",
@@ -312,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "ledblack32px101.png - PNG [32x32, 32 bit, PNG]",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Image\\ledblack32px101.png",
               "RelativeDocumentMoniker": "GiamSat\\Image\\ledblack32px101.png",
@@ -322,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "GiamSat",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\GiamSat.csproj",
               "RelativeDocumentMoniker": "GiamSat\\GiamSat.csproj",

@@ -14,18 +14,20 @@ using System.Threading;
 using System.Globalization;
 using System.Security.Cryptography;
 
-using LibUsbDotNet;
-using LibUsbDotNet.LibUsb;
-using LibUsbDotNet.Main;
-using LibUsbDotNet.LudnMonoLibUsb;
+//using LibUsbDotNet;
+//using LibUsbDotNet.LibUsb;
+//using LibUsbDotNet.Main;
+//using LibUsbDotNet.LudnMonoLibUsb;
 
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing;
 
 //using EC = LibUsbDotNet.Main.ErrorCode;
-
+using UsbHid;
+using UsbHid.USB.Classes;
 using DevComponents.DotNetBar;
 using _4P_PROJECT.DataBase;
+using UsbHid.USB.Classes;
 
 namespace GiamSat
 {
@@ -38,7 +40,8 @@ namespace GiamSat
         //public static UsbDeviceFinder MyUsbFinder = new UsbDeviceFinder(0x400, 0x580A);
 
         //RF Master
-         public static UsbDeviceFinder MyUsbFinder = new UsbDeviceFinder(0x400, 0x5FFA);
+
+        UsbHidDevice device;
 
         /* Define the vendor id and product id */
         #endregion
@@ -70,9 +73,6 @@ namespace GiamSat
  
         //System.Collections.Generic.Queue<string> mRecentFileList = new Queue<string>();
 
-        private UsbDevice mUsbDevice = null;
-        private UsbEndpointReader mEpReader;
-        private UsbEndpointWriter mEpWriter;
 
         //public enum ItemStatus { NONE, NORMAL, ERROR, BUSY, DISCONNECT }
 
@@ -2283,81 +2283,71 @@ namespace GiamSat
 
         #region Giao tiep module
 
+
         private bool openDevice()
         {
-            closeDevice();
+            var Device = DeviceDiscovery.FindHidDevices(new VidPidMatcher(0x4000, 0x5FFA));
+            device = new UsbHidDevice(Device[0].Key);
+            device.DataReceived += DeviceDataReceived;
+            return device.Connect();
+        }
 
-            mUsbDevice = UsbDevice.OpenUsbDevice(MyUsbFinder);
-            if (mUsbDevice == null)
+        private void DeviceDataReceived(byte[] data_receive)
+        {
+            int crcValue = 0;
+
+            crcValue = data_receive[1];
+
+            int iCount = data_receive[1];
+
+            // Kiem tra so luong du lieu tra ve co bang so item khong?
+
+            int[] data = new int[iCount];
+
+            int index = 2;
+            // read data 
+            for (int i = 0; i < iCount; i++)
             {
-                return false;
+                data[i] = data_receive[index];
+                crcValue += data_receive[index];
+                index++;
             }
-            // If this is a "whole" usb device (libusb-win32, linux libusb)
-            // it will have an IUsbDevice interface. If not (WinUSB) the 
-            // variable will be null indicating this is an interface of a 
-            // device.
-            IUsbDevice wholeUsbDevice = mUsbDevice as IUsbDevice;
-            if (!ReferenceEquals(wholeUsbDevice, null))
+                            
+            // data[i] la trang thai cua cac thiet bi trong he thong,
+            //public enum ItemStatus{NONE, NORMAL, ERROR, BUSY, DISCONNECT}
+            /**
+                * NONE         = 0
+                * NORMAL       = 1
+                * ERROR        = 2
+                * BUSY         = 3
+                * DISCONNECT   = 4
+                **/
+            // check sum OK
+            if (crcValue == data_receive[index] * 256 + data_receive[index + 1])
             {
-                // This is a "whole" USB device. Before it can be used, 
-                // the desired configuration and interface must be selected.
+                for (int i = 0; i < iCount; i++)
+                {
+                    if (data[i] == 1) mlstItemInfor[i].Status = ItemInfor.ItemStatus.NORMAL;
+                    else if (data[i] == 2) mlstItemInfor[i].Status = ItemInfor.ItemStatus.ERROR;
+                    else if (data[i] == 3) mlstItemInfor[i].Status = ItemInfor.ItemStatus.BUSY;
+                    else if (data[i] == 4) mlstItemInfor[i].Status = ItemInfor.ItemStatus.DISCONNECT;
 
-                // Select config #1
-                wholeUsbDevice.SetConfiguration(1);
+                    //UpdateLedStatus(mlstItemInfor[i]);
+                }
 
-                // Claim interface #0.
-                wholeUsbDevice.ClaimInterface(0);
+                // update trang thai cua he thong
+                //for (int i = 0; i < iCount; i++)
+                //{
+                //    UpdateLedStatus(mlstItemInfor[i]);
+                //}
+                             
             }
-            // open read endpoint 1.
-            //mEpReader = mUsbDevice.OpenEndpointReader(ReadEndpointID.Ep01);
-            mEpReader = mUsbDevice.OpenEndpointReader((ReadEndpointID)(0x81));
-
-            // open write endpoint 2.
-            //mEpWriter = mUsbDevice.OpenEndpointWriter(WriteEndpointID.Ep02);
-            mEpWriter = mUsbDevice.OpenEndpointWriter((WriteEndpointID)2);
-
-            //mEpReader.DataReceived += mEp_DataReceived;
-            mEpReader.Flush();
-
-            return true;
+            //MessageBox.Show("Read finished.", "Thông báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
         }
 
         private void closeDevice()
         {
-            if (mUsbDevice != null)
-            {
-                if (mUsbDevice.IsOpen)
-                {
-                    if (mEpReader != null)
-                    {
-                        mEpReader.DataReceivedEnabled = false;
-                        //mEpReader.DataReceived -= mEp_DataReceived;
-                        mEpReader.Dispose();
-                        mEpReader = null;
-                    }
-
-                    if (mEpWriter != null)
-                    {
-                        mEpWriter.Abort();
-                        mEpWriter.Dispose();
-                        mEpWriter = null;
-                    }
-
-                    // If this is a "whole" usb device (libusb-win32, linux libusb)
-                    // it will have an IUsbDevice interface. If not (WinUSB) the 
-                    // variable will be null indicating this is an interface of a 
-                    // device.
-                    IUsbDevice wholeUsbDevice = mUsbDevice as IUsbDevice;
-                    if (!ReferenceEquals(wholeUsbDevice, null))
-                    {
-                        // Release interface #0.
-                        wholeUsbDevice.ReleaseInterface(0);
-                    }
-
-                    mUsbDevice.Close();
-                    mUsbDevice = null;
-                }
-            }
+            device.Disconnect();
 
         }
 
@@ -2365,21 +2355,20 @@ namespace GiamSat
         {
             try
             {
-                if (mUsbDevice != null)
+                if (device != null)
                 {
-                    if (mUsbDevice.IsOpen)
+                    if (device.IsDeviceConnected)
                     {
                         int index = 0;
                         int crcValue = 0;
 
                         int iCount = mlstItemInfor.Count;
                         byte[] writeBuffer = new byte[64];
-
+                        byte cmd;
                         sendCommand = SendCommand.READ_SYS_STATUS;
-                        writeBuffer[index] = (byte)sendCommand;
-                        crcValue += writeBuffer[index];
-
-                        index++;
+                        //writeBuffer[index] = (byte)sendCommand;
+                        cmd = (byte)sendCommand;
+                        crcValue += cmd;
                         writeBuffer[index] = (byte)iCount;
                         crcValue += writeBuffer[index];
                         index++;
@@ -2393,12 +2382,17 @@ namespace GiamSat
 
                         writeBuffer[index] = (byte)(crcValue / 256); // high byte
                         writeBuffer[index++] = (byte)(crcValue % 256); // low byte
-                       
-                        int uiTransmitted;
-                        if (mEpWriter.Write(writeBuffer, 1000, out uiTransmitted) == ErrorCode.None)
+                        
+                        var command = new UsbHid.USB.Classes.Messaging.CommandMessage(cmd, writeBuffer, (ushort)(writeBuffer.Length + 2));
+
+
+                        bool status = device.SendMessage(command);
+
+                        if (status)
                         {
-                        }
-                        else
+
+                        } 
+                        else 
                         {
                             MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                             closeDevice();
@@ -2406,69 +2400,6 @@ namespace GiamSat
                             return;
 
                         }
-
-                        byte[] readBuffer = new byte[64];
-
-                        ErrorCode eReturn;
-                        if ((eReturn = mEpReader.Read(readBuffer, 1000, out uiTransmitted)) == ErrorCode.None)
-                        {  
-                            crcValue = 0;
-
-                            crcValue = readBuffer[0];
-
-                            iCount = readBuffer[0];
-
-                            // Kiem tra so luong du lieu tra ve co bang so item khong?
-
-                            int[] data = new int[iCount];
-
-                            index = 1;
-                            // read data 
-                            for (int i = 0; i < iCount; i++)
-                            {
-                                data[i] = readBuffer[index];
-                                crcValue += readBuffer[index];
-                                index++;
-                            }
-                            
-                            // data[i] la trang thai cua cac thiet bi trong he thong,
-                            //public enum ItemStatus{NONE, NORMAL, ERROR, BUSY, DISCONNECT}
-                            /**
-                             * NONE         = 0
-                             * NORMAL       = 1
-                             * ERROR        = 2
-                             * BUSY         = 3
-                             * DISCONNECT   = 4
-                             **/
-                            // check sum OK
-                            if (crcValue == readBuffer[index] * 256 + readBuffer[index + 1])
-                            {
-                                for (int i = 0; i < iCount; i++)
-                                {
-                                    if (data[i] == 1) mlstItemInfor[i].Status = ItemInfor.ItemStatus.NORMAL;
-                                    else if (data[i] == 2) mlstItemInfor[i].Status = ItemInfor.ItemStatus.ERROR;
-                                    else if (data[i] == 3) mlstItemInfor[i].Status = ItemInfor.ItemStatus.BUSY;
-                                    else if (data[i] == 4) mlstItemInfor[i].Status = ItemInfor.ItemStatus.DISCONNECT;
-
-                                    //UpdateLedStatus(mlstItemInfor[i]);
-                                }
-
-                                // update trang thai cua he thong
-                                //for (int i = 0; i < iCount; i++)
-                                //{
-                                //    UpdateLedStatus(mlstItemInfor[i]);
-                                //}
-                             
-                            }
-                            //MessageBox.Show("Read finished.", "Thông báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                            closeDevice();
-                            ResetAllControl();
-                        }
-
                     }
                 }
             }
@@ -2482,126 +2413,126 @@ namespace GiamSat
             }
         }
 
-        private void ScanSysStatus()
-        {
-            try
-            {
-                if (mUsbDevice != null)
-                {
-                    if (mUsbDevice.IsOpen)
-                    {
-                        int index = 0;
-                        int crcValue = 0;
+        //private void ScanSysStatus()
+        //{
+        //    try
+        //    {
+        //        if (mUsbDevice != null)
+        //        {
+        //            if (mUsbDevice.IsOpen)
+        //            {
+        //                int index = 0;
+        //                int crcValue = 0;
 
-                        int iCount = mlstItemInfor.Count;
-                        byte[] writeBuffer = new byte[64];
+        //                int iCount = mlstItemInfor.Count;
+        //                byte[] writeBuffer = new byte[64];
 
-                        sendCommand = SendCommand.SCAN_SYS_STATUS;
-                        writeBuffer[index] = (byte)sendCommand;
-                        crcValue += writeBuffer[index];
+        //                sendCommand = SendCommand.SCAN_SYS_STATUS;
+        //                writeBuffer[index] = (byte)sendCommand;
+        //                crcValue += writeBuffer[index];
 
-                        index++;
-                        writeBuffer[index] = (byte)iCount;
-                        crcValue += writeBuffer[index];
-                        index++;
+        //                index++;
+        //                writeBuffer[index] = (byte)iCount;
+        //                crcValue += writeBuffer[index];
+        //                index++;
 
-                        for (int i = 0; i < iCount; i++)
-                        {
-                            writeBuffer[index] = (byte)mlstItemInfor[i].ID;
-                            crcValue += writeBuffer[index];
-                            index++;
-                        }
+        //                for (int i = 0; i < iCount; i++)
+        //                {
+        //                    writeBuffer[index] = (byte)mlstItemInfor[i].ID;
+        //                    crcValue += writeBuffer[index];
+        //                    index++;
+        //                }
 
-                        writeBuffer[index] = (byte)(crcValue / 256); // high byte
-                        writeBuffer[index++] = (byte)(crcValue % 256); // low byte
+        //                writeBuffer[index] = (byte)(crcValue / 256); // high byte
+        //                writeBuffer[index++] = (byte)(crcValue % 256); // low byte
 
-                        int uiTransmitted;
-                        if (mEpWriter.Write(writeBuffer, 1000, out uiTransmitted) == ErrorCode.None)
-                        {
-                        }
-                        else
-                        {
-                            MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                            closeDevice();
-                            ResetAllControl();
-                            return;
+        //                int uiTransmitted;
+        //                if (mEpWriter.Write(writeBuffer, 1000, out uiTransmitted) == ErrorCode.None)
+        //                {
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+        //                    closeDevice();
+        //                    ResetAllControl();
+        //                    return;
 
-                        }
+        //                }
 
-                        byte[] readBuffer = new byte[64];
+        //                byte[] readBuffer = new byte[64];
 
-                        ErrorCode eReturn;
-                        if ((eReturn = mEpReader.Read(readBuffer, 1000, out uiTransmitted)) == ErrorCode.None)
-                        {
-                            crcValue = 0;
+        //                ErrorCode eReturn;
+        //                if ((eReturn = mEpReader.Read(readBuffer, 1000, out uiTransmitted)) == ErrorCode.None)
+        //                {
+        //                    crcValue = 0;
 
-                            crcValue = readBuffer[0];
+        //                    crcValue = readBuffer[0];
 
-                            iCount = readBuffer[0];
+        //                    iCount = readBuffer[0];
 
-                            // Kiem tra so luong du lieu tra ve co bang so item khong?
+        //                    // Kiem tra so luong du lieu tra ve co bang so item khong?
 
-                            int[] data = new int[iCount];
+        //                    int[] data = new int[iCount];
 
-                            index = 1;
-                            // read data 
-                            for (int i = 0; i < iCount; i++)
-                            {
-                                data[i] = readBuffer[index];
-                                crcValue += readBuffer[index];
-                                index++;
-                            }
+        //                    index = 1;
+        //                    // read data 
+        //                    for (int i = 0; i < iCount; i++)
+        //                    {
+        //                        data[i] = readBuffer[index];
+        //                        crcValue += readBuffer[index];
+        //                        index++;
+        //                    }
 
-                            // data[i] la trang thai cua cac thiet bi trong he thong,
-                            //public enum ItemStatus{NONE, NORMAL, ERROR, BUSY, DISCONNECT}
-                            /**
-                             * NONE         = 0
-                             * NORMAL       = 1
-                             * ERROR        = 2
-                             * BUSY         = 3
-                             * DISCONNECT   = 4
-                             **/
-                            // check sum OK
-                            if (crcValue == readBuffer[index] * 256 + readBuffer[index + 1])
-                            {
-                                for (int i = 0; i < iCount; i++)
-                                {
-                                    if (data[i] == 1) mlstItemInfor[i].Status = ItemInfor.ItemStatus.NORMAL;
-                                    else if (data[i] == 2) mlstItemInfor[i].Status = ItemInfor.ItemStatus.ERROR;
-                                    else if (data[i] == 3) mlstItemInfor[i].Status = ItemInfor.ItemStatus.BUSY;
-                                    else if (data[i] == 4) mlstItemInfor[i].Status = ItemInfor.ItemStatus.DISCONNECT;
+        //                    // data[i] la trang thai cua cac thiet bi trong he thong,
+        //                    //public enum ItemStatus{NONE, NORMAL, ERROR, BUSY, DISCONNECT}
+        //                    /**
+        //                     * NONE         = 0
+        //                     * NORMAL       = 1
+        //                     * ERROR        = 2
+        //                     * BUSY         = 3
+        //                     * DISCONNECT   = 4
+        //                     **/
+        //                    // check sum OK
+        //                    if (crcValue == readBuffer[index] * 256 + readBuffer[index + 1])
+        //                    {
+        //                        for (int i = 0; i < iCount; i++)
+        //                        {
+        //                            if (data[i] == 1) mlstItemInfor[i].Status = ItemInfor.ItemStatus.NORMAL;
+        //                            else if (data[i] == 2) mlstItemInfor[i].Status = ItemInfor.ItemStatus.ERROR;
+        //                            else if (data[i] == 3) mlstItemInfor[i].Status = ItemInfor.ItemStatus.BUSY;
+        //                            else if (data[i] == 4) mlstItemInfor[i].Status = ItemInfor.ItemStatus.DISCONNECT;
 
-                                    //UpdateLedStatus(mlstItemInfor[i]);
-                                }
+        //                            //UpdateLedStatus(mlstItemInfor[i]);
+        //                        }
 
-                                // update trang thai cua he thong
-                                //for (int i = 0; i < iCount; i++)
-                                //{
-                                //    UpdateLedStatus(mlstItemInfor[i]);
-                                //}
+        //                        // update trang thai cua he thong
+        //                        //for (int i = 0; i < iCount; i++)
+        //                        //{
+        //                        //    UpdateLedStatus(mlstItemInfor[i]);
+        //                        //}
 
-                            }
-                            //MessageBox.Show("Read finished.", "Thông báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                            closeDevice();
-                            ResetAllControl();
-                        }
+        //                    }
+        //                    //MessageBox.Show("Read finished.", "Thông báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+        //                    closeDevice();
+        //                    ResetAllControl();
+        //                }
 
-                    }
-                }
-            }
+        //            }
+        //        }
+        //    }
 
-            catch (Exception ex)
-            {
+        //    catch (Exception ex)
+        //    {
 
-                Console.WriteLine(ex.ToString());
-                closeDevice();
-                ResetAllControl();
-            }
-        }
+        //        Console.WriteLine(ex.ToString());
+        //        closeDevice();
+        //        ResetAllControl();
+        //    }
+        //}
 
         #endregion
 
@@ -2618,7 +2549,7 @@ namespace GiamSat
         // 7. Add Image in Excel Sheet
         // 8. Add Custom objects in Excel Sheet
         ////////////////////////////////////////////////////////////////////////////////////////////
-        private void ExportExcel()
+        public void ExportExcel()
         {
           // save as
                 FileInfo newFile = new FileInfo(fileName);
@@ -3402,27 +3333,6 @@ namespace GiamSat
             DialogResult dialogResult = frmNew.ShowDialog();
         }
 
-        //private void documentToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    //string path = Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()) + "\\W25Q256.pdf";
-        //    try
-        //    {
-        //        Process process = new Process();
-        //        ProcessStartInfo startInfo = new ProcessStartInfo();
-        //        process.StartInfo = startInfo;
-
-        //        //startInfo.FileName = Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()) + "\\User Manual.pdf";
-
-        //        startInfo.FileName = "User Manual.pdf";
-        //        process.Start();
-        //    }
-
-        //    catch
-        //    {
-        //        MessageBox.Show("Không thấy file hướng dẫn trong thư mục cài đặt");
-        //        return;
-        //    }
-        //}
 
     }
 }

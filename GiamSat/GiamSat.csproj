@@ -114,6 +114,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UsbHid, Version=1.2.1.0, Culture=neutral, PublicKeyToken=d3bb06c71c441c72, processorArchitecture=MSIL">
+      <HintPath>..\packages\UsbHid.1.2.1\lib\netstandard2.0\UsbHid.dll</HintPath>
+    </Reference>
     <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
       <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
     </Reference>

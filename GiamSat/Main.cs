@@ -2278,7 +2278,6 @@ namespace GiamSat
                 toolStripButtonAddImage.Enabled = false;
 
             }
-            
         }
 
         #region Giao tiep module
@@ -2366,9 +2365,10 @@ namespace GiamSat
                         byte[] writeBuffer = new byte[64];
                         byte cmd;
                         sendCommand = SendCommand.READ_SYS_STATUS;
-                        //writeBuffer[index] = (byte)sendCommand;
-                        cmd = (byte)sendCommand;
-                        crcValue += cmd;
+                        writeBuffer[index] = (byte)sendCommand;
+
+                        crcValue += writeBuffer[index];
+                        index++;
                         writeBuffer[index] = (byte)iCount;
                         crcValue += writeBuffer[index];
                         index++;
@@ -2382,8 +2382,10 @@ namespace GiamSat
 
                         writeBuffer[index] = (byte)(crcValue / 256); // high byte
                         writeBuffer[index++] = (byte)(crcValue % 256); // low byte
-                        
-                        var command = new UsbHid.USB.Classes.Messaging.CommandMessage(cmd, writeBuffer, (ushort)(writeBuffer.Length + 2));
+                        byte[] bytesToMesss = new byte[64];
+
+                        Buffer.BlockCopy(writeBuffer, 1, bytesToMesss, 0, 63);
+                        var command = new UsbHid.USB.Classes.Messaging.CommandMessage(writeBuffer[0], bytesToMesss, (ushort)(writeBuffer.Length + 2));
 
 
                         bool status = device.SendMessage(command);

@@ -1,27 +1,31 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DevComponents.DotNetBar;
+using MySql.Data.MySqlClient;
+using OfficeOpenXml.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _4P_PROJECT.DataBase
 {
     public partial class DataBase
     {
         public MySqlConnection myConnection;
-
         const string ipAddr = "localhost";
         const string port = "3306";
         const string user = "root";
         const string pass = "123456a@";
-        const string sourceDB = "test";
+        const string sourceDB = "test2";
         bool isConnected = false;
         public int number_path_image = 100;
-        public int number_status_image = 50;
+        public int number_status_device = 100;
         public enum TABLE_DB
         {
             tb_device,
@@ -30,12 +34,13 @@ namespace _4P_PROJECT.DataBase
         }
         public bool Connect()
         {
-            string myConnectionString;
+            string myConnectionDataBase;
+            string myConnectionWithoutDb;
             //set the correct values for your server, user, password and database name
-            myConnectionString = string.Format("server={0}; port={1};uid={2}; pwd={3}; database={4}", ipAddr, port, user, pass, sourceDB);
+            myConnectionDataBase = string.Format("server={0}; port={1};uid={2}; pwd={3}; database={4}", ipAddr, port, user, pass, sourceDB);
             try
             {
-                myConnection = new MySqlConnection(myConnectionString);
+                myConnection = new MySqlConnection(myConnectionDataBase);
                 //open a connection
                 myConnection.Open();
                 isConnected = true;
@@ -60,27 +65,57 @@ namespace _4P_PROJECT.DataBase
             }
             return false;
         }
-
+        private void CreateDatabase()
+        {
+            string command = "CREATE DATABASE " + sourceDB;
+            MySqlCommand cmd = new MySqlCommand(command, myConnection);
+            cmd.ExecuteNonQuery();
+        }
         public bool InitDataBase()
         {
-            // Check image exit first !!!
             if (!isTableExit(TABLE_DB.tb_device))
             {
-                // create table image first!!!
-                CreateTable(TABLE_DB.tb_image);
+                // create table device
+                CreateTable(TABLE_DB.tb_device);
             }
             if (!isTableExit(TABLE_DB.tb_status))
             {
                 // create table image first!!!
                 CreateTable(TABLE_DB.tb_status);
             }
-            if (!isTableExit(TABLE_DB.tb_device))
+            if (!isTableExit(TABLE_DB.tb_image))
             {
-                // create table device
-                CreateTable(TABLE_DB.tb_device);
+                // create table image first!!!
+                CreateTable(TABLE_DB.tb_image);
             }
 
             return true;
+        }
+
+        private bool isDataBaseExit(string name)
+        {
+            if (isConnected)
+            {
+                string command = string.Format("Select * from {0}", name);
+                MySqlCommand cmd = new MySqlCommand(command, myConnection);
+                try
+                {
+                    object obj = cmd.ExecuteScalar();
+                    if (Convert.ToInt32(obj) > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
         }
 
         private bool isTableExit(TABLE_DB nameTable)
@@ -96,7 +131,7 @@ namespace _4P_PROJECT.DataBase
             }
             else if (nameTable == TABLE_DB.tb_status)
             {
-                table_name = "device_status";
+                table_name = "status";
             }
             else
             {
@@ -126,67 +161,42 @@ namespace _4P_PROJECT.DataBase
             switch (tableName)
             {
                 case TABLE_DB.tb_device:
-                    command = "CREATE TABLE `device` (" +
-                        "\r\n\t`SN` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`Name` VARCHAR(100) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`Model` VARCHAR(100) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`Status` VARCHAR(50) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`TimeOP` INT(10) NULL DEFAULT NULL," +
-                        "\r\n\t`ID_Status` VARCHAR(100) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`ID_Image` VARCHAR(100) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\tPRIMARY KEY (`SN`) USING BTREE," +
-                        "\r\n\tINDEX `FK_device_information_image` (`ID_Image`) USING BTREE," +
-                        "\r\n\tINDEX `FK_device_device_status` (`ID_Status`) USING BTREE," +
-                        "\r\n\tCONSTRAINT `FK_device_device_status` FOREIGN KEY (`ID_Status`) REFERENCES `device_status` (`ID_Status`) ON UPDATE NO ACTION ON DELETE NO ACTION," +
-                        "\r\n\tCONSTRAINT `FK_device_information_image` FOREIGN KEY (`ID_Image`) REFERENCES `image` (`ID_Image`) ON UPDATE NO ACTION ON DELETE NO ACTION" +
-                        "\r\n)" +
-                        "\r\nCOLLATE='latin1_swedish_ci'" +
-                        "\r\nENGINE=InnoDB" +
-                        "\r\n;";
+                    command = "CREATE TABLE `device` (\r\n\t`DeviceID` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Name` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`SN` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Person` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Manufacturer` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`TimeOP` INT(10) NULL DEFAULT NULL,\r\n\t`Status` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Note` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`DeviceID`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\n;\r\n";
                     cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     break;
                 case TABLE_DB.tb_image:
-                    command = "CREATE TABLE `image` (" +
-                        "\r\n\t`ID_Image` VARCHAR(100) NOT NULL ," +
-                        "\r\n\tPRIMARY KEY (`ID_Image`) USING BTREE\r\n)" +
-                        "\r\nCOLLATE='latin1_swedish_ci'" +
-                        "\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=4\r\n;";
+                    command = "CREATE TABLE `image` (\r\n\t`ImageID` INT(10) NOT NULL AUTO_INCREMENT,\r\n\t`DeviceID` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Image_path` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Time` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`ImageID`) USING BTREE,\r\n\tINDEX `FK_image_status` (`DeviceID`) USING BTREE,\r\n\tCONSTRAINT `FK_image_status` FOREIGN KEY (`DeviceID`) REFERENCES `device` (`DeviceID`) ON UPDATE NO ACTION ON DELETE NO ACTION\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=3\r\n;\r\n";
                     cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     //add colum
-                    for (int i = 1; i <= number_path_image; i++)
-                    {
-                        command = string.Format("ALTER TABLE image ADD `{0}` VARCHAR(50) NULL DEFAULT 'NULL' COLLATE 'latin1_swedish_ci'", "Path" + i);
-                        cmd = new MySqlCommand(command, myConnection);
-                        cmd.ExecuteNonQuery();
-                    }
+
                     break;
                 case TABLE_DB.tb_status:
-                    command = "CREATE TABLE `device_status` (" +
-                        "\r\n\t`ID_Status` VARCHAR(100) NOT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`Status` VARCHAR(50) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\t`Time` VARCHAR(50) NULL DEFAULT NULL COLLATE 'latin1_swedish_ci'," +
-                        "\r\n\tPRIMARY KEY (`ID_Status`) USING BTREE\r\n)" +
-                        "\r\nCOLLATE='utf8mb4_0900_ai_ci'" +
-                        "\r\nENGINE=InnoDB" +
-                        "\r\n;";
+                    command = "CREATE TABLE `status` (\r\n\t`StatusID` INT(10) NOT NULL AUTO_INCREMENT,\r\n\t`DeviceID` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Status` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Time` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`StatusID`) USING BTREE,\r\n\tINDEX `FK_status_device` (`DeviceID`) USING BTREE,\r\n\tCONSTRAINT `FK_status_device` FOREIGN KEY (`DeviceID`) REFERENCES `device` (`DeviceID`) ON UPDATE NO ACTION ON DELETE NO ACTION\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=94\r\n;\r\n";
                     cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
-                    //add colum
-                    for (int i = 1; i <= number_status_image; i++)
-                    {
-                        command = string.Format("ALTER TABLE device_status ADD `{0}` VARCHAR(50) NULL DEFAULT 'NULL' COLLATE 'latin1_swedish_ci'", "Status" + i);
-                        cmd = new MySqlCommand(command, myConnection);
-                        cmd.ExecuteNonQuery();
-                    }
                     break;
                 default:
                     break;
             }
         }
 
-        public bool CreateNewDevice(string SN, string Name, string Model, UInt16 TimeOP = 0, string Status = "NON")
+        private string SearchDeviceIDFromTable(string SN)
+        {    
+            string command = string.Format("SELECT DeviceID FROM device WHERE SN = \'{0}\'", SN);
+            MySqlCommand cmd = new MySqlCommand(command, myConnection);
+            string DeviceID = null;
+            using (var cursor = cmd.ExecuteReader())
+            {
+                while (cursor.Read())
+                {
+                    DeviceID = Convert.ToString(cursor["DeviceID"]);
+                }
+            }
+            return DeviceID;
+        }
+        public bool CreateNewDevice(string ID, string Name, string SN = "", string Person = "", string Manufacturer = "", UInt16 TimeOP = 0, string Status = "")
         {
             string command;
             MySqlCommand cmd;
@@ -194,29 +204,27 @@ namespace _4P_PROJECT.DataBase
             {
                 return false;
             }
-            // STEP1: insert new row in image 
-            command = string.Format("INSERT INTO image (ID_Image) VALUES (\'{0}\')", SN);
-            cmd = new MySqlCommand(command, myConnection);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                // STEP1: insert new data in device table
+                command = string.Format("INSERT INTO device (DeviceID, Name, SN, Person, Manufacturer, TimeOP, Status)" +
+                    "\r\nVALUES ('{0}', \'{1}\', \'{2}\', \'{3}\', \'{4}\', {5}, \'{6}\')", ID, Name, SN, Person, Manufacturer, TimeOP, Status);
+                cmd = new MySqlCommand(command, myConnection);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
 
-            // STEP2: insert new row in device_status 
-            command = string.Format("INSERT INTO device_status (ID_Status) VALUES (\'{0}\')", SN);
-            cmd = new MySqlCommand(command, myConnection);
-            cmd.ExecuteNonQuery();
-
-            // STEP3: insert new row in device 
-            command = string.Format("INSERT INTO device (SN, Name, Model, Status, TimeOP, ID_Image, ID_Status)" +
-                "\r\nVALUES (\'{0}\', \'{1}\', \'{2}\', \'{3}\', {4}, \'{5}\', '{6}')", SN, Name, Model, Status, TimeOP, SN, SN);
-            cmd = new MySqlCommand(command, myConnection);
-            cmd.ExecuteNonQuery();
-            return true;
+                return false;
+            }
         }
 
-        public bool CheckDeviceExist(string SN)
+        public bool CheckDeviceExist(string DeviceID)
         {
             string command;
             MySqlCommand cmd;
-            command = string.Format("SELECT SN FROM device WHERE SN = \'{0}\'", SN);
+            command = string.Format("SELECT DeviceID FROM device WHERE DeviceID = \'{0}\'", DeviceID);
             cmd = new MySqlCommand(command, myConnection);
 
             object obj = cmd.ExecuteScalar();
@@ -230,7 +238,7 @@ namespace _4P_PROJECT.DataBase
             }
         }
 
-        public bool UpdateDevice(string SN, string Name, string Model, UInt16 TimeOP = 0, string Status = "NON")
+        public bool UpdateDevice(string Name, string SN, string Person = "", string Manufacturer = "", UInt16 TimeOP = 0, string Status = "")
         {
             string command;
             MySqlCommand cmd;
@@ -240,91 +248,53 @@ namespace _4P_PROJECT.DataBase
             }
 
             // update data in device 
-            command = string.Format("UPDATE device SET Name = \'{0}\', Model = \'{1}\', Status = \'{2}\', TimeOP = {3}" +
-                      " WHERE SN = \'{4}\'", Name, Model, Status, TimeOP, SN);
+            command = string.Format("UPDATE device SET Name = \'{0}\', SN = \'{1}\', Person = \'{2}\', Manufacturer = \'{3}\', TimeOP = {4}, Status = \'{5}\'" +
+                      " WHERE SN = \'{1}\'", Name, SN, Person, Manufacturer, TimeOP, Status);
             cmd = new MySqlCommand(command, myConnection);
             cmd.ExecuteNonQuery();
             return true;
         }
 
-        public bool UpdateDeviceStatus(string SN, string status_cur, string time)
+        public bool UpdateDeviceStatus(string DeviceID, string Status)
         {
             string command;
             MySqlCommand cmd;
-
-            string ID_Status = "";
             if (!isConnected)
             {
                 return false;
             }
 
-            // search ID_Status on Device
-
-            command = string.Format("SELECT ID_Status FROM device WHERE SN = \'{0}\'", SN);
+            // add status in device table 
+            command = string.Format("UPDATE device" +
+                "\r\nSET Status = \'{0}\'" +
+                "\r\nWHERE DeviceID = \'{1}\';", Status, DeviceID);
             cmd = new MySqlCommand(command, myConnection);
+            cmd.ExecuteNonQuery();
 
-            using (var cursor = cmd.ExecuteReader())
-            {
-                while (cursor.Read())
-                {
-                    ID_Status = Convert.ToString(cursor["ID_Status"]);
-                }
-            }
-
-            // and update ID_Status on device table
-
-            // update status and time on ID_Status table
-            int i = 1;
-            for (i = 1; i <= number_status_image; i++)
-            {
-                command = string.Format("SELECT Status{0} FROM device_status WHERE ID_Status = \'{1}\'", i, SN);
-                cmd = new MySqlCommand(command, myConnection);
-                using (var cursor = cmd.ExecuteReader())
-                {
-                    while (cursor.Read())
-                    {
-                        ID_Status = Convert.ToString(cursor["Status" + i]);
-                    }
-                    if (ID_Status == "NULL")
-                    {
-                        break;
-                    }
-                }
-            }
-            if (ID_Status == "NULL")
-            {
-                command = string.Format("UPDATE device_status SET Status{0} = \'{1}_{2}\' WHERE ID_Status = \'{3}\'", i, status_cur, time, SN);
-                cmd = new MySqlCommand(command, myConnection);
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            return false;
+            // add new data in status table 
+            command = string.Format("INSERT INTO status (DeviceID, Status, Time)" +
+                "\r\nVALUES (\'{0}\', \'{1}\', \'{2}\');", DeviceID, Status, DateTime.Now.ToString("MM/dd/yyyy h:mm:s tt"));
+            cmd = new MySqlCommand(command, myConnection);
+            cmd.ExecuteNonQuery();
+            return true;
         }
 
-        public string ReadDeviceStatus(string SN)
+        public string ReadDeviceStatus(string DeviceID)
         {
             string command;
             MySqlCommand cmd;
-
-            string []ID_Status = new string[2];
-            if (!isConnected)
-            {
-                return null;
-            }
-
-            // search ID_Status on Device
-
-            command = string.Format("SELECT Status FROM device WHERE SN = \'{0}\'", SN);
+            string status = null;
+            command = string.Format("SELECT Status FROM device WHERE DeviceID = \'{0}\'", DeviceID);
             cmd = new MySqlCommand(command, myConnection);
 
             using (var cursor = cmd.ExecuteReader())
             {
                 while (cursor.Read())
                 {
-                    ID_Status = Convert.ToString(cursor["Status"]).Split('_');
+                    status = Convert.ToString(cursor["Status"]);
                 }
             }
-            return ID_Status[0];
+            return status;
         }
     }
 }

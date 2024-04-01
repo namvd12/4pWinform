@@ -1,7 +1,58 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\viewdb\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\viewdb\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|d:\\nam\\4p_system\\pc_app_control_device\\giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\viewdb\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\viewdb\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|GiamSat||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\viewdb\\searchdb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\viewdb\\searchdb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\danhsachthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\danhsachthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\danhsachthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\danhsachthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\cauhinhthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\cauhinhthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\giamsat\\cauhinhthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|solutionrelative:giamsat\\cauhinhthietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BB9F8F87-2554-48F4-A390-58A346DF5ACD}|GiamSat\\GiamSat.csproj|d:\\nam\\4p_system\\pc_app_control_device\\giamsat\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +60,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +69,154 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
+              "RelativeDocumentMoniker": "GiamSat\\Main.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
+              "RelativeToolTip": "GiamSat\\Main.cs",
+              "ViewState": "AQIAAOwIAAAAAAAAAAAMwDUJAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:42:47.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GiamSat",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\GiamSat.csproj",
+              "RelativeDocumentMoniker": "GiamSat\\GiamSat.csproj",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\GiamSat.csproj",
+              "RelativeToolTip": "GiamSat\\GiamSat.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-01T02:28:21.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SearchDb.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\viewDb\\SearchDb.cs",
+              "RelativeDocumentMoniker": "GiamSat\\viewDb\\SearchDb.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\viewDb\\SearchDb.cs*",
+              "RelativeToolTip": "GiamSat\\viewDb\\SearchDb.cs*",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAhwGUAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T01:31:06.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SearchDb.Designer.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\viewDb\\SearchDb.Designer.cs",
+              "RelativeDocumentMoniker": "GiamSat\\viewDb\\SearchDb.Designer.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\viewDb\\SearchDb.Designer.cs*",
+              "RelativeToolTip": "GiamSat\\viewDb\\SearchDb.Designer.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T02:39:49.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SearchDb.cs [Design]",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\viewDb\\SearchDb.cs",
+              "RelativeDocumentMoniker": "GiamSat\\viewDb\\SearchDb.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\viewDb\\SearchDb.cs [Design]*",
+              "RelativeToolTip": "GiamSat\\viewDb\\SearchDb.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T01:20:18.516Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Database\\DataBase.cs",
+              "RelativeDocumentMoniker": "GiamSat\\Database\\DataBase.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Database\\DataBase.cs",
+              "RelativeToolTip": "GiamSat\\Database\\DataBase.cs",
+              "ViewState": "AQIAAAEBAAAAAAAAAAAlwBMBAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T09:00:37.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DanhsachThietbi.cs [Design]",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\DanhsachThietbi.cs",
+              "RelativeDocumentMoniker": "GiamSat\\DanhsachThietbi.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\DanhsachThietbi.cs [Design]",
+              "RelativeToolTip": "GiamSat\\DanhsachThietbi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:38:36.794Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CauhinhThietbi.cs [Design]",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\CauhinhThietbi.cs",
+              "RelativeDocumentMoniker": "GiamSat\\CauhinhThietbi.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\CauhinhThietbi.cs [Design]",
+              "RelativeToolTip": "GiamSat\\CauhinhThietbi.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:38:17.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs",
+              "RelativeDocumentMoniker": "GiamSat\\Main.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Main.cs [Design]",
+              "RelativeToolTip": "GiamSat\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T09:00:29.698Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Program.cs",
+              "RelativeDocumentMoniker": "GiamSat\\Program.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\Program.cs",
+              "RelativeToolTip": "GiamSat\\Program.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAvwB4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:38:26.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CauhinhThietbi.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\CauhinhThietbi.cs",
+              "RelativeDocumentMoniker": "GiamSat\\CauhinhThietbi.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\CauhinhThietbi.cs",
+              "RelativeToolTip": "GiamSat\\CauhinhThietbi.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAQwGgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:40:55.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DanhsachThietbi.cs",
+              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\DanhsachThietbi.cs",
+              "RelativeDocumentMoniker": "GiamSat\\DanhsachThietbi.cs",
+              "ToolTip": "D:\\NAM\\4P_SYSTEM\\pc_app_control_device\\GiamSat\\DanhsachThietbi.cs",
+              "RelativeToolTip": "GiamSat\\DanhsachThietbi.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T03:42:03.1Z",
+              "EditorCaption": ""
             }
           ]
         }

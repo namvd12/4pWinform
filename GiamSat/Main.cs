@@ -28,6 +28,8 @@ using UsbHid.USB.Classes;
 using DevComponents.DotNetBar;
 using _4P_PROJECT.DataBase;
 using UsbHid.USB.Classes;
+using GiamSat.viewDb;
+using ZstdSharp;
 
 namespace GiamSat
 {
@@ -1938,18 +1940,20 @@ namespace GiamSat
 
         private void toolStripButtonLoad_Click(object sender, EventArgs e)
         {
-            DanhsachThietbi frmNew = new DanhsachThietbi();
-            frmNew.CalledApplication = this;
-            DialogResult dialogResult = frmNew.ShowDialog();
+            //DanhsachThietbi frmNew = new DanhsachThietbi();
+            //frmNew.CalledApplication = this;
+            //DialogResult dialogResult = frmNew.ShowDialog();
 
-            if (dialogResult == DialogResult.OK)
-            {
+            //if (dialogResult == DialogResult.OK)
+            //{
 
-            }
-            else
-            {
-                return;
-            }
+            //}
+            //else
+            //{
+            //    return;
+            //}
+            SearchDb searchFrom = new SearchDb();
+            searchFrom.Show();
         }
 
         private void toolStripButtonConnect_Click(object sender, EventArgs e)
@@ -1961,7 +1965,7 @@ namespace GiamSat
                     toolStripButtonNew.Enabled = false;
                     toolStripButtonOpen.Enabled = false;
                     toolStripButtonSave.Enabled = false;
-                    toolStripButtonLoad.Enabled = false;
+                    //toolStripButtonLoad.Enabled = false;
                     toolStripButtonAdd.Enabled = false;
                     toolStripButtonConnect.Enabled = false;
                     toolStripButtonDisconnect.Enabled = true;
@@ -1975,13 +1979,18 @@ namespace GiamSat
                     MessageBox.Show(mMainResourceManager.GetString("ErrorConnectionNotOpen"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
 
-                if (!db.Connect())
+                db.Connect();
+                if (db.IsConnected())
                 {
-                    MessageBox.Show("Error connect DataBase");
+                    db.InitDataBase();
+                }
+                else
+                {
+                    MessageBox.Show("Error connect DB");
                 }
             }
 
-            catch
+            catch(Exception)
             {
 
 
@@ -2031,9 +2040,9 @@ namespace GiamSat
                     // update database
                     if (!db.CheckDeviceExist(mlstItemInfor[i].ID.ToString()))
                     {
-                        db.CreateNewDevice(mlstItemInfor[i].ID.ToString(), "Device_" + i, "Test", 0, (mlstItemInfor[i].Status.ToString()));
+                        db.CreateNewDevice(mlstItemInfor[i].ID.ToString(), mlstItemInfor[i].Ten.ToString());
                     }
-                    db.UpdateDevice(mlstItemInfor[i].ID.ToString(), "Device_" + i, "Test", 0, (mlstItemInfor[i].Status.ToString()));
+                    db.UpdateDeviceStatus(mlstItemInfor[i].ID.ToString(), mlstItemInfor[i].Status.ToString());
                 }
 
                 timer1.Enabled = true;
@@ -2347,7 +2356,6 @@ namespace GiamSat
         private void closeDevice()
         {
             device.Disconnect();
-
         }
 
         private void ReadSysStatus()
@@ -2910,10 +2918,6 @@ namespace GiamSat
 
         #endregion
 
-        public string GetTimeStamp()
-        {
-            return DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString();
-        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
@@ -2927,8 +2931,7 @@ namespace GiamSat
                 UpdateLedStatus(mlstItemInfor[i]);
                 if (db.ReadDeviceStatus(mlstItemInfor[i].ID.ToString()) != mlstItemInfor[i].Status.ToString())
                 {
-                    db.UpdateDevice(mlstItemInfor[i].ID.ToString(), "Device_" + (i+1).ToString(), "Test", 0, (mlstItemInfor[i].Status.ToString()));
-                    db.UpdateDeviceStatus(mlstItemInfor[i].ID.ToString(), mlstItemInfor[i].Status.ToString(), GetTimeStamp());
+                    db.UpdateDeviceStatus(mlstItemInfor[i].ID.ToString(), mlstItemInfor[i].Status.ToString());
                 }
             }
             timer1.Enabled = true;
@@ -3334,7 +3337,5 @@ namespace GiamSat
             frmNew.CalledApplication = this;
             DialogResult dialogResult = frmNew.ShowDialog();
         }
-
-
     }
 }

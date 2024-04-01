@@ -113,3 +113,4 @@ D:\NAM\4P_SYSTEM\pc_app_control_device\GiamSat\obj\x86\Debug\GiamSat.csproj.Up2D
 D:\NAM\4P_SYSTEM\pc_app_control_device\GiamSat\obj\x86\Debug\GiamSat.exe
 D:\NAM\4P_SYSTEM\pc_app_control_device\GiamSat\obj\x86\Debug\GiamSat.pdb
 D:\NAM\4P_SYSTEM\pc_app_control_device\GiamSat\bin\Debug\UsbHid.dll
+D:\NAM\4P_SYSTEM\pc_app_control_device\GiamSat\obj\x86\Debug\GiamSat.viewDb.SearchDb.resources

@@ -370,7 +370,6 @@
             this.toolStripButtonLoad.Name = "toolStripButtonLoad";
             this.toolStripButtonLoad.Size = new System.Drawing.Size(36, 36);
             this.toolStripButtonLoad.Text = "Duyệt thiết bị";
-            this.toolStripButtonLoad.Visible = false;
             this.toolStripButtonLoad.Click += new System.EventHandler(this.toolStripButtonLoad_Click);
             // 
             // toolStripButtonConnect

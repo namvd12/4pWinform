@@ -1940,18 +1940,6 @@ namespace GiamSat
 
         private void toolStripButtonLoad_Click(object sender, EventArgs e)
         {
-            //DanhsachThietbi frmNew = new DanhsachThietbi();
-            //frmNew.CalledApplication = this;
-            //DialogResult dialogResult = frmNew.ShowDialog();
-
-            //if (dialogResult == DialogResult.OK)
-            //{
-
-            //}
-            //else
-            //{
-            //    return;
-            //}
             SearchDb searchFrom = new SearchDb();
             searchFrom.Show();
         }
@@ -2047,7 +2035,7 @@ namespace GiamSat
 
                 timer1.Enabled = true;
             }
-            catch
+            catch (Exception)
             {
 
             }
@@ -2173,34 +2161,7 @@ namespace GiamSat
 
         private void Main_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.KeyData == (Keys.Control | Keys.N))
-            //{
-            //    toolStripButtonNew.PerformClick();
-            //}
 
-            //else if (e.KeyData == (Keys.Control | Keys.O))
-            //{
-            //    toolStripButtonOpen.PerformClick();
-            //}
-
-            //else if (e.KeyData == (Keys.Control | Keys.S))
-            //{
-            //    toolStripButtonSave.PerformClick();
-            //}
-
-            //else if (e.KeyData == (Keys.Control | Keys.Shift|Keys.S))
-            //{
-            //    FileSaveAs();
-            //}
-
-            //else if (e.KeyData == (Keys.Alt | Keys.F4))
-            //{
-            //    DialogResult dialogResult = MessageBox.Show("Lưu file lại?", "Thông báo", MessageBoxButtons.OKCancel);
-            //    if (dialogResult == DialogResult.OK)
-            //    {
-            //        toolStripButtonSave.PerformClick();
-            //    }
-            //}
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -2355,7 +2316,10 @@ namespace GiamSat
 
         private void closeDevice()
         {
-            device.Disconnect();
+            if (device != null)
+            { 
+                device.Disconnect();
+            }     
         }
 
         private void ReadSysStatus()
@@ -2423,126 +2387,6 @@ namespace GiamSat
             }
         }
 
-        //private void ScanSysStatus()
-        //{
-        //    try
-        //    {
-        //        if (mUsbDevice != null)
-        //        {
-        //            if (mUsbDevice.IsOpen)
-        //            {
-        //                int index = 0;
-        //                int crcValue = 0;
-
-        //                int iCount = mlstItemInfor.Count;
-        //                byte[] writeBuffer = new byte[64];
-
-        //                sendCommand = SendCommand.SCAN_SYS_STATUS;
-        //                writeBuffer[index] = (byte)sendCommand;
-        //                crcValue += writeBuffer[index];
-
-        //                index++;
-        //                writeBuffer[index] = (byte)iCount;
-        //                crcValue += writeBuffer[index];
-        //                index++;
-
-        //                for (int i = 0; i < iCount; i++)
-        //                {
-        //                    writeBuffer[index] = (byte)mlstItemInfor[i].ID;
-        //                    crcValue += writeBuffer[index];
-        //                    index++;
-        //                }
-
-        //                writeBuffer[index] = (byte)(crcValue / 256); // high byte
-        //                writeBuffer[index++] = (byte)(crcValue % 256); // low byte
-
-        //                int uiTransmitted;
-        //                if (mEpWriter.Write(writeBuffer, 1000, out uiTransmitted) == ErrorCode.None)
-        //                {
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-        //                    closeDevice();
-        //                    ResetAllControl();
-        //                    return;
-
-        //                }
-
-        //                byte[] readBuffer = new byte[64];
-
-        //                ErrorCode eReturn;
-        //                if ((eReturn = mEpReader.Read(readBuffer, 1000, out uiTransmitted)) == ErrorCode.None)
-        //                {
-        //                    crcValue = 0;
-
-        //                    crcValue = readBuffer[0];
-
-        //                    iCount = readBuffer[0];
-
-        //                    // Kiem tra so luong du lieu tra ve co bang so item khong?
-
-        //                    int[] data = new int[iCount];
-
-        //                    index = 1;
-        //                    // read data 
-        //                    for (int i = 0; i < iCount; i++)
-        //                    {
-        //                        data[i] = readBuffer[index];
-        //                        crcValue += readBuffer[index];
-        //                        index++;
-        //                    }
-
-        //                    // data[i] la trang thai cua cac thiet bi trong he thong,
-        //                    //public enum ItemStatus{NONE, NORMAL, ERROR, BUSY, DISCONNECT}
-        //                    /**
-        //                     * NONE         = 0
-        //                     * NORMAL       = 1
-        //                     * ERROR        = 2
-        //                     * BUSY         = 3
-        //                     * DISCONNECT   = 4
-        //                     **/
-        //                    // check sum OK
-        //                    if (crcValue == readBuffer[index] * 256 + readBuffer[index + 1])
-        //                    {
-        //                        for (int i = 0; i < iCount; i++)
-        //                        {
-        //                            if (data[i] == 1) mlstItemInfor[i].Status = ItemInfor.ItemStatus.NORMAL;
-        //                            else if (data[i] == 2) mlstItemInfor[i].Status = ItemInfor.ItemStatus.ERROR;
-        //                            else if (data[i] == 3) mlstItemInfor[i].Status = ItemInfor.ItemStatus.BUSY;
-        //                            else if (data[i] == 4) mlstItemInfor[i].Status = ItemInfor.ItemStatus.DISCONNECT;
-
-        //                            //UpdateLedStatus(mlstItemInfor[i]);
-        //                        }
-
-        //                        // update trang thai cua he thong
-        //                        //for (int i = 0; i < iCount; i++)
-        //                        //{
-        //                        //    UpdateLedStatus(mlstItemInfor[i]);
-        //                        //}
-
-        //                    }
-        //                    //MessageBox.Show("Read finished.", "Thông báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show(mMainResourceManager.GetString("ErrorReadingData"), mMainResourceManager.GetString("LabelApplicationName"), MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-        //                    closeDevice();
-        //                    ResetAllControl();
-        //                }
-
-        //            }
-        //        }
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-
-        //        Console.WriteLine(ex.ToString());
-        //        closeDevice();
-        //        ResetAllControl();
-        //    }
-        //}
 
         #endregion
 
@@ -3091,8 +2935,7 @@ namespace GiamSat
             }
 
             else
-            {
-               
+            {              
                     closeDevice();
                     ResetAllControl();
                 

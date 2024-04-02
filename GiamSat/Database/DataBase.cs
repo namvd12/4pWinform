@@ -161,19 +161,19 @@ namespace _4P_PROJECT.DataBase
             switch (tableName)
             {
                 case TABLE_DB.tb_device:
-                    command = "CREATE TABLE `device` (\r\n\t`DeviceID` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Name` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`SN` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Person` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Manufacturer` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`TimeOP` INT(10) NULL DEFAULT NULL,\r\n\t`Status` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Note` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`DeviceID`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\n;\r\n";
+                    command = "CREATE TABLE `device` (\r\n\t`DeviceID` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Name` VARCHAR(100) NOT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`SN` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Person` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Manufacturer` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Time` CHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Status` VARCHAR(100) NULL DEFAULT '0' COLLATE 'utf8mb4_general_ci',\r\n\t`Note` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`DeviceID`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\n;\r\n";
                     cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     break;
                 case TABLE_DB.tb_image:
-                    command = "CREATE TABLE `image` (\r\n\t`ImageID` INT(10) NOT NULL AUTO_INCREMENT,\r\n\t`DeviceID` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Image_path` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Time` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`ImageID`) USING BTREE,\r\n\tINDEX `FK_image_status` (`DeviceID`) USING BTREE,\r\n\tCONSTRAINT `FK_image_status` FOREIGN KEY (`DeviceID`) REFERENCES `device` (`DeviceID`) ON UPDATE NO ACTION ON DELETE NO ACTION\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=3\r\n;\r\n";
+                    command = "CREATE TABLE `image` (\r\n\t`ImageID` INT(10) NOT NULL AUTO_INCREMENT,\r\n\t`DeviceID` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Image_path` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Time` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`ImageID`) USING BTREE,\r\n\tINDEX `FK_image_status` (`DeviceID`) USING BTREE,\r\n\tCONSTRAINT `FK_image_status` FOREIGN KEY (`DeviceID`) REFERENCES `device` (`DeviceID`) ON UPDATE NO ACTION ON DELETE NO ACTION\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n";
                     cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     //add colum
 
                     break;
                 case TABLE_DB.tb_status:
-                    command = "CREATE TABLE `status` (\r\n\t`StatusID` INT(10) NOT NULL AUTO_INCREMENT,\r\n\t`DeviceID` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Status` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Time` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`StatusID`) USING BTREE,\r\n\tINDEX `FK_status_device` (`DeviceID`) USING BTREE,\r\n\tCONSTRAINT `FK_status_device` FOREIGN KEY (`DeviceID`) REFERENCES `device` (`DeviceID`) ON UPDATE NO ACTION ON DELETE NO ACTION\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=94\r\n;\r\n";
+                    command = "CREATE TABLE `status` (\r\n\t`StatusID` INT(10) NOT NULL AUTO_INCREMENT,\r\n\t`DeviceID` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_general_ci',\r\n\t`Status` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Time` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Image_path` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`Note` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`StatusID`) USING BTREE,\r\n\tINDEX `FK_status_device` (`DeviceID`) USING BTREE,\r\n\tCONSTRAINT `FK_status_device` FOREIGN KEY (`DeviceID`) REFERENCES `device` (`DeviceID`) ON UPDATE NO ACTION ON DELETE NO ACTION\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n";
                     cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     break;
@@ -196,7 +196,7 @@ namespace _4P_PROJECT.DataBase
             }
             return DeviceID;
         }
-        public bool CreateNewDevice(string ID, string Name, string SN = "", string Person = "", string Manufacturer = "", UInt16 TimeOP = 0, string Status = "")
+        public bool CreateNewDevice(string ID, string Name, string SN = "", string Person = "", string Manufacturer = "", string Time = "", string Status = "")
         {
             string command;
             MySqlCommand cmd;
@@ -207,8 +207,8 @@ namespace _4P_PROJECT.DataBase
             try
             {
                 // STEP1: insert new data in device table
-                command = string.Format("INSERT INTO device (DeviceID, Name, SN, Person, Manufacturer, TimeOP, Status)" +
-                    "\r\nVALUES ('{0}', \'{1}\', \'{2}\', \'{3}\', \'{4}\', {5}, \'{6}\')", ID, Name, SN, Person, Manufacturer, TimeOP, Status);
+                command = string.Format("INSERT INTO device (DeviceID, Name, SN, Person, Manufacturer, Time, Status)" +
+                    "\r\nVALUES ('{0}', \'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}\', \'{6}\')", ID, Name, SN, Person, Manufacturer, Time, Status);
                 cmd = new MySqlCommand(command, myConnection);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -263,17 +263,17 @@ namespace _4P_PROJECT.DataBase
             {
                 return false;
             }
-
+            string time_str = DateTime.Now.ToString("MM/dd/yyyy h:mm:s tt");
             // add status in device table 
             command = string.Format("UPDATE device" +
-                "\r\nSET Status = \'{0}\'" +
-                "\r\nWHERE DeviceID = \'{1}\';", Status, DeviceID);
+                "\r\nSET Status = \'{0}\', Time = \'{1}\'" +
+                "\r\nWHERE DeviceID = \'{2}\';", Status, time_str, DeviceID);
             cmd = new MySqlCommand(command, myConnection);
             cmd.ExecuteNonQuery();
 
             // add new data in status table 
             command = string.Format("INSERT INTO status (DeviceID, Status, Time)" +
-                "\r\nVALUES (\'{0}\', \'{1}\', \'{2}\');", DeviceID, Status, DateTime.Now.ToString("MM/dd/yyyy h:mm:s tt"));
+                "\r\nVALUES (\'{0}\', \'{1}\', \'{2}\');", DeviceID, Status, time_str);
             cmd = new MySqlCommand(command, myConnection);
             cmd.ExecuteNonQuery();
             return true;

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>tula_ic.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="tula_ic.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Other\pptx\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net" Version="0.1.0" />
+    <PackageReference Include="HidSharp" Version="2.1.0" />
+    <PackageReference Include="LiveCharts.WinForms.NetCore3" Version="0.9.8" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Syncfusion.Presentation.WinForms" Version="25.2.6" />
+    <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\..\..\pc_app_control_device2\pc_app_control_device\WinFormsApp1\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\Config\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Config\ConfigFolderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

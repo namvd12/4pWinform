@@ -29,14 +29,12 @@
 
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>..\..\..\..\pc_app_control_device2\pc_app_control_device\WinFormsApp1\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>bin\Debug\net6.0-windows\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\Config\AddUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="View\Config\AddUser.cs" />
     <Compile Update="View\Config\ConfigFolderReport.cs">
       <SubType>Form</SubType>
     </Compile>

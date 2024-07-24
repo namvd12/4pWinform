@@ -1,4 +1,5 @@
 ﻿using _4P_PROJECT.DataBase;
+using GiamSat.model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +11,7 @@ namespace Giamsat.Model
 {
     public class MachinePlan
     {
+        Machine machine = new Machine();
         public class MachinePlanData
         {
             /* MaintenanceData*/
@@ -19,6 +21,8 @@ namespace Giamsat.Model
             public DateTime TimeLatest;        //tula_3
             public DateTime TimeMaintenace;    //tula_4
             public UInt32 TimeRemaining;       //tula_5
+            public string ItemName;            //tula_6
+            public string status;              //tula_7
         }
 
         private DataBase mMydatabase;
@@ -32,6 +36,7 @@ namespace Giamsat.Model
             set
             {
                 mMydatabase = value;
+                machine.database = mMydatabase;
             }
         }
 
@@ -50,16 +55,18 @@ namespace Giamsat.Model
                     data.TimeLatest = Convert.ToDateTime(row["tula3"]);
                     data.TimeMaintenace = Convert.ToDateTime(row["tula4"]);
                     data.TimeRemaining = Convert.ToUInt32(row["tula5"]);
+                    data.ItemName = Convert.ToString(row["tula6"]);
+                    data.status = Convert.ToString(row["tula7"]);
                     ls.Add(data);
                 }
             }
             return ls;
         }
 
-        public MachinePlanData get(int machineID)
+        public MachinePlanData get(int maintenanceID)
         {
             MachinePlanData data = new MachinePlanData();
-            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table4, (UInt64)machineID);
+            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table4, (UInt64)maintenanceID);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
@@ -69,32 +76,34 @@ namespace Giamsat.Model
                     data.Cycles = Convert.ToUInt32(row["tula2"]);
                     data.TimeLatest = Convert.ToDateTime(row["tula3"]);
                     data.TimeMaintenace = Convert.ToDateTime(row["tula4"]);
-                    data.TimeRemaining = Convert.ToUInt32(row["tula4"]);
+                    data.TimeRemaining = Convert.ToUInt32(row["tula5"]);
+                    data.ItemName = Convert.ToString(row["tula6"]);
+                    data.status = Convert.ToString(row["tula7"]);
                 }
             }
             return data;
         }
 
-        public bool add(int machineID, UInt32 Cycles, DateTime TimeLatest, DateTime TimeMaintenace, UInt32 TimeRemaining)
+        public bool add(int machineID, UInt32 Cycles, DateTime TimeLatest, DateTime TimeMaintenace, UInt32 TimeRemaining, string item, string status)
         {
             bool res;
             res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table4, machineID.ToString(), Cycles.ToString(), TimeLatest.ToString(),
-                                        TimeMaintenace.ToString(), TimeRemaining.ToString());
+                                        TimeMaintenace.ToString(), TimeRemaining.ToString(), item, status);
             return res;
         }
-        public bool set(int MaintenanceID, int machineID, UInt32 Cycles, DateTime TimeLatest, DateTime TimeMaintenace, UInt32 TimeRemaining)
+        public bool set(int MaintenanceID, int machineID, UInt32 Cycles, DateTime TimeLatest, DateTime TimeMaintenace, UInt32 TimeRemaining, string item, string status)
         {
             bool res = false;
 
             if (MaintenanceID == 0)
             {
                 res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table4, machineID.ToString(), Cycles.ToString(), TimeLatest.ToString(),
-                            TimeMaintenace.ToString(), TimeRemaining.ToString());
+                            TimeMaintenace.ToString(), TimeRemaining.ToString(), item, status);
             }
             else
             {             
                 res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table4, (UInt64)MaintenanceID, machineID.ToString(), Cycles.ToString(), TimeLatest.ToString(),
-                                            TimeMaintenace.ToString(), TimeRemaining.ToString());
+                                            TimeMaintenace.ToString(), TimeRemaining.ToString(), item, status);
             }
             return res;
         }
@@ -112,12 +121,19 @@ namespace Giamsat.Model
             return res;
         }
 
-        public bool update(int machineID, UInt32 Cycles, DateTime TimeLatest, DateTime TimeMaintenace, UInt32 TimeRemaining)
+        public bool update(int machineID, UInt32 Cycles, DateTime TimeLatest, DateTime TimeMaintenace, UInt32 TimeRemaining, string item, string status)
         {
             bool res;
             int MaintenanceID = (int)mMydatabase.GetKey(DataBase.TABLE_DB.tula_table4, machineID.ToString());
             res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table4, (UInt64)MaintenanceID, null, Cycles.ToString(), TimeLatest.ToString(), TimeMaintenace.ToString(), TimeRemaining.ToString());
             return res;
+        }
+
+        public string getMachineNameFromMaintenanceID(int maintenanceID)
+        {
+            var data = this.get(maintenanceID);
+            var machineInfor = machine.get((int)data.MachineID);
+            return machineInfor.machineName;
         }
     }
 }

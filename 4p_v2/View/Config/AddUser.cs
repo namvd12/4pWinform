@@ -102,7 +102,7 @@ namespace GiamSat.View
                 {
                     // Hash
                     string hashPW = BCrypt.Net.BCrypt.HashPassword(tb_pw.Text);
-                    status = user.add(tb_id.Text, tb_level.Text, tb_user.Text, hashPW, tb_fullName.Text, tb_phone.Text, tb_email.Text);
+                    status = user.add(tb_id.Text, (tb_level.SelectedIndex + 1).ToString(), tb_user.Text, hashPW, tb_fullName.Text, tb_phone.Text, tb_email.Text);
                 }
                 if (status)
                 {

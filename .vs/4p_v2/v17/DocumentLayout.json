@@ -1,255 +1,304 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\NAM\\4P_SYSTEM\\4p_v2\\",
+  "WorkspaceRootPath": "D:\\namvd\\4P\\pc_app_control_device\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\adduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showsparepart\\addmachineplan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addmachineplan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showsparepart\\addmachineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addmachineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addmachineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showsparepart\\addmachineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\machineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\machineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\control\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\historyng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\historyng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addmachineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addmachineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\dataanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\dataanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\sparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\sparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\namvd\\AppData\\Local\\Temp\\.vsdbgsrc\\588d5f290d02d9e13ed29199c5cd7f74764f6c5571ea4806f349e8c431c0ee5c\\Main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:2:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\sabanwi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\sabanwi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showreporting\\visualreporting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showreporting\\visualreporting.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\ipaddress.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\ipaddress.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addsparepart.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addsparepart.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showmachine\\addnew.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\addnew.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\configfolderreport.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configfolderreport.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\configtimeng.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configtimeng.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showitems\\additems.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showitems\\additems.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addmachineplan.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addmachineplan.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\adduser.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\sabanwi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\sabanwi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\control\\devices\\iteminfor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\devices\\iteminfor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\control\\devices\\itemrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\devices\\itemrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\adduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configfolderreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addmachineplan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addmachineplan.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\addnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\ipaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\clientrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\clientrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\clientrf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\historyng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\historyng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\adduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\passwordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\passwordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\passwordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\passwordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\passwordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\passwordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\control\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\database\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\passwordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\passwordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\passwordform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\control\\devices\\rfmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\control\\devices\\rfmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\devices\\rfmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\control\\devices\\iteminfor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\devices\\iteminfor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\sparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\sparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\model\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configuser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\configuser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configuser.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\machineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\machineplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showmachine\\edithistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showmachine\\edithistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\edithistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showmachine\\edithistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showmachine\\edithistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\edithistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configtimeng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configfolderreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\configfolderreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configfolderreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\config\\configtimeng.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\config\\configtimeng.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\config\\configtimeng.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showitems\\addregion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showitems\\addregion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showitems\\addregion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\namvd\\AppData\\Local\\SourceServer\\3e7d0adcb1dd800aeea6b432976f52be2a3c4490640ab387ae0d9f530834f74a\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\CancellationTokenSource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showreporting\\visualreporting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\model\\dataanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\model\\dataanalysis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\viewsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showsparepart\\addsparepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\4p_v2.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\4p_v2.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\4p_v2.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\GiamSat.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\GiamSat.csproj|solutionrelative:4p_v2\\view\\showitems\\additems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:1:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:1:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:1:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showmachine\\searchdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\GiamSat.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\GiamSat.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\GiamSat.csproj|solutionrelative:4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\view\\showreporting\\visualreporting.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\view\\showreporting\\visualreporting.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:4p_v2\\GiamSat.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\4p_v2.csproj|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\4p_v2.csproj|D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\4p_v2.csproj|solutionrelative:4p_v2\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:4p_v2\\GiamSat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\desktop.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\desktop.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\desktop.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\nam\\4p_system\\4p_v2\\4p_v2\\control\\websocket\\statustowebsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|d:\\namvd\\4p\\pc_app_control_device\\4p_v2\\control\\websocket\\statustowebsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1381B8F4-8FFB-40F8-81D9-ECBFA5149811}|4p_v2\\SabanWi.csproj|solutionrelative:4p_v2\\control\\websocket\\statustowebsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -260,93 +309,431 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AddMachinePlan.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
+              "Title": "DataAnalysis.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\DataAnalysis.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\DataAnalysis.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\DataAnalysis.cs",
+              "RelativeToolTip": "4p_v2\\Model\\DataAnalysis.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAD4vz8AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T01:39:59.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SparePart.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\SparePart.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\SparePart.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\SparePart.cs",
+              "RelativeToolTip": "4p_v2\\Model\\SparePart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T04:51:15.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\User.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\User.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\User.cs",
+              "RelativeToolTip": "4p_v2\\Model\\User.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAD4vxsAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T08:55:23.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HistoryNG.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\HistoryNG.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\HistoryNG.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\HistoryNG.cs",
+              "RelativeToolTip": "4p_v2\\Model\\HistoryNG.cs",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAWwIwAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T01:40:08.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Database\\DataBase.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Control\\Database\\DataBase.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Database\\DataBase.cs",
+              "RelativeToolTip": "4p_v2\\Control\\Database\\DataBase.cs",
+              "ViewState": "AQIAAP0CAAAAAAAAAAAvwBADAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T03:15:25.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddMachinePlan.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs [Design]",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T01:41:44.173Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ViewSparePart.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs [Design]",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T01:59:49.294Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViewSparePart.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
+              "ViewState": "AQIAAPUAAAAAAAAAAAAvwP8AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T01:59:53.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddMachinePlan.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAQwDAAAAAfAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAQwFIAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T01:41:46.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConfigUser.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigUser.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigUser.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigUser.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\Config\\ConfigUser.cs [Design]",
+              "DocumentIndex": 11,
+              "Title": "History.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\History.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\History.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\History.cs",
+              "RelativeToolTip": "4p_v2\\Model\\History.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowKIAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T09:16:49.587Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-15T01:40:03.392Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddUser.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\AddUser.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\AddUser.cs",
-              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "Machine.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\Machine.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\Machine.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\Machine.cs",
+              "RelativeToolTip": "4p_v2\\Model\\Machine.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAvwE0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T09:39:27.805Z",
+              "WhenOpened": "2024-07-17T07:32:03.916Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddUser.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\AddUser.Designer.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\AddUser.Designer.cs",
-              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.Designer.cs",
-              "ViewState": "AQIAAHEBAAAAAAAAAAAgwGsBAAAUAAAA",
+              "Title": "MachinePlan.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\MachinePlan.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Model\\MachinePlan.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\MachinePlan.cs",
+              "RelativeToolTip": "4p_v2\\Model\\MachinePlan.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAD4v4gAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T09:39:21.341Z"
+              "WhenOpened": "2024-05-30T04:51:11.64Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddMachinePlan.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
-              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
-              "ViewState": "AQIAACMBAAAAAAAAAAAgwBwAAAAVAAAA",
+              "DocumentIndex": 15,
+              "Title": "AddNew.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\AddNew.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\AddNew.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\AddNew.cs [Design]",
+              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\AddNew.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T03:56:37.622Z"
+              "WhenOpened": "2024-06-14T02:08:29.547Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Program.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Program.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Program.cs",
+              "RelativeToolTip": "4p_v2\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T03:34:05.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddSparePart.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs [Design]",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddSparePart.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T01:42:31.576Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddUser.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.cs [Design]",
+              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T09:39:18.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Main.cs",
+              "DocumentMoniker": "C:\\Users\\namvd\\AppData\\Local\\Temp\\.vsdbgsrc\\588d5f290d02d9e13ed29199c5cd7f74764f6c5571ea4806f349e8c431c0ee5c\\Main.cs",
+              "ToolTip": "C:\\Users\\namvd\\AppData\\Local\\Temp\\.vsdbgsrc\\588d5f290d02d9e13ed29199c5cd7f74764f6c5571ea4806f349e8c431c0ee5c\\Main.cs [Read Only]",
+              "ViewState": "AQIAABoBAAAAAAAAAAAAADUBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T09:05:42.818Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SearchDb.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\SearchDb.cs [Design]",
+              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\SearchDb.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T02:30:40.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddUser.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.cs",
+              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAArwGkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T09:39:27.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AddNew.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\AddNew.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\AddNew.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\AddNew.resx",
+              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\AddNew.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ConfigFolderReport.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigFolderReport.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.resx",
+              "RelativeToolTip": "4p_v2\\View\\Config\\ConfigFolderReport.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SearchDb.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "ViewState": "AQIAANgAAAAAAAAAAAAAAO0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T03:50:54.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AddMachinePlan.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.resx",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Main.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Main.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Main.cs [Design]",
+              "RelativeToolTip": "4p_v2\\Main.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:14:24.332Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ConfigTimeNG.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigTimeNG.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.resx",
+              "RelativeToolTip": "4p_v2\\View\\Config\\ConfigTimeNG.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "VisualReporting.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
+              "RelativeToolTip": "4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T03:22:03.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AddItems.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowItems\\AddItems.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.resx",
+              "RelativeToolTip": "4p_v2\\View\\ShowItems\\AddItems.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SabanWi",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\SabanWi.csproj",
+              "RelativeDocumentMoniker": "4p_v2\\SabanWi.csproj",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\SabanWi.csproj",
+              "RelativeToolTip": "4p_v2\\SabanWi.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-09T02:11:09.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AddUser.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.resx",
+              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SabanWi.csproj",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\SabanWi.csproj",
+              "RelativeDocumentMoniker": "4p_v2\\SabanWi.csproj",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\SabanWi.csproj",
+              "RelativeToolTip": "4p_v2\\SabanWi.csproj",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACwAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-09T02:10:47.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AddSparePart.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddSparePart.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddSparePart.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddSparePart.resx",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddSparePart.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IpAddress.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\IpAddress.resx",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\IpAddress.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\IpAddress.resx",
+              "RelativeToolTip": "4p_v2\\View\\Config\\IpAddress.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-09T02:15:47.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ItemRF.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Devices\\ItemRF.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Control\\Devices\\ItemRF.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Devices\\ItemRF.cs",
+              "RelativeToolTip": "4p_v2\\Control\\Devices\\ItemRF.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAawB0AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T02:08:18.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ConfigUser.cs [Design]",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigUser.cs",
+              "ToolTip": "D:\\namvd\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.cs [Design]",
+              "RelativeToolTip": "..\\..\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T09:16:49.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "ConfigFolderReport.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigFolderReport.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigFolderReport.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigFolderReport.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigFolderReport.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T01:31:51.031Z"
+              "WhenOpened": "2024-07-01T01:31:51.031Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 42,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
@@ -356,11 +743,48 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 33,
+              "Title": "ItemInfor.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Devices\\ItemInfor.cs",
+              "RelativeDocumentMoniker": "4p_v2\\Control\\Devices\\ItemInfor.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Devices\\ItemInfor.cs",
+              "RelativeToolTip": "4p_v2\\Control\\Devices\\ItemInfor.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAIA8wBIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T03:18:24.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "AddMachinePlan.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
+              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.Designer.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwBYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T03:56:37.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "AddUser.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.Designer.cs",
+              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\AddUser.Designer.cs",
+              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.Designer.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwBYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-05T09:39:21.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
               "Title": "ConfigUser.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigUser.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigUser.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigUser.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -368,61 +792,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 45,
               "Title": "AddNew.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\AddNew.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\AddNew.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\AddNew.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\AddNew.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\AddNew.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowMachine\\AddNew.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAAAFsAAAAnAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAIBJwFsAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T02:08:34.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-14T02:08:34.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\User.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Model\\User.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\User.cs",
-              "RelativeToolTip": "4p_v2\\Model\\User.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T08:55:23.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SearchDb.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "ViewState": "AQIAAGcBAAAAAAAAAAAQwNQBAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T03:50:54.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 46,
               "Title": "IpAddress.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\IpAddress.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\IpAddress.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\IpAddress.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\IpAddress.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\IpAddress.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\IpAddress.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAAIwDwAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T09:41:26.279Z"
+              "WhenOpened": "2024-07-05T09:41:26.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 49,
               "Title": "PasswordForm.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\PasswordForm.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\PasswordForm.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\PasswordForm.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\PasswordForm.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\PasswordForm.cs",
               "RelativeToolTip": "4p_v2\\View\\PasswordForm.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwBkAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -431,36 +830,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "DataBase.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Database\\DataBase.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Control\\Database\\DataBase.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Database\\DataBase.cs",
-              "RelativeToolTip": "4p_v2\\Control\\Database\\DataBase.cs",
-              "ViewState": "AQIAAPUBAAAAAAAAAAAIwOkBAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T03:15:25.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 48,
               "Title": "Main.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Main.cs",
               "RelativeDocumentMoniker": "4p_v2\\Main.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Main.cs",
               "RelativeToolTip": "4p_v2\\Main.cs",
               "ViewState": "AQIAAMAGAAAAAAAAAAAgwNMGAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T03:22:05.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T03:22:05.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 47,
               "Title": "ClientRF.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\ClientRF.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\ClientRF.cs",
               "RelativeDocumentMoniker": "4p_v2\\Model\\ClientRF.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\ClientRF.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\ClientRF.cs",
               "RelativeToolTip": "4p_v2\\Model\\ClientRF.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -468,11 +854,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 51,
               "Title": "PasswordForm.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\PasswordForm.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\PasswordForm.Designer.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\PasswordForm.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\PasswordForm.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\PasswordForm.Designer.cs",
               "RelativeToolTip": "4p_v2\\View\\PasswordForm.Designer.cs",
               "ViewState": "AQIAAFgAAAAAAAAAAAAewH0AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -480,23 +866,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HistoryNG.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\HistoryNG.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Model\\HistoryNG.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\HistoryNG.cs",
-              "RelativeToolTip": "4p_v2\\Model\\HistoryNG.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAIwJ8AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:40:08.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 52,
               "Title": "RFMaster.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Devices\\RFMaster.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Devices\\RFMaster.cs",
               "RelativeDocumentMoniker": "4p_v2\\Control\\Devices\\RFMaster.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Devices\\RFMaster.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Devices\\RFMaster.cs",
               "RelativeToolTip": "4p_v2\\Control\\Devices\\RFMaster.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -504,48 +878,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "ItemInfor.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Devices\\ItemInfor.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Control\\Devices\\ItemInfor.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Devices\\ItemInfor.cs",
-              "RelativeToolTip": "4p_v2\\Control\\Devices\\ItemInfor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T03:18:24.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SparePart.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\SparePart.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Model\\SparePart.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\SparePart.cs",
-              "RelativeToolTip": "4p_v2\\Model\\SparePart.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwC0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T04:51:15.75Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 54,
               "Title": "ConfigUser.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigUser.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.Designer.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigUser.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigUser.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigUser.Designer.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigUser.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T09:44:23.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-05T09:44:23.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 53,
               "Title": "Config.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\Config.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\Config.cs",
               "RelativeDocumentMoniker": "4p_v2\\Model\\Config.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\Config.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Model\\Config.cs",
               "RelativeToolTip": "4p_v2\\Model\\Config.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAiwDMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -553,11 +902,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 55,
               "Title": "EditHistory.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\EditHistory.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\EditHistory.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\EditHistory.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\EditHistory.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\EditHistory.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowMachine\\EditHistory.cs",
               "ViewState": "AQIAAC8BAAAAAAAAAAAcwEoBAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -566,59 +915,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Program.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Program.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Program.cs",
-              "RelativeToolTip": "4p_v2\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T03:34:05.254Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "History.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\History.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Model\\History.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\History.cs",
-              "RelativeToolTip": "4p_v2\\Model\\History.cs",
-              "ViewState": "AQIAAFQBAAAAAAAAAAAAwGQBAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:40:03.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "MachinePlan.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\MachinePlan.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Model\\MachinePlan.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\MachinePlan.cs",
-              "RelativeToolTip": "4p_v2\\Model\\MachinePlan.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowDgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T04:51:11.64Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 57,
               "Title": "ConfigTimeNG.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigTimeNG.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigTimeNG.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigTimeNG.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigTimeNG.cs",
               "ViewState": "AQIAACIAAAAAAAAAAAAgwCkAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T01:37:44.323Z"
+              "WhenOpened": "2024-07-01T01:37:44.323Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 58,
               "Title": "ConfigFolderReport.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigFolderReport.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.Designer.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigFolderReport.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigFolderReport.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.Designer.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigFolderReport.Designer.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAowBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -626,11 +940,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 59,
               "Title": "ConfigTimeNG.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigTimeNG.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.Designer.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigTimeNG.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigTimeNG.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.Designer.cs",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigTimeNG.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -638,7 +952,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 63,
               "Title": "CancellationTokenSource.cs",
               "DocumentMoniker": "C:\\Users\\namvd\\AppData\\Local\\SourceServer\\3e7d0adcb1dd800aeea6b432976f52be2a3c4490640ab387ae0d9f530834f74a\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\CancellationTokenSource.cs",
               "ToolTip": "C:\\Users\\namvd\\AppData\\Local\\SourceServer\\3e7d0adcb1dd800aeea6b432976f52be2a3c4490640ab387ae0d9f530834f74a\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\CancellationTokenSource.cs",
@@ -648,11 +962,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 62,
               "Title": "VisualReporting.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowReporting\\VisualReporting.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowReporting\\VisualReporting.cs",
               "ViewState": "AQIAAMACAAAAAAAAAAAuwNACAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -661,35 +975,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "VisualReporting.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
-              "RelativeToolTip": "4p_v2\\View\\ShowReporting\\VisualReporting.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T03:22:03.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "DataAnalysis.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\DataAnalysis.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Model\\DataAnalysis.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Model\\DataAnalysis.cs",
-              "RelativeToolTip": "4p_v2\\Model\\DataAnalysis.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAADgv1YAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:39:59.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 73,
               "Title": "desktop.ico -  [English (United Kingdom)] - Icon [61x59, 32 bit, BMP]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\desktop.ico",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\desktop.ico",
               "RelativeDocumentMoniker": "4p_v2\\desktop.ico",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\desktop.ico -  [English (United Kingdom)] - Icon [61x59, 32 bit, BMP]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\desktop.ico -  [English (United Kingdom)] - Icon [61x59, 32 bit, BMP]",
               "RelativeToolTip": "4p_v2\\desktop.ico -  [English (United Kingdom)] - Icon [61x59, 32 bit, BMP]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
               "WhenOpened": "2024-05-30T04:07:00.045Z",
@@ -697,49 +987,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 66,
               "Title": "AddItems.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowItems\\AddItems.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowItems\\AddItems.cs",
               "ViewState": "AQIAADwAAAAAAAAAAAApwEwAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T04:59:32.548Z"
+              "WhenOpened": "2024-05-30T04:59:32.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 64,
               "Title": "AddSparePart.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
               "ViewState": "AQIAAGYAAAAAAAAAAAAmwF4AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:42:33.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T01:42:33.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "ViewSparePart.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
-              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAowDYAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:59:53.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 74,
               "Title": "Resources.Designer.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Properties\\Resources.Designer.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Properties\\Resources.Designer.cs",
               "RelativeDocumentMoniker": "4p_v2\\Properties\\Resources.Designer.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Properties\\Resources.Designer.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Properties\\Resources.Designer.cs",
               "RelativeToolTip": "4p_v2\\Properties\\Resources.Designer.cs",
               "ViewState": "AQIAAH4AAAAAAAAAAAAawJMAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -747,33 +1024,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 70,
               "Title": "GiamSat.csproj",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
-              "RelativeDocumentMoniker": "4p_v2\\GiamSat.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
-              "RelativeToolTip": "4p_v2\\GiamSat.csproj",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-05-30T03:58:01.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 72,
               "Title": "GiamSat.csproj",
               "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
-              "RelativeDocumentMoniker": "4p_v2\\GiamSat.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
-              "RelativeToolTip": "4p_v2\\GiamSat.csproj",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\GiamSat.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-05-30T03:22:33.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 68,
               "Title": "SearchDb.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
               "RelativeToolTip": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
               "ViewState": "AQIAAH8AAAAAAAAAAIBJwKEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -781,11 +1058,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 75,
               "Title": "StatusToWebSocket.cs",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Websocket\\StatusToWebSocket.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Websocket\\StatusToWebSocket.cs",
               "RelativeDocumentMoniker": "4p_v2\\Control\\Websocket\\StatusToWebSocket.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Control\\Websocket\\StatusToWebSocket.cs",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Control\\Websocket\\StatusToWebSocket.cs",
               "RelativeToolTip": "4p_v2\\Control\\Websocket\\StatusToWebSocket.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAA5wBcAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -793,222 +1070,144 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 38,
               "Title": "ConfigFolderReport.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigFolderReport.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigFolderReport.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigFolderReport.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigFolderReport.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigFolderReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T01:31:25.742Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 40,
               "Title": "ConfigTimeNG.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigTimeNG.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\ConfigTimeNG.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\ConfigTimeNG.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\ConfigTimeNG.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\Config\\ConfigTimeNG.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T01:31:00.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 36,
               "Title": "IpAddress.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\IpAddress.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\IpAddress.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\Config\\IpAddress.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\IpAddress.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\Config\\IpAddress.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\Config\\IpAddress.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T01:31:01.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AddMachinePlan.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddMachinePlan.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:41:44.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 44,
               "Title": "AddItems.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowItems\\AddItems.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\ShowItems\\AddItems.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T02:06:45.99Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-14T02:06:45.99Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AddNew.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\AddNew.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\AddNew.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\AddNew.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\AddNew.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T02:08:29.547Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SearchDb.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\SearchDb.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\SearchDb.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowMachine\\SearchDb.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T02:30:40.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AddUser.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\AddUser.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\Config\\AddUser.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\Config\\AddUser.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\Config\\AddUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-05T09:39:18.352Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 50,
               "Title": "PasswordForm.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\PasswordForm.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\PasswordForm.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\PasswordForm.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\PasswordForm.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\PasswordForm.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\PasswordForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-06T02:29:05.751Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Main.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs",
-              "RelativeDocumentMoniker": "4p_v2\\Main.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs [Design]",
-              "RelativeToolTip": "4p_v2\\Main.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T01:14:24.332Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 56,
               "Title": "EditHistory.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\EditHistory.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\EditHistory.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowMachine\\EditHistory.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowMachine\\EditHistory.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowMachine\\EditHistory.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\ShowMachine\\EditHistory.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T02:05:25.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 60,
               "Title": "AddRegion.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddRegion.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddRegion.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowItems\\AddRegion.cs",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddRegion.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowItems\\AddRegion.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddRegion.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T02:05:22.812Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 61,
               "Title": "VisualReporting.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowReporting\\VisualReporting.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs [Design]",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.cs [Design]",
               "RelativeToolTip": "4p_v2\\View\\ShowReporting\\VisualReporting.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T01:22:59.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "AddSparePart.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\AddSparePart.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\AddSparePart.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\AddSparePart.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:42:31.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "ViewSparePart.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
-              "RelativeDocumentMoniker": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowSparePart\\ViewSparePart.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowSparePart\\ViewSparePart.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T01:59:49.294Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 65,
               "Title": "VisualReporting.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowReporting\\VisualReporting.cs",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowReporting\\VisualReporting.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T03:24:01.927Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 67,
               "Title": "AddItems.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowItems\\AddItems.cs",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowItems\\AddItems.cs",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs [Design]",
-              "RelativeToolTip": "4p_v2\\View\\ShowItems\\AddItems.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowItems\\AddItems.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T04:59:27.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 69,
               "Title": "Main.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Main.cs",
               "RelativeDocumentMoniker": "4p_v2\\Main.cs",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs [Design]",
-              "RelativeToolTip": "4p_v2\\Main.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T04:44:08.161Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 23,
               "Title": "VisualReporting.resx",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.resx",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.resx",
               "RelativeDocumentMoniker": "4p_v2\\View\\ShowReporting\\VisualReporting.resx",
-              "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\View\\ShowReporting\\VisualReporting.resx",
+              "ToolTip": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\View\\ShowReporting\\VisualReporting.resx",
               "RelativeToolTip": "4p_v2\\View\\ShowReporting\\VisualReporting.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2024-06-13T01:12:55.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 71,
               "Title": "Main.cs [Design]",
-              "DocumentMoniker": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs",
+              "DocumentMoniker": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\Main.cs",
               "RelativeDocumentMoniker": "4p_v2\\Main.cs",
               "ToolTip": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs [Design]",
-              "RelativeToolTip": "4p_v2\\Main.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T03:34:34.802Z"
             }

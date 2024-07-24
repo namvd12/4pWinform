@@ -27,6 +27,8 @@ namespace GiamSat.View
 
         MachinePlan machinePlan = new MachinePlan();
 
+        public ViewSparePart viewSparePart;
+
         private Main mAppInstance;
 
         public Main CalledApplication
@@ -59,14 +61,17 @@ namespace GiamSat.View
                 cb_machineName.Items.Add(machineData.machineName);
             }
         }
-        public void Set(string id, string machineName, string cycle, string timeStart, string timeEnd)
+        public void Set(string id, string machineName, string cycle, string timeStart, string timeEnd,string item, string status)
         {
             isEditing = true;
             btn_delete.Enabled = true;
             _maintenanceID = Convert.ToUInt16(id);
             tb_cycle.Text = cycle;
+            tb_item.Text = item;
+            tb_status.Text = status;    
             dateTimePicker_latest.Text = timeStart;
             dateTimePicker_Maintenance.Text = timeEnd;
+            machineName = machinePlan.getMachineNameFromMaintenanceID(_maintenanceID);
             cb_machineName.SelectedIndex = cb_machineName.Items.IndexOf(machineName);
         }
 
@@ -77,13 +82,13 @@ namespace GiamSat.View
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (tb_cycle.Text != string.Empty && dateTimePicker_latest.Text != string.Empty)
+            if (tb_cycle.Text != string.Empty && dateTimePicker_latest.Text != string.Empty &&  tb_item.Text!= string.Empty)
             {
 
                 DateTime Timelatest = DateTime.ParseExact(dateTimePicker_latest.Text, "dd-MM-yyyy", null);
                 DateTime TimeMaintenace = DateTime.ParseExact(dateTimePicker_Maintenance.Text, "dd-MM-yyyy", null);
                 TimeSpan TimeRemaining = TimeMaintenace.Subtract(Timelatest);
-                bool status = machinePlan.set(_maintenanceID, _machineid, Convert.ToUInt16(tb_cycle.Text), Timelatest, TimeMaintenace, Convert.ToUInt16(TimeRemaining.Days));
+                bool status = machinePlan.set(_maintenanceID, _machineid, Convert.ToUInt16(tb_cycle.Text), Timelatest, TimeMaintenace, Convert.ToUInt16(TimeRemaining.Days), tb_item.Text, tb_status.Text);
                 if (status)
                 {
                     MessageBox.Show("Done");
@@ -93,8 +98,8 @@ namespace GiamSat.View
                     MessageBox.Show("Error");
                 }
 
+                viewSparePart.resume();
                 this.Close();
-
             }
         }
 
@@ -104,6 +109,7 @@ namespace GiamSat.View
             if (result.Equals(DialogResult.OK))
             {
                 machinePlan.delete(_maintenanceID);
+                viewSparePart.resume();
                 this.Close();
 
             }
@@ -157,6 +163,11 @@ namespace GiamSat.View
                 DateTime Timelatest = DateTime.ParseExact(dateTimePicker_latest.Text, "dd-MM-yyyy", null);
                 dateTimePicker_Maintenance.Text = Timelatest.AddDays(Convert.ToUInt32(tb_cycle.Text)).ToString();
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

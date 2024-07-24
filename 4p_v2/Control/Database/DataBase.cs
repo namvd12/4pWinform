@@ -807,7 +807,7 @@ namespace _4P_PROJECT.DataBase
             else if (tableName == TABLE_DB.tula_table4)
             {
                 table_Name = "tula_table4";
-                condition = string.Format("WHERE " + "tula1 = {0}", tulaKey);
+                condition = string.Format("WHERE " + "tula_Key = {0}", tulaKey);
             }
             else if (tableName == TABLE_DB.tula_table5)
             {

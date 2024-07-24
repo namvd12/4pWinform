@@ -7,6 +7,9 @@
     <Compile Update="View\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\Config\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\Config\ConfigTimeNG.cs">
       <SubType>Form</SubType>
     </Compile>

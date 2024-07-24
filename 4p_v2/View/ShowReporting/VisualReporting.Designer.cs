@@ -107,7 +107,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1377, 709);
+            panel4.Size = new Size(1370, 709);
             panel4.TabIndex = 4;
             // 
             // tableLayoutPanel2
@@ -127,7 +127,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 23.16119F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 56.6510162F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(1377, 709);
+            tableLayoutPanel2.Size = new Size(1370, 709);
             tableLayoutPanel2.TabIndex = 3;
             // 
             // cartesianChart1
@@ -144,7 +144,7 @@
             lb_title.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lb_title.Location = new Point(3, 108);
             lb_title.Name = "lb_title";
-            lb_title.Size = new Size(1371, 33);
+            lb_title.Size = new Size(1364, 33);
             lb_title.TabIndex = 0;
             lb_title.Text = "Title";
             lb_title.TextAlign = ContentAlignment.MiddleCenter;
@@ -169,7 +169,7 @@
             tbLayout_Search.RowStyles.Add(new RowStyle(SizeType.Percent, 67.92453F));
             tbLayout_Search.RowStyles.Add(new RowStyle(SizeType.Percent, 32.07547F));
             tbLayout_Search.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-            tbLayout_Search.Size = new Size(1371, 102);
+            tbLayout_Search.Size = new Size(1364, 102);
             tbLayout_Search.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -180,7 +180,7 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 66);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(451, 33);
+            flowLayoutPanel1.Size = new Size(448, 33);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
@@ -216,7 +216,7 @@
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(3, 43);
             label1.Name = "label1";
-            label1.Size = new Size(451, 20);
+            label1.Size = new Size(448, 20);
             label1.TabIndex = 0;
             label1.Text = "Date";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -227,9 +227,9 @@
             flowLayoutPanel2.Controls.Add(cb_week);
             flowLayoutPanel2.Controls.Add(btn_seachWeek);
             flowLayoutPanel2.Dock = DockStyle.Fill;
-            flowLayoutPanel2.Location = new Point(460, 66);
+            flowLayoutPanel2.Location = new Point(457, 66);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(451, 33);
+            flowLayoutPanel2.Size = new Size(448, 33);
             flowLayoutPanel2.TabIndex = 1;
             flowLayoutPanel2.Paint += flowLayoutPanel1_Paint;
             // 
@@ -264,9 +264,9 @@
             flowLayoutPanel3.Controls.Add(cb_month);
             flowLayoutPanel3.Controls.Add(btn_searchMonth);
             flowLayoutPanel3.Dock = DockStyle.Fill;
-            flowLayoutPanel3.Location = new Point(917, 66);
+            flowLayoutPanel3.Location = new Point(911, 66);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(451, 33);
+            flowLayoutPanel3.Size = new Size(450, 33);
             flowLayoutPanel3.TabIndex = 3;
             // 
             // cb_month
@@ -297,9 +297,9 @@
             lb_month.AutoSize = true;
             lb_month.Dock = DockStyle.Fill;
             lb_month.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lb_month.Location = new Point(917, 43);
+            lb_month.Location = new Point(911, 43);
             lb_month.Name = "lb_month";
-            lb_month.Size = new Size(451, 20);
+            lb_month.Size = new Size(450, 20);
             lb_month.TabIndex = 2;
             lb_month.Text = "Month";
             lb_month.TextAlign = ContentAlignment.MiddleCenter;
@@ -309,9 +309,9 @@
             label4.AutoSize = true;
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(460, 43);
+            label4.Location = new Point(457, 43);
             label4.Name = "label4";
-            label4.Size = new Size(451, 20);
+            label4.Size = new Size(448, 20);
             label4.TabIndex = 0;
             label4.Text = "Week";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -322,7 +322,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menu_allLine, Menu_eachLine, Menu_MTTR, Menu_MTBF });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(457, 43);
+            menuStrip1.Size = new Size(454, 43);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -375,7 +375,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1371, 158);
+            tableLayoutPanel1.Size = new Size(1364, 158);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // tbLayout_colorLine
@@ -412,7 +412,7 @@
             tbLayout_colorLine.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tbLayout_colorLine.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tbLayout_colorLine.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tbLayout_colorLine.Size = new Size(486, 152);
+            tbLayout_colorLine.Size = new Size(484, 152);
             tbLayout_colorLine.TabIndex = 2;
             // 
             // tb_line1
@@ -458,7 +458,7 @@
             // tb_line6
             // 
             tb_line6.Dock = DockStyle.Fill;
-            tb_line6.Location = new Point(245, 3);
+            tb_line6.Location = new Point(244, 3);
             tb_line6.Name = "tb_line6";
             tb_line6.Size = new Size(139, 23);
             tb_line6.TabIndex = 0;
@@ -466,7 +466,7 @@
             // tb_line7
             // 
             tb_line7.Dock = DockStyle.Fill;
-            tb_line7.Location = new Point(245, 33);
+            tb_line7.Location = new Point(244, 33);
             tb_line7.Name = "tb_line7";
             tb_line7.Size = new Size(139, 23);
             tb_line7.TabIndex = 0;
@@ -474,7 +474,7 @@
             // tb_line8
             // 
             tb_line8.Dock = DockStyle.Fill;
-            tb_line8.Location = new Point(245, 63);
+            tb_line8.Location = new Point(244, 63);
             tb_line8.Name = "tb_line8";
             tb_line8.Size = new Size(139, 23);
             tb_line8.TabIndex = 0;
@@ -482,7 +482,7 @@
             // tb_line9
             // 
             tb_line9.Dock = DockStyle.Fill;
-            tb_line9.Location = new Point(245, 93);
+            tb_line9.Location = new Point(244, 93);
             tb_line9.Name = "tb_line9";
             tb_line9.Size = new Size(139, 23);
             tb_line9.TabIndex = 0;
@@ -535,7 +535,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(390, 0);
+            label8.Location = new Point(389, 0);
             label8.Name = "label8";
             label8.Size = new Size(38, 15);
             label8.TabIndex = 1;
@@ -544,7 +544,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(390, 30);
+            label9.Location = new Point(389, 30);
             label9.Name = "label9";
             label9.Size = new Size(38, 15);
             label9.TabIndex = 1;
@@ -553,7 +553,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(390, 60);
+            label10.Location = new Point(389, 60);
             label10.Name = "label10";
             label10.Size = new Size(38, 15);
             label10.TabIndex = 1;
@@ -562,7 +562,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(390, 90);
+            label11.Location = new Point(389, 90);
             label11.Name = "label11";
             label11.Size = new Size(38, 15);
             label11.TabIndex = 1;
@@ -574,14 +574,14 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1377, 709);
+            panel1.Size = new Size(1370, 709);
             panel1.TabIndex = 1;
             // 
             // VisualReporting
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1377, 709);
+            ClientSize = new Size(1370, 709);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MainMenuStrip = menuStrip1;

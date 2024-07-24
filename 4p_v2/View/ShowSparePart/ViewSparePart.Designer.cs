@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             button2 = new Button();
             btn_machinePlan = new Button();
             panel2 = new Panel();
@@ -72,7 +73,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 31);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1034, 77);
+            panel2.Size = new Size(1160, 77);
             panel2.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -84,7 +85,7 @@
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1034, 77);
+            flowLayoutPanel1.Size = new Size(1160, 77);
             flowLayoutPanel1.TabIndex = 3;
             // 
             // btn_newMcPlan
@@ -117,21 +118,33 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Arial Narrow", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new Padding(0, 2, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Margin = new Padding(1);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1034, 387);
+            dataGridView1.Size = new Size(1160, 503);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+            dataGridView1.CellPainting += dataGridView1_CellPainting;
             // 
             // panel1
             // 
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1034, 31);
+            panel1.Size = new Size(1160, 31);
             panel1.TabIndex = 2;
             // 
             // timer1
@@ -146,7 +159,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 108);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1034, 387);
+            panel3.Size = new Size(1160, 503);
             panel3.TabIndex = 1;
             // 
             // ViewSparePart
@@ -154,7 +167,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1034, 495);
+            ClientSize = new Size(1160, 611);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);

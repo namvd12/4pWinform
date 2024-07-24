@@ -2164,11 +2164,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\SabanWi.csproj",
+      "projectUniqueName": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\SabanWi.csproj",
       "projectName": "SabanWi",
-      "projectPath": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\SabanWi.csproj",
+      "projectPath": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\SabanWi.csproj",
       "packagesPath": "C:\\Users\\namvd\\.nuget\\packages\\",
-      "outputPath": "D:\\NAM\\4P_SYSTEM\\4p_v2\\4p_v2\\obj\\",
+      "outputPath": "D:\\namvd\\4P\\pc_app_control_device\\4p_v2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\namvd\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2243,6 +2243,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -2251,7 +2269,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   },

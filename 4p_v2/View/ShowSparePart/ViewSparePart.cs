@@ -253,7 +253,7 @@ namespace GiamSat
             return dataviewTotal;
         }
 
-        private int updateToDataView(DataGridView dataGridView,ref List<ArrayList> list, ref int numRowAdded)
+        private int updateToDataView(DataGridView dataGridView, ref List<ArrayList> list, ref int numRowAdded)
         {
             list = list.OrderBy(arr => arr[1]).ThenBy(arr => arr[7]).ToList();
             foreach (var data in list)
@@ -486,6 +486,10 @@ namespace GiamSat
 
         private void ViewSparePart_Load(object sender, EventArgs e)
         {
+            if (!mAppInstance.ShowLoginDlgCheckPass("Edit_sparePart"))
+            {
+                this.Close();
+            }
             resume();
         }
 
@@ -503,11 +507,11 @@ namespace GiamSat
         {
             e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
             if (e.RowIndex < 1 || e.ColumnIndex < 0)
-            {             
+            {
                 e.AdvancedBorderStyle.Top = dataGridView1.AdvancedCellBorderStyle.Top;
                 return;
             }
-            
+
             if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex) && (e.ColumnIndex == 0 || e.ColumnIndex == 1))
             {
                 e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
@@ -527,6 +531,11 @@ namespace GiamSat
                 e.Value = "";
                 e.FormattingApplied = true;
             }
+        }
+
+        private void ViewSparePart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mAppInstance.userCurrent.logout();
         }
     }
 }

@@ -44,6 +44,18 @@ using System.Net.Sockets;
 using Giamsat.Control.Websocket;
 using static Giamsat.Control.Websocket.StatusToWebSocket;
 using SabanWi.View.Config;
+using _4P_PROJECT.Control;
+using System.Text.Json.Nodes;
+using Newtonsoft.Json;
+using Mysqlx;
+using SabanWi.Model.user;
+using Org.BouncyCastle.Asn1.Cmp;
+using static GiamSat.model.History;
+using System.Reflection.PortableExecutable;
+using Machine = GiamSat.model.Machine;
+using static System.Net.WebRequestMethods;
+using System.Configuration.Internal;
+using System.Security.Policy;
 
 
 namespace GiamSat
@@ -63,6 +75,11 @@ namespace GiamSat
         HistoryNG historyNG = new HistoryNG();
         ConfigSystem config = new ConfigSystem();
         DataAnalysis dataAnalys = new DataAnalysis();
+        public User userCurrent = new User();
+        Group groupUser = new Group();
+        Permission permission = new Permission();
+        Group_permission group_Permission = new Group_permission();
+
         List<ClientData> Listclients = new List<ClientData>();
         List<machineData> ListMachine = new List<machineData>();
         /* Device*/
@@ -70,6 +87,8 @@ namespace GiamSat
 
         public List<ItemRF> lsItems = new List<ItemRF>();
 
+        /*HTTP*/
+        public HttpListener _httpListener = new HttpListener();
         /*Back ground worker*/
 
         private BackgroundWorker connectRFMaster = new BackgroundWorker();
@@ -79,6 +98,10 @@ namespace GiamSat
         private BackgroundWorker updateRFStatus = new BackgroundWorker();
 
         private BackgroundWorker updateSocketSv = new BackgroundWorker();
+
+        private BackgroundWorker updateNotificationToBackend = new BackgroundWorker();
+
+        private BackgroundWorker listenerToBackend = new BackgroundWorker();
 
         /*Device infor*/
         public enum DeviceInformation { OK, SAME_ID, SAME_LOCATION, SAME_ID_LOCATION };
@@ -114,6 +137,7 @@ namespace GiamSat
         public DataBase MainDatabase { get { return db; } }
         public LedColour Ledcolour { get; set; }
 
+        public int timeNGConfig = 0;
         public Main()
         {
             InitializeComponent();
@@ -146,8 +170,16 @@ namespace GiamSat
             updateRFStatus.WorkerReportsProgress = true;
 
             /*Background worker: update to socketServer*/
-            updateSocketSv.DoWork += updateSocketServer_DoWork;
-            updateSocketSv.WorkerReportsProgress = true;
+            //updateSocketSv.DoWork += updateSocketServer_DoWork;
+            //updateSocketSv.WorkerReportsProgress = true;
+
+            /*Background worker: update notification to backend server*/
+            updateNotificationToBackend.DoWork += updateNotificationSV_DoWork;
+            updateNotificationToBackend.WorkerReportsProgress = true;
+
+            /*Background worker: listener http*/
+            listenerToBackend.DoWork += listenerToBackend_DoWork;
+            listenerToBackend.WorkerReportsProgress = true;
 
         }
 
@@ -181,12 +213,22 @@ namespace GiamSat
                 if (db.IsConnected())
                 {
                     db.InitDataBase();
+
                     clientDb.database = db;
                     historyDb.database = db;
                     machineDb.database = db;
                     historyNG.database = db;
                     dataAnalys.database = db;
                     config.database = db;
+
+                    userCurrent.database = db;
+                    groupUser.database = db;
+                    permission.database = db;
+                    group_Permission.database = db;
+                    // set default permission
+                    groupUser.setDefaultGroup();
+                    permission.setDefaultPermission();
+                    group_Permission.setDefaut_group_permission();
                     break;
                 }
             }
@@ -230,8 +272,10 @@ namespace GiamSat
             /*Run worker check RF status*/
             updateRFStatus.RunWorkerAsync();
 
-            /*Run worker set status to Socket*/
-            //updateSocketSv.RunWorkerAsync();
+            /*Run worker send status to server */
+            updateNotificationToBackend.RunWorkerAsync();
+
+            listenerToBackend.RunWorkerAsync();
         }
 
         void updateHistoryNG()
@@ -243,7 +287,7 @@ namespace GiamSat
             List<HistoryNGData> listWarningNG_OK = historyNG.searchWarningNG_OK();
             Dictionary<HistoryNGData, HistoryNGData> listDataPair = new Dictionary<HistoryNGData, HistoryNGData>();
 
-            int timeNG = config.getTimeReport();
+            timeNGConfig = config.getTimeReport();
 
             if (listWarningNG_OK.Count > 0)
             {
@@ -275,7 +319,7 @@ namespace GiamSat
                 {
                     timeOK = DateTime.ParseExact(ls.Value.time, "dd-MM-yyyy HH:mm", null);
 
-                    if (timeOK.Subtract(timeWarningNG).TotalMinutes > timeNG)
+                    if (timeOK.Subtract(timeWarningNG).TotalMinutes > timeNGConfig)
                     {
                         // update NG
                         historyNG.update(ls.Key.historyNGID, "NG");
@@ -289,7 +333,7 @@ namespace GiamSat
                 else
                 {
                     timeOK = DateTime.Now;
-                    if (timeOK.Subtract(timeWarningNG).TotalMinutes > timeNG)
+                    if (timeOK.Subtract(timeWarningNG).TotalMinutes > timeNGConfig)
                     {
                         // update NG
                         historyNG.update(ls.Key.historyNGID, "NG");
@@ -349,7 +393,7 @@ namespace GiamSat
                                     item.cntDIS = 1;
                                 }
 
-                                if ((item.cntNG >= 5 || item.cntOK >= 5 || item.cntDIS == 1))
+                                if ((item.cntNG >= 1 || item.cntOK >= 1 || item.cntDIS == 1))
                                 {
                                     item.cntNG = 0;
                                     item.cntOK = 0;
@@ -493,10 +537,431 @@ namespace GiamSat
                     }
                 }
                 statusUpdateSocket.update();
-
             }
         }
 
+        class deviceNGNoti
+        {
+            public string deviceCode { get; set; }
+
+        }
+
+        public class deviceInfor
+        {
+            public string deviceCode;
+            public string deviceName;
+            public string line;
+            public string lane;
+
+        }
+
+        private void updateNotificationSV_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            Https https = new Https();
+
+            string jsonString;
+
+            var listDeviceNGNoti = new List<deviceInfor> { };
+            timeNGConfig = config.getTimeReport();
+            while (true)
+            {
+                Thread.Sleep(200);
+                DateTime timeNow = DateTime.Now;
+                foreach (var item in lsItems)
+                {
+                    if ((item.status == item.NG) && !item.machineName.Contains("Region"))
+                    {
+                        foreach (var machine in ListMachine)
+                        {
+                            if (item.machineid == machine.machineID && (item.isNoti == false))
+                            {
+                                DateTime timeNG = DateTime.ParseExact(item.timeNG, "dd-MM-yyyy HH:mm", null);
+                                if (timeNow.Subtract(timeNG).TotalMinutes > timeNGConfig)
+                                {
+                                    deviceInfor deviceInfor = new deviceInfor();
+                                    deviceInfor.deviceCode = machine.machineCode;
+                                    deviceInfor.deviceName = machine.machineName;
+                                    deviceInfor.line = machine.linePosition;
+                                    deviceInfor.lane = machine.lane;
+                                    listDeviceNGNoti.Add(deviceInfor);
+                                    item.isNoti = true;
+                                    break;
+                                }
+                            }    
+                        }
+                    }
+                    else if (item.status == item.OK && !item.machineName.Contains("Region"))
+                    {
+                        item.isNoti = false;
+                    }
+                }
+                if (listDeviceNGNoti.Count != 0)
+                {
+                    jsonString = JsonConvert.SerializeObject(listDeviceNGNoti);
+                    var response = https.sendNotification(jsonString);
+                    if (!response.Contains("OK"))
+                    {
+                        // send again
+                        response = https.sendNotification(jsonString);
+                    }
+                    listDeviceNGNoti.Clear();
+                }
+            }
+        }
+
+        private void listenerToBackend_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            _httpListener.Prefixes.Add("http://localhost:8888/" + "api/exportData/"); // Set your desired URL and port
+            _httpListener.Start();
+
+            while (true)
+            {
+                Task<HttpListenerContext> context = Task.Run<HttpListenerContext>(async () => await _httpListener.GetContextAsync());
+                try
+                {
+                    HandleRequest(context.Result);
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        private void HandleRequest(HttpListenerContext context)
+        {
+            if (context.Request.HttpMethod == "POST")
+            {
+                using (var reader = new System.IO.StreamReader(context.Request.InputStream, context.Request.ContentEncoding))
+                {
+                    string json = reader.ReadToEnd();
+                    dynamic data = JsonConvert.DeserializeObject(json);
+                    UInt32 historyID = (UInt32)data.historyID;
+                    string writer = (string)data.writer;
+                    string check = (string)data.check;
+                    string approved = (string)data.approved;
+
+                    byte[] responseBuffer = Encoding.UTF8.GetBytes("Error");
+                    if (historyID != null && writer != null && check != null && approved != null)
+                    {
+                        string status = exportPPT(historyID, writer, check, approved);
+                        responseBuffer = Encoding.UTF8.GetBytes(status);
+                    }
+
+                    context.Response.ContentLength64 = responseBuffer.Length;
+                    context.Response.OutputStream.Write(responseBuffer, 0, responseBuffer.Length);
+                    context.Response.OutputStream.Close();
+                }
+            }
+        }
+
+        private string exportPPT(UInt32 historyID, string writer, string check, string approved)
+        {
+            HistoryData g_historyData = new HistoryData();
+            machineData g_machineData = new machineData();
+
+            Https http = new Https();
+            /*data picture*/
+            byte[] picture1 = null;
+            byte[] picture2 = null;
+            byte[] picture3 = null;
+            byte[] picture4 = null;
+            byte[] picture5 = null;
+            byte[] picture6 = null;
+
+            /*Folder */
+            string directOpentPptx = "../example_pptx/Sample.pptx";
+            // get folder save report
+            string directSavetPptx = "../report_pptx/";
+            var folder = config.getFolderReport();
+            if (folder != "")
+            {
+                directSavetPptx = folder + "/";
+            }
+            string CurrentfileName;
+
+            g_historyData = historyDb.get(historyID, 0);
+            if (g_historyData.ChildMachineID != 0)
+            {
+                g_machineData = machineDb.get(g_historyData.ChildMachineID);
+            }
+            else
+            {
+                g_machineData = machineDb.get(g_historyData.machineID);
+            }
+
+            /*Time*/
+            var dateMachineNG = DateTime.ParseExact(g_historyData.time, "dd-MM-yyyy HH:mm", null);
+            HistoryNGData historyDataOK = historyNG.searchStatusOKNearNG(g_historyData.historyID, g_historyData.machineID);
+            DateTime dateMachineOK = new DateTime();
+            string g_timeStart = "";
+            if (historyDataOK != null)
+            {
+                dateMachineOK = DateTime.ParseExact(historyDataOK.time, "dd-MM-yyyy HH:mm", null);
+                g_timeStart = dateMachineOK.Subtract(dateMachineNG).TotalMinutes.ToString("0");
+            }
+
+            /*User*/
+            string g_writer = writer;
+            string g_checked = check;
+            string g_approved = approved;
+
+            /*get data iamge*/
+            try
+            {
+                if (g_historyData.picture1 != string.Empty)
+                {
+                    string imageText1 = http.GetDataImage(g_historyData.picture1);
+                    if (imageText1 != string.Empty)
+                    {
+                        picture1 = Convert.FromBase64String(imageText1);
+                        Bitmap image;
+                        using (MemoryStream stream = new MemoryStream(picture1))
+                        {
+                            image = new Bitmap(stream);
+                        }
+                    }
+                }
+
+                if (g_historyData.picture2 != string.Empty)
+                {
+                    string imageText = http.GetDataImage(g_historyData.picture2);
+                    if (imageText != string.Empty)
+                    {
+                        picture2 = Convert.FromBase64String(imageText);
+                        Bitmap image;
+                        using (MemoryStream stream = new MemoryStream(picture2))
+                        {
+                            image = new Bitmap(stream);
+                        }
+                    }
+                }
+
+                if (g_historyData.picture3 != string.Empty)
+                {
+                    string imageText = http.GetDataImage(g_historyData.picture3);
+                    if (imageText != string.Empty)
+                    {
+                        picture3 = Convert.FromBase64String(imageText);
+                        Bitmap image;
+                        using (MemoryStream stream = new MemoryStream(picture3))
+                        {
+                            image = new Bitmap(stream);
+                        }
+                    }
+                }
+
+                if (g_historyData.picture4 != string.Empty)
+                {
+                    string imageText = http.GetDataImage(g_historyData.picture4);
+                    if (imageText != string.Empty)
+                    {
+                        picture4 = Convert.FromBase64String(imageText);
+                        Bitmap image;
+                        using (MemoryStream stream = new MemoryStream(picture4))
+                        {
+                            image = new Bitmap(stream);
+                        }
+                    }
+                }
+                if (g_historyData.picture5 != string.Empty)
+                {
+                    string imageText = http.GetDataImage(g_historyData.picture5);
+                    if (imageText != string.Empty)
+                    {
+                        picture5 = Convert.FromBase64String(imageText);
+                        Bitmap image;
+                        using (MemoryStream stream = new MemoryStream(picture5))
+                        {
+                            image = new Bitmap(stream);
+                        }
+                    }
+                }
+                if (g_historyData.picture6 != string.Empty)
+                {
+                    string imageText = http.GetDataImage(g_historyData.picture6);
+                    if (imageText != string.Empty)
+                    {
+                        picture6 = Convert.FromBase64String(imageText);
+                        Bitmap image;
+                        using (MemoryStream stream = new MemoryStream(picture6))
+                        {
+                            image = new Bitmap(stream);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            try
+            {
+                //Loads the PowerPoint Presentation
+                IPresentation pptxDoc = Presentation.Open(directOpentPptx);
+                //Gets the slide from Presentation
+                ISlide slide = pptxDoc.Slides[0];
+                //Gets the shape in slide
+
+                string noTrouble_str = string.Empty;
+                for (int i = 0; i < slide.Shapes.Count; i++)
+                {
+                    //Gets the shape in slide
+                    IShape textboxShape = slide.Shapes[i] as IShape;
+                    if (textboxShape.ShapeName == "tb_notrouble")
+                    {
+                        /*caculate noTrouble export*/
+                        DateTime date = DateTime.Now;
+                        var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+                        var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddSeconds(-1);
+
+                        List<HistoryNGData> lsHistorydataNG = historyNG.searchNgOnTime(firstDayOfMonth.ToString("yyyy-MM-dd"), lastDayOfMonth.ToString("yyyy-MM-dd"));
+
+                        int count = 0;
+                        for (int j = lsHistorydataNG.Count; j > 0; j--)
+                        {
+                            count++;
+                            if (lsHistorydataNG[j - 1].historyID == g_historyData.historyID.ToString())
+                            {
+                                break;
+                            }
+                        }
+                        noTrouble_str = string.Format("{0}_{1:0000}", g_historyData.noTrouble.Split('_')[0], count);
+                        textboxShape.TextBody.Text = noTrouble_str;
+                    }
+                    else if (textboxShape.ShapeName == "tb_writer")
+                    {
+                        textboxShape.TextBody.Text = g_writer;
+                    }
+                    else if (textboxShape.ShapeName == "tb_checked")
+                    {
+                        textboxShape.TextBody.Text = g_checked;
+                    }
+                    else if (textboxShape.ShapeName == "tb_approved")
+                    {
+                        textboxShape.TextBody.Text = g_approved;
+                    }
+                    else if (textboxShape.ShapeName == "tb_machineName")
+                    {
+                        textboxShape.TextBody.Text = g_machineData.machineName;
+                    }
+                    else if (textboxShape.ShapeName == "tb_model")
+                    {
+                        textboxShape.TextBody.Text = g_machineData.Model;
+                    }
+                    else if (textboxShape.ShapeName == "tb_line")
+                    {
+                        textboxShape.TextBody.Text = g_machineData.linePosition + "." + g_machineData.lane + "-" + g_machineData.TopBot;
+                    }
+                    else if (textboxShape.ShapeName == "tb_serial")
+                    {
+                        textboxShape.TextBody.Text = g_machineData.Serial;
+                    }
+                    else if (textboxShape.ShapeName == "tb_troubleName")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.troubleName;
+                    }
+                    else if (textboxShape.ShapeName == "tb_dateNG")
+                    {
+                        textboxShape.TextBody.Text = dateMachineNG.ToString("dd.MM.yyyy");
+                    }
+                    else if (textboxShape.ShapeName == "tb_timeStop")
+                    {
+                        textboxShape.TextBody.Text = dateMachineNG.ToString("HH") + "h" + dateMachineNG.ToString("mm");
+                    }
+                    else if (textboxShape.ShapeName == "tb_timeStart")
+                    {
+                        textboxShape.TextBody.Text = dateMachineOK.ToString("HH") + "h" + dateMachineOK.ToString("mm");
+                    }
+                    else if (textboxShape.ShapeName == "tb_totalTime")
+                    {
+                        textboxShape.TextBody.Text = g_timeStart + " Min";
+                    }
+                    else if (textboxShape.ShapeName == "tb_note1")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.note1;
+                    }
+                    else if (textboxShape.ShapeName == "tb_note2")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.note2;
+                    }
+                    else if (textboxShape.ShapeName == "tb_note3")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.note3;
+                    }
+                    else if (textboxShape.ShapeName == "tb_note4")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.note4;
+                    }
+                    else if (textboxShape.ShapeName == "tb_note5")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.note5;
+                    }
+                    else if (textboxShape.ShapeName == "tb_note6")
+                    {
+                        textboxShape.TextBody.Text = g_historyData.note6;
+                    }
+                }
+
+                for (int i = 0; i < slide.Pictures.Count; i++)
+                {
+                    //Gets the shape in slide
+                    IPicture ShapePicture = slide.Pictures[i] as IPicture;
+                    if (ShapePicture.ShapeName == "picture_1")
+                    {
+                        if (picture1 != null)
+                        {
+                            ShapePicture.ImageData = picture1;
+                        }
+                    }
+                    else if (ShapePicture.ShapeName == "picture_2")
+                    {
+                        if (picture2 != null)
+                        {
+                            ShapePicture.ImageData = picture2;
+                        }
+                    }
+                    else if (ShapePicture.ShapeName == "picture_3")
+                    {
+                        if (picture3 != null)
+                        {
+                            ShapePicture.ImageData = picture3;
+                        }
+                    }
+                    else if (ShapePicture.ShapeName == "picture_4")
+                    {
+                        if (picture4 != null)
+                        {
+                            ShapePicture.ImageData = picture4;
+                        }
+                    }
+                    else if (ShapePicture.ShapeName == "picture_5")
+                    {
+                        if (picture5 != null)
+                        {
+                            ShapePicture.ImageData = picture5;
+                        }
+                    }
+                    else if (ShapePicture.ShapeName == "picture_6")
+                    {
+                        if (picture6 != null)
+                        {
+                            ShapePicture.ImageData = picture6;
+                        }
+                    }
+                }
+                /* Save file*/
+                CurrentfileName = string.Format("{0} - Line{1} - {2} - {3} - {4}.pptx", noTrouble_str, g_machineData.linePosition, g_machineData.TopBot != null ? g_machineData.TopBot.ToUpper() : "", g_machineData.machineName, g_historyData.troubleName).Replace(":", string.Empty);
+                pptxDoc.Save(directSavetPptx + CurrentfileName);
+                pptxDoc.Close();
+                Cursor.Current = Cursors.Default;
+                return directSavetPptx + CurrentfileName;
+            }
+            catch (Exception)
+            {
+                return "Error";
+            }
+        }
         #region Item method
 
 
@@ -1605,52 +2070,7 @@ namespace GiamSat
 
         public void UpdateUIControls()
         {
-            //this.Text = mMainResourceManager.GetString("MainTitle");
-            //fileToolStripMenuItem.Text = mMainResourceManager.GetString("FileMenu");
-            //newToolStripMenuItem.Text = mMainResourceManager.GetString("NewMenu");
-            //saveToolStripMenuItem.Text = mMainResourceManager.GetString("SaveMenu");
-            //saveAsToolStripMenuItem.Text = mMainResourceManager.GetString("SaveAsMenu");
-            //openToolStripMenuItem.Text = mMainResourceManager.GetString("OpenMenu");
-            //recentToolStripMenuItem.Text = mMainResourceManager.GetString("RecentMenu");
-            //exitToolStripMenuItem.Text = mMainResourceManager.GetString("ExitMenu");
 
-            //editToolStripMenuItem.Text = mMainResourceManager.GetString("EditMenu");
-            //connectToolStripMenuItem.Text = mMainResourceManager.GetString("ConnectMenu");
-            //disconnectToolStripMenuItem.Text = mMainResourceManager.GetString("DisconnectMenu");
-            //runToolStripMenuItem.Text = mMainResourceManager.GetString("RunMenu");
-            //stopToolStripMenuItem.Text = mMainResourceManager.GetString("StopMenu");
-            //viewToolStripMenuItem.Text = mMainResourceManager.GetString("ViewMenu");
-            //languageToolStripMenuItem.Text = mMainResourceManager.GetString("LanguageMenu");
-            //englishToolStripMenuItem.Text = mMainResourceManager.GetString("EnglishLanguageMenu");
-            //vietnameseToolStripMenuItem.Text = mMainResourceManager.GetString("VietnameseLanguageMenu");
-            //helpToolStripMenuItem.Text = mMainResourceManager.GetString("HelpMenu");
-            //aboutToolStripMenuItem.Text = mMainResourceManager.GetString("AboutMenu");
-            //viewToolStripMenuItem.Text = mMainResourceManager.GetString("ViewMenu");
-            //deviceListToolStripMenuItem.Text = mMainResourceManager.GetString("DeviceListMenu");
-            //nameToolStripMenuItem.Text = mMainResourceManager.GetString("NameMenu");
-            //setUpToolStripMenuItem.Text = mMainResourceManager.GetString("EnterSetupMenu");
-            //demoModeToolStripMenuItem.Text = mMainResourceManager.GetString("DemoModeMenu");
-            ////documentToolStripMenuItem.Text = mMainResourceManager.GetString("DocumentMenu");
-            //changePasswordToolStripMenuItem.Text = mMainResourceManager.GetString("ChangePasswordMenu");
-
-            ////toolStripButtonNew.Text = mMainResourceManager.GetString("NewToolTip");
-            ////toolStripButtonOpen.Text = mMainResourceManager.GetString("OpenToolTip");
-            ////toolStripButtonSave.Text = mMainResourceManager.GetString("SaveToolTip");
-            ////toolStripButtonAdd.Text = mMainResourceManager.GetString("AddToolTip");
-            ////toolStripButtonConnect.Text = mMainResourceManager.GetString("ConnectToolTip");
-            ////toolStripButtonDisconnect.Text = mMainResourceManager.GetString("DisconnectToolTip");
-            ////toolStripButtonLoad.Text = mMainResourceManager.GetString("LoadToolTip");
-            ////toolStripButtonRun.Text = mMainResourceManager.GetString("RunToolTip");
-            ////toolStripButtonStop.Text = mMainResourceManager.GetString("StopToolTip");
-            ////toolStripButtonAddImage.Text = mMainResourceManager.GetString("AddImageToolTip");
-
-            //if (!EditEnable)
-            //{
-            //    //toolStripButtonAdd.Enabled = false;
-            //    //toolStripButtonSave.Enabled = false;
-            //    //toolStripButtonAddImage.Enabled = false;
-            //    changePasswordToolStripMenuItem.Enabled = false;
-            //}
         }
 
         private void toolStripMenuItemExit_Click(object sender, EventArgs e)
@@ -1745,11 +2165,14 @@ namespace GiamSat
 
         #endregion
 
-        public bool ShowLoginDlg()
+        public bool ShowLoginDlgCheckPass(string permission)
         {
-            PasswordForm logindlg = new PasswordForm();
+            if (this.userCurrent.userHasPermission(userCurrent.getNameUserLogin(), permission))
+            {
+                return true;
+            }
+            PasswordForm logindlg = new PasswordForm(permission);
             logindlg.CalledApplication = this;
-
             DialogResult dr = logindlg.ShowDialog(this);
             if (dr != DialogResult.OK)
                 return false;
@@ -1972,10 +2395,7 @@ namespace GiamSat
 
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            PasswordForm passForm = new PasswordForm();
-            passForm.CalledApplication = this;
-            DialogResult dialogResult = passForm.ShowDialog();
-            if (dialogResult == DialogResult.OK)
+            if (ShowLoginDlgCheckPass("Edit_user"))
             {
                 this.WindowState = FormWindowState.Normal;
                 if (viewDetail)
@@ -2018,10 +2438,8 @@ namespace GiamSat
 
         private void edToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PasswordForm passForm = new PasswordForm();
-            passForm.CalledApplication = this;
-            DialogResult dialogResult = passForm.ShowDialog();
-            if (dialogResult == DialogResult.OK)
+
+            if (ShowLoginDlgCheckPass("Edit_user"))
             {
                 this.WindowState = FormWindowState.Normal;
                 foreach (var item in lsItems)
@@ -2130,14 +2548,27 @@ namespace GiamSat
         private void timeNGToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfigTimeNG configForm = new ConfigTimeNG();
-            configForm.CalledSearchDb = this;
-            configForm.Show();
+            try
+            {
+                configForm.CalledSearchDb = this;
+                configForm.Show();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void ipAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ipAddress ipAddress = new ipAddress();
-            ipAddress.Show();
+            try
+            {
+                ipAddress.mAppInstance = this;
+                ipAddress.Show();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -2195,9 +2626,29 @@ namespace GiamSat
 
         private void sparePaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewSparePart viewSparePart = new ViewSparePart();
-            viewSparePart.CalledMainDb = this;
-            viewSparePart.Show();
+            //ViewSparePart viewSparePart = new ViewSparePart();
+            //try
+            //{
+            //    viewSparePart.CalledMainDb = this;
+            //    viewSparePart.Show();
+            //}
+            //catch (Exception)
+            //{
+
+            //}
+            try
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = "http://localhost/",
+                    UseShellExecute = true
+                };
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to open URL: {ex.Message}");
+            }
         }
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -2208,17 +2659,45 @@ namespace GiamSat
         private void folderReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfigFolderReport configFolderReport = new ConfigFolderReport();
-            configFolderReport.CalledSearchDb = this;
-            configFolderReport.Show();
+            try
+            {
+                configFolderReport.CalledSearchDb = this;
+                configFolderReport.Show();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(ShowLoginDlg())
+            ConfigUser configUserForm = new ConfigUser();
+            try
             {
-                ConfigUser configUserForm = new ConfigUser();
                 configUserForm.CalledApplication = this;
                 configUserForm.Show();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var psi = new ProcessStartInfo
+                {
+                    FileName = "http://localhost/",
+                    UseShellExecute = true
+                };
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to open URL: {ex.Message}");
             }
         }
     }

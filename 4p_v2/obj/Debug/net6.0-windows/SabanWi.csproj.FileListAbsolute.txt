@@ -146,7 +146,6 @@ D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\SabanWi.dll
 D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\SabanWi.pdb
 D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\en-US\SabanWi.resources.dll
 D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\vi-VN\SabanWi.resources.dll
-D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\BCrypt.Net.dll
 D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
 D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\Google.Protobuf.dll
 D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\HidSharp.dll
@@ -209,3 +208,4 @@ D:\namvd\4P\pc_app_control_device\4p_v2\obj\Debug\net6.0-windows\refint\SabanWi.
 D:\namvd\4P\pc_app_control_device\4p_v2\obj\Debug\net6.0-windows\SabanWi.pdb
 D:\namvd\4P\pc_app_control_device\4p_v2\obj\Debug\net6.0-windows\SabanWi.genruntimeconfig.cache
 D:\namvd\4P\pc_app_control_device\4p_v2\obj\Debug\net6.0-windows\ref\SabanWi.dll
+D:\namvd\4P\pc_app_control_device\4p_v2\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll

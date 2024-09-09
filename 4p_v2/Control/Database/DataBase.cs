@@ -1,19 +1,24 @@
 ﻿using DevComponents.DotNetBar;
 using DevComponents.DotNetBar.Controls;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using Mysqlx;
+using SabanWi.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using static Mysqlx.Notice.Warning.Types;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace _4P_PROJECT.DataBase
 {
@@ -31,15 +36,19 @@ namespace _4P_PROJECT.DataBase
 
         public enum TABLE_DB
         {
-            tula_table1,
-            tula_table2,
-            tula_table3,
-            tula_table4,
-            tula_table5,
-            tula_table6,
-            tula_table7,
-            tula_table8,
-            tula_table9,
+            tula_table1,   // Device infor
+            tula_table2,   // Status device
+            tula_table3,   // Client table
+            tula_table4,   // Machine plan
+            tula_table5,   // Sparepart plan
+            tula_table6,   // Status report
+            tula_table7,   // Setting system
+            tula_table8,   // User data
+            tula_table9,   // Authen request 
+            tula_table10,  // Group
+            tula_table11,  // Permission 
+            tula_table12,  // Group_permission
+            tula_table13,  // Categories
         }
         public bool Connect()
         {
@@ -100,12 +109,14 @@ namespace _4P_PROJECT.DataBase
         }
         public bool InitDataBase()
         {
-            if (!isTableExit(TABLE_DB.tula_table1))
+            if (!isTableExit(TABLE_DB.tula_table1))      
             {
+                /* Device information table*/
                 CreateTable(TABLE_DB.tula_table1);
             }
             if (!isTableExit(TABLE_DB.tula_table2))
             {
+                /* Status table*/
                 CreateTable(TABLE_DB.tula_table2);
             }
             else
@@ -118,36 +129,67 @@ namespace _4P_PROJECT.DataBase
             }
             if (!isTableExit(TABLE_DB.tula_table3))
             {
+                /* Client table */
                 CreateTable(TABLE_DB.tula_table3);
             }
             if (!isTableExit(TABLE_DB.tula_table4))
             {
+                /*Machine plan*/
                 CreateTable(TABLE_DB.tula_table4);
             }
             if (!isTableExit(TABLE_DB.tula_table5))
             {
+                /*Sparepart plan*/
                 CreateTable(TABLE_DB.tula_table5);
             }
             if (!isTableExit(TABLE_DB.tula_table6))
             {
+                /* Status report*/
                 CreateTable(TABLE_DB.tula_table6);
             }
             if (!isTableExit(TABLE_DB.tula_table7))
             {
+                /*Setting system*/
                 CreateTable(TABLE_DB.tula_table7);
             }
             if (!isTableExit(TABLE_DB.tula_table8))
             {
+                /* User data*/
                 CreateTable(TABLE_DB.tula_table8);
+
+                /* create account admin*/
+                string hashPW = BCrypt.Net.BCrypt.HashPassword("1234",12);
+                AddNewData(DataBase.TABLE_DB.tula_table8, "9999999", "Admin", "admin", hashPW, "admin", "", "","","1");
             }
             if (!isTableExit(TABLE_DB.tula_table9))
             {
+                /* Authen user*/
                 CreateTable(TABLE_DB.tula_table9);
+            }
+            if (!isTableExit(TABLE_DB.tula_table10))
+            {
+                /* Group user */
+                CreateTable(TABLE_DB.tula_table10);
+            }
+            if (!isTableExit(TABLE_DB.tula_table11))
+            {
+                /* Permission */
+                CreateTable(TABLE_DB.tula_table11);               
+            }
+            if (!isTableExit(TABLE_DB.tula_table12))
+            {
+                /* Group_permission */
+                CreateTable(TABLE_DB.tula_table12);
+            }
+            if (!isTableExit(TABLE_DB.tula_table13))
+            {
+                /* Categories */
+                CreateTable(TABLE_DB.tula_table13);
             }
             return true;
         }
 
-        private bool isTableExit(TABLE_DB nameTable)
+        public bool isTableExit(TABLE_DB nameTable)
         {
             string table_name = null;
             if (nameTable == TABLE_DB.tula_table1)
@@ -185,6 +227,22 @@ namespace _4P_PROJECT.DataBase
             else if (nameTable == TABLE_DB.tula_table9)
             {
                 table_name = "tula_table9";
+            }
+            else if (nameTable == TABLE_DB.tula_table10)
+            {
+                table_name = "tula_table10";
+            }
+            else if (nameTable == TABLE_DB.tula_table11)
+            {
+                table_name = "tula_table11";
+            }
+            else if (nameTable == TABLE_DB.tula_table12)
+            {
+                table_name = "tula_table12";
+            }
+            else if (nameTable == TABLE_DB.tula_table13)
+            {
+                table_name = "tula_table13";
             }
             else
             {
@@ -370,6 +428,22 @@ namespace _4P_PROJECT.DataBase
                     command = "CREATE TABLE `tula_table9` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     break;
+                case TABLE_DB.tula_table10:
+                    command = "CREATE TABLE `tula_table10` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
+                    cmd.ExecuteNonQuery();
+                    break;
+                case TABLE_DB.tula_table11:
+                    command = "CREATE TABLE `tula_table11` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
+                    cmd.ExecuteNonQuery();
+                    break;
+                case TABLE_DB.tula_table12:
+                    command = "CREATE TABLE `tula_table12` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
+                    cmd.ExecuteNonQuery();
+                    break;
+                case TABLE_DB.tula_table13:
+                    command = "CREATE TABLE `tula_table13` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
+                    cmd.ExecuteNonQuery();
+                    break;
                 default:
                     break;
             }
@@ -467,6 +541,39 @@ namespace _4P_PROJECT.DataBase
                 else if (tableName == TABLE_DB.tula_table8)
                 {
                     table_Name = "tula_table8";
+
+                    command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
+                                            "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20)" +
+                                            "\r\nVALUES (\'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}\', \'{6}\', \'{7}\',\'{8}\', \'{9}\', \'{10}\', " +
+                                            "\'{11}\', \'{12}\', \'{13}\', \'{14}\', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')",
+                                            table_Name, tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, tula9, tula10, tula11, tula12, tula13, tula14, tula15
+                                            , tula16, tula17, tula18, tula19, tula20);
+                }
+                else if (tableName == TABLE_DB.tula_table10)
+                {
+                    table_Name = "tula_table10";
+
+                    command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
+                                            "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20)" +
+                                            "\r\nVALUES (\'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}\', \'{6}\', \'{7}\',\'{8}\', \'{9}\', \'{10}\', " +
+                                            "\'{11}\', \'{12}\', \'{13}\', \'{14}\', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')",
+                                            table_Name, tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, tula9, tula10, tula11, tula12, tula13, tula14, tula15
+                                            , tula16, tula17, tula18, tula19, tula20);
+                }
+                else if (tableName == TABLE_DB.tula_table11)
+                {
+                    table_Name = "tula_table11";
+
+                    command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
+                                            "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20)" +
+                                            "\r\nVALUES (\'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}\', \'{6}\', \'{7}\',\'{8}\', \'{9}\', \'{10}\', " +
+                                            "\'{11}\', \'{12}\', \'{13}\', \'{14}\', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')",
+                                            table_Name, tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, tula9, tula10, tula11, tula12, tula13, tula14, tula15
+                                            , tula16, tula17, tula18, tula19, tula20);
+                }
+                else if (tableName == TABLE_DB.tula_table12)
+                {
+                    table_Name = "tula_table12";
 
                     command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
                                             "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20)" +
@@ -899,7 +1006,7 @@ namespace _4P_PROJECT.DataBase
             return table;
         }
 
-        public DataTable GetData(TABLE_DB tableName, string value1, string value2)
+        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "")
         {
             string command;
             string table_Name = null;
@@ -939,8 +1046,32 @@ namespace _4P_PROJECT.DataBase
             else if (tableName == TABLE_DB.tula_table8)
             {
                 table_Name = "tula_table8";
+                if (value1 != "")
+                {
+                    condition = string.Format("WHERE " + "tula1 = \"{0}\"", value1);
+                }
+                else if (value2 != "")
+                {
+                    condition = string.Format("WHERE " + "tula2 = \"{0}\" OR tula2 = \"{1}\"", value2, value3);
+                }
+            }
+            else if (tableName == TABLE_DB.tula_table10)
+            {
+                table_Name = "tula_table10";
 
-                condition = string.Format("WHERE " + "tula1 = \"{0}\" OR tula3 = \"{1}\"", value1, value2);
+                condition = string.Format("WHERE " + "tula1 = \"{0}\"", value1);
+            }
+            else if (tableName == TABLE_DB.tula_table11)
+            {
+                table_Name = "tula_table11";
+
+                condition = string.Format("WHERE " + "tula1 = \"{0}\"", value1);
+            }
+            else if (tableName == TABLE_DB.tula_table12)
+            {
+                table_Name = "tula_table12";
+
+                condition = string.Format("WHERE " + "tula1 = \"{0}\"", value1);
             }
 
             waitConnectFree();
@@ -1046,6 +1177,10 @@ namespace _4P_PROJECT.DataBase
             else if (tableName == TABLE_DB.tula_table8)
             {
                 table_Name = "tula_table8";
+            }
+            else if (tableName == TABLE_DB.tula_table10)
+            {
+                table_Name = "tula_table10";
             }
             waitConnectFree();
             try
@@ -1161,7 +1296,23 @@ namespace _4P_PROJECT.DataBase
             }
             else if (tableName == TABLE_DB.tula_table8)
             {
-                command = string.Format("SELECT tula_Key FROM tula_table7");
+                command = string.Format("SELECT tula_Key FROM tula_table8");
+            }
+            else if (tableName == TABLE_DB.tula_table9)
+            {
+                command = string.Format("SELECT tula_Key FROM tula_table9");
+            }
+            else if (tableName == TABLE_DB.tula_table10)
+            {
+                command = string.Format("SELECT tula_Key FROM tula_table10");
+            }
+            else if (tableName == TABLE_DB.tula_table11)
+            {
+                command = string.Format("SELECT tula_Key FROM tula_table11");
+            }
+            else if (tableName == TABLE_DB.tula_table12)
+            {
+                command = string.Format("SELECT tula_Key FROM tula_table12 WHERE tula1 = \"{0}\" AND tula2 = \"{1}\"", tula1, tula2);
             }
             waitConnectFree();
             try
@@ -1396,6 +1547,29 @@ namespace _4P_PROJECT.DataBase
                 releaseConnect();
             }
             return tula_Key;
+        }
+
+        public bool checkPermission(string UserName, string PermissionName)
+        {
+            string command;
+            MySqlCommand cmd;
+            command = string.Format("SELECT COUNT(*) FROM tula_table11 p JOIN tula_table12 gp ON gp.tula2  = p.tula_Key JOIN tula_table8 u ON u.tula9 = gp.tula1 WHERE u.tula3 = '{0}' AND p.tula1 = '{1}'", UserName, PermissionName);
+            waitConnectFree();
+            try
+            {
+                cmd = new MySqlCommand(command, myConnection);;
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                releaseConnect();
+                if (count > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using _4P_PROJECT.Control;
 using GiamSat.model;
 using GiamSat.viewDb;
+using Microsoft.VisualBasic.ApplicationServices;
 using Org.BouncyCastle.Utilities.Collections;
+using SabanWi.Model.user;
 using Syncfusion.Presentation;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,8 @@ using System.Windows.Forms;
 using static GiamSat.model.History;
 using static GiamSat.model.HistoryNG;
 using static GiamSat.model.Machine;
+using static SabanWi.Model.user.User;
+using User = SabanWi.Model.user.User;
 
 namespace GiamSat.View
 {
@@ -28,6 +32,7 @@ namespace GiamSat.View
         private ConfigSystem configSystem;
         private HistoryData g_historyData;
         private machineData g_machineData;
+        private User g_user;
 
         private byte[] picture1;
         private byte[] picture2;
@@ -60,6 +65,7 @@ namespace GiamSat.View
                 g_machine.database = mSearchDbInstance.mAppInstance.MainDatabase;
                 g_history.database = mSearchDbInstance.mAppInstance.MainDatabase;
                 g_historyNG.database = mSearchDbInstance.mAppInstance.MainDatabase;
+                g_user.database = mSearchDbInstance.mAppInstance.MainDatabase;
                 configSystem.database = mSearchDbInstance.mAppInstance.MainDatabase;
             }
         }
@@ -69,6 +75,7 @@ namespace GiamSat.View
             g_machine = new Machine();
             g_history = new History();
             g_historyNG = new HistoryNG();
+            g_user = new User();
             configSystem = new ConfigSystem();
         }
 
@@ -209,6 +216,47 @@ namespace GiamSat.View
             {
                 directSavetPptx = folder + "/";
             }
+
+            // user check
+            // get user writer
+            UserData writer;
+            if (g_historyData.userIDWriter != "")
+            {
+                writer = g_user.getByUserID(g_historyData.userIDWriter);
+                if (writer != null)
+                {
+                    cb_writer.Items.Add(writer.fullName);
+                    cb_writer.Text = writer.fullName;
+                }
+            }
+            else
+            {
+                var listUserWriter = g_user.getByPositionName(Group.groupName.engineer);
+                foreach (var user in listUserWriter)
+                {
+                    cb_writer.Items.Add(user.fullName);
+                    cb_writer.Text = user.fullName;
+                }
+            }
+
+            // get list checked or approved
+            var listUser = g_user.getByPositionName(Group.groupName.teamLeader, Group.groupName.partLeader);
+
+            foreach (var user in listUser) 
+            {
+                if (user.position == Group.groupName.teamLeader)
+                {
+                    cb_approved.Items.Add(user.fullName);
+                    cb_approved.Text = user.fullName;
+                }
+
+                if (user.position == Group.groupName.partLeader)
+                {
+                    cb_checked.Items.Add(user.fullName);
+                    cb_checked.Text = user.fullName;
+                }
+            }
+            
         }
 
         private void saveDb()
@@ -293,6 +341,9 @@ namespace GiamSat.View
             g_historyData.note4 = tb_note4.Text;
             g_historyData.note5 = tb_note5.Text;
             g_historyData.note6 = tb_note6.Text;
+            g_writer = cb_writer.Text;
+            g_checked = cb_checked.Text;
+            g_approved = cb_approved.Text;
             try
             {
                 //Loads the PowerPoint Presentation

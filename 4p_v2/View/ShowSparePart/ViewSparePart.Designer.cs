@@ -174,6 +174,8 @@
             Name = "ViewSparePart";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Spare part";
+            TopMost = true;
+            FormClosing += ViewSparePart_FormClosing;
             Load += ViewSparePart_Load;
             panel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);

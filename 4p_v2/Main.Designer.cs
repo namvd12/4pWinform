@@ -358,27 +358,27 @@
             // 
             configToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { timeNGToolStripMenuItem, folderReportToolStripMenuItem, ipAToolStripMenuItem });
             configToolStripMenuItem.Name = "configToolStripMenuItem";
-            configToolStripMenuItem.Size = new Size(180, 22);
+            configToolStripMenuItem.Size = new Size(117, 22);
             configToolStripMenuItem.Text = "Config";
             // 
             // timeNGToolStripMenuItem
             // 
             timeNGToolStripMenuItem.Name = "timeNGToolStripMenuItem";
-            timeNGToolStripMenuItem.Size = new Size(180, 22);
+            timeNGToolStripMenuItem.Size = new Size(142, 22);
             timeNGToolStripMenuItem.Text = "Time NG";
             timeNGToolStripMenuItem.Click += timeNGToolStripMenuItem_Click;
             // 
             // folderReportToolStripMenuItem
             // 
             folderReportToolStripMenuItem.Name = "folderReportToolStripMenuItem";
-            folderReportToolStripMenuItem.Size = new Size(180, 22);
+            folderReportToolStripMenuItem.Size = new Size(142, 22);
             folderReportToolStripMenuItem.Text = "Folder report";
             folderReportToolStripMenuItem.Click += folderReportToolStripMenuItem_Click;
             // 
             // ipAToolStripMenuItem
             // 
             ipAToolStripMenuItem.Name = "ipAToolStripMenuItem";
-            ipAToolStripMenuItem.Size = new Size(180, 22);
+            ipAToolStripMenuItem.Size = new Size(142, 22);
             ipAToolStripMenuItem.Text = "IP adress";
             ipAToolStripMenuItem.Click += ipAToolStripMenuItem_Click;
             // 
@@ -386,42 +386,42 @@
             // 
             positionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem1, edToolStripMenuItem, saveToolStripMenuItem1 });
             positionToolStripMenuItem.Name = "positionToolStripMenuItem";
-            positionToolStripMenuItem.Size = new Size(180, 22);
+            positionToolStripMenuItem.Size = new Size(117, 22);
             positionToolStripMenuItem.Text = "Monitor";
             positionToolStripMenuItem.Click += positionToolStripMenuItem_Click;
             // 
             // newToolStripMenuItem1
             // 
             newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            newToolStripMenuItem1.Size = new Size(180, 22);
+            newToolStripMenuItem1.Size = new Size(98, 22);
             newToolStripMenuItem1.Text = "New";
             newToolStripMenuItem1.Click += newToolStripMenuItem1_Click;
             // 
             // edToolStripMenuItem
             // 
             edToolStripMenuItem.Name = "edToolStripMenuItem";
-            edToolStripMenuItem.Size = new Size(180, 22);
+            edToolStripMenuItem.Size = new Size(98, 22);
             edToolStripMenuItem.Text = "Edit";
             edToolStripMenuItem.Click += edToolStripMenuItem_Click;
             // 
             // saveToolStripMenuItem1
             // 
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            saveToolStripMenuItem1.Size = new Size(180, 22);
+            saveToolStripMenuItem1.Size = new Size(98, 22);
             saveToolStripMenuItem1.Text = "Save";
             saveToolStripMenuItem1.Click += saveToolStripMenuItem1_Click;
             // 
             // userToolStripMenuItem
             // 
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new Size(180, 22);
+            userToolStripMenuItem.Size = new Size(117, 22);
             userToolStripMenuItem.Text = "User";
             userToolStripMenuItem.Click += userToolStripMenuItem_Click;
             // 
             // updateToolStripMenuItem
             // 
             updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            updateToolStripMenuItem.Size = new Size(180, 22);
+            updateToolStripMenuItem.Size = new Size(117, 22);
             updateToolStripMenuItem.Text = "Update";
             // 
             // showToolStripMenuItem
@@ -457,14 +457,14 @@
             // searchAndReportsToolStripMenuItem
             // 
             searchAndReportsToolStripMenuItem.Name = "searchAndReportsToolStripMenuItem";
-            searchAndReportsToolStripMenuItem.Size = new Size(172, 22);
+            searchAndReportsToolStripMenuItem.Size = new Size(180, 22);
             searchAndReportsToolStripMenuItem.Text = "Search and reports";
             searchAndReportsToolStripMenuItem.Click += searchAndReportsToolStripMenuItem_Click;
             // 
             // addNewToolStripMenuItem
             // 
             addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            addNewToolStripMenuItem.Size = new Size(172, 22);
+            addNewToolStripMenuItem.Size = new Size(180, 22);
             addNewToolStripMenuItem.Text = "Add new";
             addNewToolStripMenuItem.Click += addNewToolStripMenuItem_Click;
             // 
@@ -485,39 +485,41 @@
             reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             reportToolStripMenuItem.Size = new Size(54, 30);
             reportToolStripMenuItem.Text = "Report";
+            reportToolStripMenuItem.Click += reportToolStripMenuItem_Click;
             // 
             // visualReportingToolStripMenuItem
             // 
             visualReportingToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reportAllLineToolStripMenuItem, reportEachLineToolStripMenuItem, mTBFToolStripMenuItem, mTToolStripMenuItem });
             visualReportingToolStripMenuItem.Name = "visualReportingToolStripMenuItem";
-            visualReportingToolStripMenuItem.Size = new Size(157, 22);
+            visualReportingToolStripMenuItem.Size = new Size(180, 22);
             visualReportingToolStripMenuItem.Text = "Visual reporting";
+            visualReportingToolStripMenuItem.Visible = false;
             // 
             // reportAllLineToolStripMenuItem
             // 
             reportAllLineToolStripMenuItem.Name = "reportAllLineToolStripMenuItem";
-            reportAllLineToolStripMenuItem.Size = new Size(159, 22);
+            reportAllLineToolStripMenuItem.Size = new Size(180, 22);
             reportAllLineToolStripMenuItem.Text = "Report all line";
             reportAllLineToolStripMenuItem.Click += reportAllLineToolStripMenuItem_Click;
             // 
             // reportEachLineToolStripMenuItem
             // 
             reportEachLineToolStripMenuItem.Name = "reportEachLineToolStripMenuItem";
-            reportEachLineToolStripMenuItem.Size = new Size(159, 22);
+            reportEachLineToolStripMenuItem.Size = new Size(180, 22);
             reportEachLineToolStripMenuItem.Text = "Report each line";
             reportEachLineToolStripMenuItem.Click += reportEachLineToolStripMenuItem_Click;
             // 
             // mTBFToolStripMenuItem
             // 
             mTBFToolStripMenuItem.Name = "mTBFToolStripMenuItem";
-            mTBFToolStripMenuItem.Size = new Size(159, 22);
+            mTBFToolStripMenuItem.Size = new Size(180, 22);
             mTBFToolStripMenuItem.Text = "MTTR";
             mTBFToolStripMenuItem.Click += mTBFToolStripMenuItem_Click;
             // 
             // mTToolStripMenuItem
             // 
             mTToolStripMenuItem.Name = "mTToolStripMenuItem";
-            mTToolStripMenuItem.Size = new Size(159, 22);
+            mTToolStripMenuItem.Size = new Size(180, 22);
             mTToolStripMenuItem.Text = "MTBF";
             mTToolStripMenuItem.Click += mTToolStripMenuItem_Click;
             // 

@@ -46,8 +46,8 @@ namespace Giamsat.View.Config
                 MessageBox.Show("Error folder");
                 return;
             }
-               
-            bool status = mConfig.setFolder(tb_time.Text.Replace("\\","/"));
+
+            bool status = mConfig.setFolder(tb_time.Text.Replace("\\", "/"));
             if (status)
             {
                 MessageBox.Show("Done");
@@ -85,7 +85,16 @@ namespace Giamsat.View.Config
 
         private void ConfigTimeNG_Load(object sender, EventArgs e)
         {
+            if (!mSearchDbInstance.ShowLoginDlgCheckPass("Edit_device"))
+            {
+                this.Close();
+            }
             tb_time.Text = mConfig.getFolderReport().ToString();
+        }
+
+        private void ConfigFolderReport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mSearchDbInstance.userCurrent.logout();
         }
     }
 }

@@ -138,6 +138,9 @@
             Controls.Add(panel1);
             Name = "ConfigUser";
             Text = "ConfigUser";
+            TopMost = true;
+            FormClosing += ConfigUser_FormClosing;
+            Load += ConfigUser_Load;
             panel1.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();

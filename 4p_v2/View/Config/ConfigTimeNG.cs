@@ -78,7 +78,16 @@ namespace Giamsat.View.Config
 
         private void ConfigTimeNG_Load(object sender, EventArgs e)
         {
+            if (!mSearchDbInstance.ShowLoginDlgCheckPass("Edit_device"))
+            {
+                this.Close();
+            }
             tb_time.Text = mConfig.getTimeReport().ToString();
+        }
+
+        private void ConfigTimeNG_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mSearchDbInstance.userCurrent.logout();
         }
     }
 }

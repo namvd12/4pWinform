@@ -1,4 +1,4 @@
-﻿using SabanWi.Model;
+﻿using SabanWi.Model.user;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +12,9 @@ namespace GiamSat
 {
     public partial class PasswordForm : Form
     {
-        private User User = new User();
+        public User User;
         private Main mAppInstance;
-
+        private string g_permission = "";
         public Main CalledApplication
         {
             get
@@ -24,6 +24,7 @@ namespace GiamSat
             set
             {
                 mAppInstance = value;
+                User = mAppInstance.userCurrent;
                 User.database = mAppInstance.db;
                 UpdateUIControl();
             }
@@ -43,20 +44,25 @@ namespace GiamSat
         }
 
 
-        public PasswordForm()
+        public PasswordForm(string permission)
         {
             InitializeComponent();
+            g_permission = permission;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            var isAdmin = User.loginAdmin(tb_user.Text, tb_pw.Text);
+            var userData = User.login(tb_user.Text, tb_pw.Text, g_permission);
 
-            if (!isAdmin)
+            if (userData == null)
             {
                 errorProvider1.SetError(tb_pw, "Mật khẩu không đúng!");
-                return ;
+                return;
+            }
+            else
+            {
+                User.setCurrentUser(userData);
             }
             this.DialogResult = DialogResult.OK;
             this.Close();

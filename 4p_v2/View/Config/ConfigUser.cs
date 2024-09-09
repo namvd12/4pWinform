@@ -2,7 +2,7 @@
 using GiamSat;
 using GiamSat.model;
 using GiamSat.View;
-using SabanWi.Model;
+using SabanWi.Model.user;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +17,7 @@ using static GiamSat.model.ClientRF;
 using static GiamSat.model.History;
 using static GiamSat.viewDb.SearchDb;
 using static Mysqlx.Notice.Warning.Types;
-using static SabanWi.Model.User;
+using static SabanWi.Model.user.User;
 
 namespace SabanWi.View.Config
 {
@@ -53,7 +53,7 @@ namespace SabanWi.View.Config
 
             List<UserData> lsdata = new List<UserData>();
             int count = 0;
-            if(tb_user.Text == "")
+            if (tb_user.Text == "")
             {
                 lsdata = g_user.getAll();
             }
@@ -75,7 +75,7 @@ namespace SabanWi.View.Config
             column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewTextBoxColumn column3 = new DataGridViewTextBoxColumn();
-            column3.HeaderText = "level";
+            column3.HeaderText = "Position";
             column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             DataGridViewTextBoxColumn column4 = new DataGridViewTextBoxColumn();
@@ -109,10 +109,10 @@ namespace SabanWi.View.Config
                 count++;
                 string UserID = item.userID;
                 string User = item.userName;
-                string level = "";
+                string position = "";
                 try
                 {
-                    level = g_user.levels[Convert.ToInt16(item.level) - 1];
+                    position = item.position;
                 }
                 catch (Exception)
                 {
@@ -123,7 +123,7 @@ namespace SabanWi.View.Config
                 string phone = item.phone;
                 string email = item.email;
 
-                g_dataGritSource.Rows.Add(count.ToString(), UserID, User, level, fullName, phone, email);
+                g_dataGritSource.Rows.Add(count.ToString(), UserID, User, position, fullName, phone, email);
 
             }
         }
@@ -138,7 +138,7 @@ namespace SabanWi.View.Config
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-             loadUserTable();
+            loadUserTable();
         }
 
         private void g_dataGritSource_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -148,12 +148,25 @@ namespace SabanWi.View.Config
                 AddUser addform = new AddUser();
                 addform.CalledAppconfigUser = this;
                 addform.CalledApplication = mAppInstance;
-                UserData data = g_user.get(g_dataGritSource.Rows[e.RowIndex].Cells[1].Value.ToString(), g_dataGritSource.Rows[e.RowIndex].Cells[2].Value.ToString());
+                UserData data = g_user.getByUserID(g_dataGritSource.Rows[e.RowIndex].Cells[1].Value.ToString());
                 addform.Set(data);
                 addform.Show();
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void ConfigUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mAppInstance.userCurrent.logout();
+        }
+
+        private void ConfigUser_Load(object sender, EventArgs e)
+        {
+            if (!mAppInstance.ShowLoginDlgCheckPass("Edit_User"))
+            {
+                this.Close();
             }
         }
     }

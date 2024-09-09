@@ -8,25 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using static GiamSat.model.Machine;
 
-namespace SabanWi.Model
+namespace SabanWi.Model.user
 {
     public class User
     {
         public class UserData
         {
-            /* MaintenanceData*/
             public uint userKey;            //tula_key
             public string userID;           //tula_1
-            public string level;            //tula_2
+            public string position;         //tula_2
             public string userName;         //tula_3
             public string password;         //tula_4
             public string fullName;         //tula_5
             public string phone;            //tula_6
             public string email;            //tula_7
             public string avatar;           //tula_8
+            public string groupID;          //tula_9
+            public string topicNoti;        //tula_10
         }
-        public List<string> levels = new List<string> { "level1", "level2","level3","level4" };
 
+        private static UserData userCurrent = new UserData();
+
+        private Group group = new Group();
         private DataBase mMydatabase;
 
         public DataBase database
@@ -38,6 +41,7 @@ namespace SabanWi.Model
             set
             {
                 mMydatabase = value;
+                group.database = value;
             }
         }
 
@@ -52,39 +56,67 @@ namespace SabanWi.Model
                     UserData data = new UserData();
                     data.userKey = Convert.ToUInt32(row["tula_key"]);
                     data.userID = Convert.ToString(row["tula1"]);
-                    data.level = Convert.ToString(row["tula2"]);
+                    data.position = Convert.ToString(row["tula2"]);
                     data.userName = Convert.ToString(row["tula3"]);
                     data.password = Convert.ToString(row["tula4"]);
                     data.fullName = Convert.ToString(row["tula5"]);
                     data.phone = Convert.ToString(row["tula6"]);
                     data.email = Convert.ToString(row["tula7"]);
                     data.avatar = Convert.ToString(row["tula8"]);
+                    data.groupID = Convert.ToString(row["tula9"]);
                     ls.Add(data);
                 }
             }
             return ls;
         }
 
-        public UserData get(string userID, string userName)
+        public UserData getByUserID(string userID)
         {
             UserData data = new UserData();
-            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table8, userID, userName);
+            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table8, userID);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
                 {
                     data.userKey = Convert.ToUInt32(row["tula_key"]);
                     data.userID = Convert.ToString(row["tula1"]);
-                    data.level = Convert.ToString(row["tula2"]);
+                    data.position = Convert.ToString(row["tula2"]);
                     data.userName = Convert.ToString(row["tula3"]);
                     data.password = Convert.ToString(row["tula4"]);
                     data.fullName = Convert.ToString(row["tula5"]);
                     data.phone = Convert.ToString(row["tula6"]);
                     data.email = Convert.ToString(row["tula7"]);
                     data.avatar = Convert.ToString(row["tula8"]);
+                    data.groupID = Convert.ToString(row["tula9"]);
                 }
             }
             return data;
+        }
+
+        public List<UserData> getByPositionName(string value1, string value2 = "")
+        {
+            List<UserData> ls = new List<UserData>();
+
+            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table8, "",value1, value2);
+            if (dt != null)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    UserData data = new UserData();
+                    data.userKey = Convert.ToUInt32(row["tula_key"]);
+                    data.userID = Convert.ToString(row["tula1"]);
+                    data.position = Convert.ToString(row["tula2"]);
+                    data.userName = Convert.ToString(row["tula3"]);
+                    data.password = Convert.ToString(row["tula4"]);
+                    data.fullName = Convert.ToString(row["tula5"]);
+                    data.phone = Convert.ToString(row["tula6"]);
+                    data.email = Convert.ToString(row["tula7"]);
+                    data.avatar = Convert.ToString(row["tula8"]);
+                    data.groupID = Convert.ToString(row["tula9"]);
+                    ls.Add(data);
+                }
+            }
+            return ls;
         }
 
         public List<UserData> SearchValue(string value)
@@ -99,19 +131,20 @@ namespace SabanWi.Model
                     UserData data = new UserData();
                     data.userKey = Convert.ToUInt32(row["tula_key"]);
                     data.userID = Convert.ToString(row["tula1"]);
-                    data.level = Convert.ToString(row["tula2"]);
+                    data.position = Convert.ToString(row["tula2"]);
                     data.userName = Convert.ToString(row["tula3"]);
                     data.password = Convert.ToString(row["tula4"]);
                     data.fullName = Convert.ToString(row["tula5"]);
                     data.phone = Convert.ToString(row["tula6"]);
                     data.email = Convert.ToString(row["tula7"]);
                     data.avatar = Convert.ToString(row["tula8"]);
+                    data.groupID = Convert.ToString(row["tula9"]);
                     ls.Add(data);
                 }
             }
             return ls;
         }
-        public bool add(string userID, string level, string userName, string password, string fullName = "", string phone= "", string email="")
+        public bool add(string userID, string position, string userName, string password, string fullName = "", string phone = "", string email = "")
         {
             bool res;
 
@@ -121,8 +154,11 @@ namespace SabanWi.Model
             {
                 return false;
             }
-            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table8, userID, level, userName,
-                                        password, fullName, phone, email);
+            // get groupID by position
+            var groupID = group.getGroupKeyByName(position);
+            string topPicNoti = position;
+            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table8, userID, position, userName,
+                                        password, fullName, phone, email, "", groupID.ToString(), topPicNoti);
             return res;
         }
 
@@ -133,31 +169,63 @@ namespace SabanWi.Model
             return res;
         }
 
-        public bool update(uint userKey, string userID, string level, string userName, string password = null, string fullName = null, string phone = null, string email =null)
+        public bool update(uint userKey, string userID, string position, string userName, string password = null, string fullName = null, string phone = null, string email = null)
         {
             bool res;
-            res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table8, (ulong)userKey, userID, level, userName, password, fullName, phone, email);
+            var groupID = group.getGroupKeyByName(position);
+            string topPicNoti = position;
+            res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table8, userKey, userID, position, userName, password, fullName, phone, email, null, groupID.ToString(), topPicNoti);
             return res;
         }
-        public bool loginAdmin(string userName, string password)
+        public UserData login(string userName, string password, string permission)
         {
             List<UserData> listUser = SearchValue(userName);
             foreach (var user in listUser)
             {
-                if (user.userName == "admin")
-                {
-                    var checkPass = BCrypt.Net.BCrypt.Verify(password, user.password);
-                    if (checkPass == true)
+                if (user.userName == userName && mMydatabase.checkPermission(userName, permission))
+                {                
+                    try
                     {
-                        return true;
+                        var checkPass = BCrypt.Net.BCrypt.Verify(password, user.password);
+                        if (checkPass == true)
+                        {
+                            return user;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        return false;
+                        //return user;
+                        //throw;
                     }
                 }
             }
-            return false;
+            return null;
+        }
+
+        public void logout()
+        {
+            userCurrent = null;
+        }
+
+        public string getNameUserLogin()
+        {
+            if (userCurrent !=null)
+            {
+                return userCurrent.userName;
+            }
+            return ""; 
+        }
+        public void setCurrentUser(UserData user)
+        {
+            userCurrent = user;
+        }
+        public bool userHasPermission(string userName, string permissionname)
+        {
+            return mMydatabase.checkPermission(userName, permissionname);
         }
     }
 }

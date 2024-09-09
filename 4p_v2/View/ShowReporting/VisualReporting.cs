@@ -94,7 +94,7 @@ namespace GiamSat.View.ShowReporting
                     DataLabels = true,
                     Fill = System.Windows.Media.Brushes.Transparent,
                     FontSize = 15.0,
-                    LineSmoothness = 0,                                       
+                    LineSmoothness = 1,                                       
                 },
             };
 

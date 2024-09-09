@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.IO;
 using static System.Net.WebRequestMethods;
+using System.Net.Http.Json;
 namespace _4P_PROJECT.Control
 {
     internal class Https
@@ -20,6 +21,7 @@ namespace _4P_PROJECT.Control
         private static string Url_delete_spare_part = localHost + "deleteSparePartPlan.php";
         private static string Url_machine = localHost + "machine.php";
         private static string Url_machineStatusNG = localHost + "machineListNG.php";
+        private static string Url_notiNG = localHost + "sendNotification";
         private static string responseString = string.Empty;
 
         private string path = "setting.bin";
@@ -35,6 +37,7 @@ namespace _4P_PROJECT.Control
                 Url_machine = localHost + "machine.php";
                 string webSocketHost = "https://" + System.IO.File.ReadAllText(path) + "/WebSocket/";
                 Url_machineStatusNG = webSocketHost + "machineListNG.php";
+                Url_notiNG = "http://" + System.IO.File.ReadAllText(path) + "/api/sendNotification";
             }
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -65,7 +68,8 @@ namespace _4P_PROJECT.Control
             MACHINE,
             MACHINE_PLAN,
             SPARE_PART,
-            MACHINE_LIST_NG
+            MACHINE_LIST_NG,
+            NOTI_NG,
         };
         private async Task<string> get(TypeInfor type_plan, string tulaKey, string tulaData1 = null, string tulaData2 = null)
         {
@@ -109,7 +113,7 @@ namespace _4P_PROJECT.Control
                 response = System.IO.File.ReadAllText(url);
             }
             else if (url.Contains(dirReplace))
-            { 
+            {
                 url = url.Replace(dirReplace, localHost);
                 response = await client.GetStringAsync(url);
             }
@@ -168,16 +172,16 @@ namespace _4P_PROJECT.Control
             {
                 Url = Url_machineStatusNG;
             }
-
+            else if (type_plan == TypeInfor.NOTI_NG)
+            {
+                Url = Url_notiNG;
+            }
             else
             {
                 return string.Empty;
             }
-            var content = jsonText;
 
-            var contentdata = new StringContent(content);
-
-            var response = await client.PostAsync(Url, contentdata);
+            var response = await client.PostAsJsonAsync(Url, jsonText);
 
             return responseString = await response.Content.ReadAsStringAsync();
 
@@ -186,7 +190,7 @@ namespace _4P_PROJECT.Control
         {
             if (type_plan == TypeInfor.SPARE_PART)
             {
-                Url = Url_delete_spare_part; 
+                Url = Url_delete_spare_part;
             }
             else if (type_plan == TypeInfor.MACHINE_PLAN)
             {
@@ -212,12 +216,12 @@ namespace _4P_PROJECT.Control
 
         public string GetData(TypeInfor type_plan, string tulaKey, string tulaData1 = null, string tulaData2 = null)
         {
-            Task<string> task = Task.Run<string>(async () => await get(type_plan,tulaKey, tulaData1, tulaData2));
+            Task<string> task = Task.Run<string>(async () => await get(type_plan, tulaKey, tulaData1, tulaData2));
             try
             {
                 return task.Result;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
                 return string.Empty;
@@ -235,7 +239,7 @@ namespace _4P_PROJECT.Control
                 return string.Empty;
             }
         }
-        public string SetData(TypeInfor type_plan, uint tulaData1, string tulaData2 = "", 
+        public string SetData(TypeInfor type_plan, uint tulaData1, string tulaData2 = "",
                         string tulaData3 = "", string tulaData4 = "", string tulaData5 = "", string tulaData6 = "",
                         string tulaData7 = "", string tulaData8 = "", string tulaData9 = "")
         {
@@ -276,6 +280,19 @@ namespace _4P_PROJECT.Control
             catch
             {
 
+                return string.Empty;
+            }
+        }
+
+        public string sendNotification(string machineJson)
+        {
+            Task<string> task = Task.Run<string>(async () => await set(TypeInfor.NOTI_NG, machineJson));
+            try
+            {
+                return task.Result;
+            }
+            catch
+            {
                 return string.Empty;
             }
         }

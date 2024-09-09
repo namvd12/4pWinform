@@ -14,7 +14,7 @@ namespace GiamSat.model
     {
         public class HistoryData
         {
-            public UInt64 historyID;         //tula_key
+            public UInt64 historyID;      //tula_key
             public int machineID;         //tula_1
             public string machineName;    //tula_2
             public string line;           //tula_3
@@ -35,7 +35,8 @@ namespace GiamSat.model
             public string note5;          //tula_18
             public string picture6;       //tula_19
             public string note6;          //tula_20
-            public int ChildMachineID;      //tula_21
+            public int ChildMachineID;    //tula_21
+            public string userIDWriter;   //tula_22    
         }
 
         private DataBase mMydatabase;
@@ -90,6 +91,14 @@ namespace GiamSat.model
                     {
                         data.ChildMachineID = 0;
                     }
+                    if (row["tula22"] != System.DBNull.Value)
+                    {
+                        data.userIDWriter = Convert.ToString(row["tula22"]);
+                    }
+                    else
+                    {
+                        data.userIDWriter = "";
+                    }
                     ls.Add(data);
                 }
             }
@@ -132,6 +141,14 @@ namespace GiamSat.model
                     else
                     {
                         data.ChildMachineID = 0;
+                    }
+                    if (row["tula22"] != System.DBNull.Value)
+                    {
+                        data.userIDWriter = Convert.ToString(row["tula22"]);
+                    }
+                    else
+                    {
+                        data.userIDWriter = "";
                     }
                 }
             }
@@ -201,6 +218,14 @@ namespace GiamSat.model
                     {
                         data.ChildMachineID = 0;
                     }
+                    if (row["tula22"] != System.DBNull.Value)
+                    {
+                        data.userIDWriter = Convert.ToString(row["tula22"]);
+                    }
+                    else
+                    {
+                        data.userIDWriter = "";
+                    }
                     ls.Add(data);
                 }
             }
@@ -244,6 +269,14 @@ namespace GiamSat.model
                     else
                     {
                         data.ChildMachineID = 0;
+                    }
+                    if (row["tula22"] != System.DBNull.Value)
+                    {
+                        data.userIDWriter = Convert.ToString(row["tula22"]);
+                    }
+                    else
+                    {
+                        data.userIDWriter = "";
                     }
                 }
             }
@@ -293,6 +326,14 @@ namespace GiamSat.model
                     {
                         data.ChildMachineID = 0;
                     }
+                    if (row["tula22"] != System.DBNull.Value)
+                    {
+                        data.userIDWriter = Convert.ToString(row["tula22"]);
+                    }
+                    else
+                    {
+                        data.userIDWriter = "";
+                    }
                     ls.Add(data);
                 }
             }
@@ -335,6 +376,14 @@ namespace GiamSat.model
                     else
                     {
                         data.ChildMachineID = 0;
+                    }
+                    if (row["tula22"] != System.DBNull.Value)
+                    {
+                        data.userIDWriter = Convert.ToString(row["tula22"]);
+                    }
+                    else
+                    {
+                        data.userIDWriter = "";
                     }
                     ls.Add(data);
                 }

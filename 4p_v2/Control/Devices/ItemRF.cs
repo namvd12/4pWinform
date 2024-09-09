@@ -41,5 +41,7 @@ namespace Giamsat.Control.Devices
         public uint cntNG;
         public uint cntOK;
         public uint cntDIS;
+
+        public bool isNoti = false;
     }
 }

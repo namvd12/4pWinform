@@ -131,6 +131,7 @@
             Name = "ConfigFolderReport";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Setting";
+            FormClosing += ConfigFolderReport_FormClosing;
             Load += ConfigTimeNG_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

@@ -380,6 +380,7 @@
             Name = "AddMachinePlan";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddNew";
+            TopMost = true;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

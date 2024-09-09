@@ -16,6 +16,22 @@ namespace Giamsat.View.Config
     public partial class ipAddress : Form
     {
         string path = "setting.bin";
+
+        public Main mAppInstance;
+
+
+        public Main CalledApplication
+        {
+            get
+            {
+                return mAppInstance;
+            }
+            set
+            {
+                mAppInstance = value;
+            }
+        }
+
         public ipAddress()
         {
             InitializeComponent();

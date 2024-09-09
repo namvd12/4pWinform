@@ -131,6 +131,7 @@
             Name = "ConfigTimeNG";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Setting time NG";
+            FormClosing += ConfigTimeNG_FormClosing;
             Load += ConfigTimeNG_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

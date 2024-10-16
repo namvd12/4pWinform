@@ -56,6 +56,8 @@ using Machine = GiamSat.model.Machine;
 using static System.Net.WebRequestMethods;
 using System.Configuration.Internal;
 using System.Security.Policy;
+using SabanWi.Control.Devices;
+using SabanWi.Model;
 
 
 namespace GiamSat
@@ -75,6 +77,7 @@ namespace GiamSat
         HistoryNG historyNG = new HistoryNG();
         ConfigSystem config = new ConfigSystem();
         DataAnalysis dataAnalys = new DataAnalysis();
+        CallMaterial callMaterial = new CallMaterial();
         public User userCurrent = new User();
         Group groupUser = new Group();
         Permission permission = new Permission();
@@ -104,8 +107,6 @@ namespace GiamSat
         private BackgroundWorker listenerToBackend = new BackgroundWorker();
 
         /*Device infor*/
-        public enum DeviceInformation { OK, SAME_ID, SAME_LOCATION, SAME_ID_LOCATION };
-
         public enum LedColour { NONE, GREEN, RED, YELLOW, BLACK };
 
         public enum SendCommand
@@ -180,7 +181,6 @@ namespace GiamSat
             /*Background worker: listener http*/
             listenerToBackend.DoWork += listenerToBackend_DoWork;
             listenerToBackend.WorkerReportsProgress = true;
-
         }
 
 
@@ -225,6 +225,8 @@ namespace GiamSat
                     groupUser.database = db;
                     permission.database = db;
                     group_Permission.database = db;
+
+                    callMaterial.database = db;
                     // set default permission
                     groupUser.setDefaultGroup();
                     permission.setDefaultPermission();
@@ -358,6 +360,7 @@ namespace GiamSat
         void updateHistory()
         {
             Dictionary<string, int> regionStatus = new Dictionary<string, int>();
+            string mode = config.getModeSystem();
             /* check status RF master*/
             if (RFMaster.isConnect())
             {
@@ -405,7 +408,7 @@ namespace GiamSat
                                         /* set status to database*/
                                         clientDb.setStatus(item.machineid, item.machineName, item.status);
                                         machineDb.updateStatus(item.machineid, item.status, item.timeNG);
-                                        UInt64 historyID = historyDb.add(item.machineid, "", item.timeNG, item.status);
+                                        UInt64 historyID = historyDb.add(item.machineid, "", item.timeNG, item.status, mode);
                                         UpdateLedStatus(item);
 
                                         /* check and add historyNG for analysis */
@@ -420,12 +423,12 @@ namespace GiamSat
                                                 }
                                                 if (historyNGLast.status != item.status)
                                                 {
-                                                    historyNG.add(item.machineid, historyID.ToString(), item.line.ToString(), item.lane.ToString(), item.timeNG, item.status);
+                                                    historyNG.add(item.machineid, historyID.ToString(), item.line.ToString(), item.lane.ToString(), item.timeNG, item.status, mode);
                                                 }
                                             }
                                             else
                                             {
-                                                historyNG.add(item.machineid, historyID.ToString(), item.line.ToString(), item.lane.ToString(), item.timeNG, item.status);
+                                                historyNG.add(item.machineid, historyID.ToString(), item.line.ToString(), item.lane.ToString(), item.timeNG, item.status, mode);
                                             }
                                         }
                                     }
@@ -502,13 +505,95 @@ namespace GiamSat
                 }
             }
         }
+
+        void updateHMI_status()
+        {
+            ItemHMI itemHMI = new ItemHMI();
+            uint addrHMI = 10;
+
+            itemHMI =  RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.GET_STATE, "GET STATE");
+            if(itemHMI != null)
+            {
+                if(itemHMI.state == ItemHMI.hmiState.LOGOUT && itemHMI.cmd == ItemHMI.hmiResponseCmd.LOGIN)
+                {
+                    var status = userCurrent.checkUserLoginHMI(itemHMI.user, itemHMI.password);
+
+                    if(status)
+                    {
+                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN,"OK");
+                    } 
+                    else
+                    {
+                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN, "ERROR");
+                    }
+                }
+                else if (itemHMI.state == ItemHMI.hmiState.LOGED && itemHMI.cmd == ItemHMI.hmiResponseCmd.REQUEST)
+                {
+                    Https https = new Https();
+                    var machineCode = itemHMI.machineCode;
+                    var line = itemHMI.line;
+                    var lane = itemHMI.lane;
+                    var partNumber = itemHMI.partNumber;
+                    var slot = itemHMI.slot;
+                    var number = itemHMI.number;
+                    var level = itemHMI.level;
+                    var status = itemHMI.status;
+                    var time = itemHMI.time;
+                    var userCall = itemHMI.user;
+
+                    // add to database
+                    itemHMI.callID = callMaterial.add(machineCode, line, lane, partNumber, slot, number, level, status, time.ToString("dd-MM-yyyy HH:mm"), userCall);
+
+                    if (itemHMI.callID == 0)
+                    {
+                        // send back HMI status Error
+                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, "Error: duplicate call");
+                    }
+                    else
+                    {
+                        // update data call to database
+                        var jsonString = JsonConvert.SerializeObject(itemHMI);
+                        https.sendNotiCallMaterial(jsonString);
+                        // send back HMI status
+                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
+                    }
+                }
+                else if (itemHMI.state == ItemHMI.hmiState.CHECKSTATUS && itemHMI.cmd == ItemHMI.hmiResponseCmd.UPDATE_STATUS)
+                {
+                    var machineCode = itemHMI.machineCode;
+                    var line = itemHMI.line;
+                    var lane = itemHMI.lane;
+                    var partNumber = itemHMI.partNumber;
+
+                    string status = callMaterial.getStatus(machineCode, line, lane, partNumber);
+                    RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
+                }
+                else
+                {
+                    // do nothting
+                }    
+            }
+            else
+            {
+                //// test
+                //Https https = new Https();
+                //itemHMI = new ItemHMI();
+                //itemHMI.callID = 43;
+                //itemHMI.machineCode = "XU123";
+                //itemHMI.partNumber = "ABHDX";
+                //itemHMI.user = "namvd";
+                //var jsonString = JsonConvert.SerializeObject(itemHMI);
+                //https.sendNotiCallMaterial(jsonString);
+            }    
+        }   
         private void updateRFStatus_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             while (true)
             {
-                Thread.Sleep(300);
+                Thread.Sleep(1000);
                 updateHistory();
                 updateHistoryNG();
+                updateHMI_status();
             }
         }
 
@@ -533,7 +618,6 @@ namespace GiamSat
                                 break;
                             }
                         }
-
                     }
                 }
                 statusUpdateSocket.update();
@@ -641,7 +725,7 @@ namespace GiamSat
                     string approved = (string)data.approved;
 
                     byte[] responseBuffer = Encoding.UTF8.GetBytes("Error");
-                    if (historyID != null && writer != null && check != null && approved != null)
+                    if (historyID != null)
                     {
                         string status = exportPPT(historyID, writer, check, approved);
                         responseBuffer = Encoding.UTF8.GetBytes(status);

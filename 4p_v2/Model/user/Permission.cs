@@ -125,6 +125,20 @@ namespace SabanWi.Model.user
             if (getPermissionKeyByName("Delete_sparePart") == 0)
             {
                 mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table11, "Delete_sparePart", "Delete system");
+            } 
+            
+            /*call material*/
+            if (getPermissionKeyByName("View_callMaterial") == 0)
+            {
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table11, "View_callMaterial", "View call material");
+            }
+            if (getPermissionKeyByName("Edit_callMaterial") == 0)
+            {
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table11, "Edit_callMaterial", "Edit call material");
+            }
+            if (getPermissionKeyByName("Delete_callMaterial") == 0)
+            {
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table11, "Delete_callMaterial", "Delete call material");
             }
         }
     }

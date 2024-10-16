@@ -391,7 +391,7 @@ namespace GiamSat.model
             return ls;
         }
 
-        public UInt64 add(int machineID, string errorName, string time, string status)
+        public UInt64 add(int machineID, string errorName, string time, string status, string modeSystem)
         {
             bool res;
             string machineCode;
@@ -418,7 +418,7 @@ namespace GiamSat.model
             mc.get_Mc_Line_Land(machineID, out machineCode, out machineName, out line, out lane);
             
             res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table2, machineID.ToString(), machineName, line, lane, troubleName, errorName, time, status, 
-                                        "", "", "", "", "", "", "", "", "", "", "", "", machineID.ToString());
+                                        "", "", "", "", "", "", "", "", "", "", "", "", machineID.ToString(), "", modeSystem);
             if (res)
             {
                 historyID = getHistoryID(troubleName);

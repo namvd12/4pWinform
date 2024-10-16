@@ -18,7 +18,8 @@ namespace GiamSat.model
             public int configNum;               // tula_1     
             public string timeReportNG;         // tula_2
             public string folderSaveReport;     // tula_3
-
+            public string lineWorking;          // tula_4
+            public string modeSystem;           // tula_5
         }
 
         private DataBase mMydatabase;
@@ -48,6 +49,8 @@ namespace GiamSat.model
                     data.configNum = Convert.ToInt32(row["tula1"]);
                     data.timeReportNG = Convert.ToString(row["tula2"]);
                     data.folderSaveReport = Convert.ToString(row["tula3"]);
+                    data.lineWorking = Convert.ToString(row["tula4"]);
+                    data.modeSystem = Convert.ToString(row["tula5"]);
                 }
             }
             else
@@ -98,6 +101,13 @@ namespace GiamSat.model
                 res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table7, (UInt64)config.configID, null, null, folder);
             }
             return res;
+        }
+
+        public string getModeSystem()
+        {
+            ConfigData config = new ConfigData();
+            config = get(1);
+            return config.modeSystem;
         }
     }
 }

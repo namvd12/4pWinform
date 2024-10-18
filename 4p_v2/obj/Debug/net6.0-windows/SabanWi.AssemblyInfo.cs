@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SabanWi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ac10ed1749e67e7fe57ce496df821278313738e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99c0750a7dc7ff486d7a05695b6891d7b794dfed")]
 [assembly: System.Reflection.AssemblyProductAttribute("SabanWi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SabanWi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

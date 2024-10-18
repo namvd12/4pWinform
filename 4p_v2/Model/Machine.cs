@@ -27,6 +27,8 @@ namespace GiamSat.model
             public string Model;         //tula_10
             public string Serial;        //tula_11
             public string TopBot;        //tula_12
+            public string category;      //tula_13
+            public string mode;          //tula_14
         }
 
         private DataBase mMydatabase;
@@ -171,11 +173,11 @@ namespace GiamSat.model
             return res;
         }
 
-        public bool updateStatus(int machineID, string status, string time)
+        public bool updateStatus(int machineID, string status, string time, string mode)
         {
             bool res;
 
-            res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table1, (UInt64)machineID, null, null, null, null, status, time);
+            res = mMydatabase.EditData(DataBase.TABLE_DB.tula_table1, (UInt64)machineID, null, null, null, null, status, time, null, null, null, null, null,null,null, mode);
             return res;
         }
 

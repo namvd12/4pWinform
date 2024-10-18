@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SabanWi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea5799c1b931d1627e1ac50d2d5dd9dc6727f8dd")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99c0750a7dc7ff486d7a05695b6891d7b794dfed")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("SabanWi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SabanWi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

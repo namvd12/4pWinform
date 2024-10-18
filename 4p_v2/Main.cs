@@ -404,8 +404,13 @@ namespace GiamSat
 
                                         /* set status to database*/
                                         clientDb.setStatus(item.machineid, item.machineName, item.status);
+<<<<<<< Updated upstream
                                         machineDb.updateStatus(item.machineid, item.status, item.timeNG);
                                         UInt64 historyID = historyDb.add(item.machineid, "", item.timeNG, item.status);
+=======
+                                        machineDb.updateStatus(item.machineid, item.status, item.timeNG, mode);
+                                        UInt64 historyID = historyDb.add(item.machineid, "", item.timeNG, item.status, mode);
+>>>>>>> Stashed changes
                                         UpdateLedStatus(item);
 
                                         /* check and add historyNG for analysis */

@@ -407,7 +407,7 @@ namespace GiamSat
 
                                         /* set status to database*/
                                         clientDb.setStatus(item.machineid, item.machineName, item.status);
-                                        machineDb.updateStatus(item.machineid, item.status, item.timeNG);
+                                        machineDb.updateStatus(item.machineid, item.status, item.timeNG, mode);
                                         UInt64 historyID = historyDb.add(item.machineid, "", item.timeNG, item.status, mode);
                                         UpdateLedStatus(item);
 

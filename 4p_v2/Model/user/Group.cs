@@ -21,7 +21,8 @@ namespace SabanWi.Model.user
             partLeader = "Part_leader",
             engineer = "Engineer",
             customer = "Customer",
-            test = "test";
+            test = "test",
+            callMaterial = "CallMaterial";
         }
         public class GroupData
         {
@@ -108,6 +109,10 @@ namespace SabanWi.Model.user
             if (getGroupKeyByName(groupName.test) == 0)
             {
                 mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table10, groupName.test, "test_system only view");
+            }
+            if (getGroupKeyByName(groupName.callMaterial) == 0)
+            {
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table10, groupName.callMaterial, "callMaterial only view");
             }
         }
     }

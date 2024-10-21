@@ -60,7 +60,9 @@ namespace SabanWi.Model.user
             string []list_permission_admin = { "View_user"       , "Edit_user"       , "Delete_user", 
                                                "View_device"     , "Edit_device"     , "Delete_device", 
                                                "View_devicePlan" , "Edit_devicePlan" , "Delete_devicePlan", 
-                                               "View_sparePart"  , "Edit_sparePart"  , "Delete_sparePart"};
+                                               "View_sparePart"  , "Edit_sparePart"  , "Delete_sparePart",
+                                               "View_callMaterial"  , "Edit_callMaterial"  , "Delete_callMaterial",
+            };
             setGroup_Permission(groupName.admin, list_permission_admin);
 
             string[] list_permission_leader = {"View_device"     , "Edit_device"     , "Delete_device",
@@ -82,7 +84,12 @@ namespace SabanWi.Model.user
             string[] list_permission_test = {"View_device"     ,
                                                  "View_devicePlan" ,
                                                  "View_sparePart"  ,};
-            setGroup_Permission(groupName.test, list_permission_test);
+            setGroup_Permission(groupName.test, list_permission_test);            
+            
+            string[] list_permission_callMaterial = {"View_callMaterial",
+                                                 "Edit_callMaterial" ,
+                                                 "Delete_callMaterial"  ,};
+            setGroup_Permission(groupName.callMaterial, list_permission_callMaterial);
         }
     }
 }

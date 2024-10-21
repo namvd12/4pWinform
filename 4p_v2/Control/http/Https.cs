@@ -22,6 +22,7 @@ namespace _4P_PROJECT.Control
         private static string Url_machine = localHost + "machine.php";
         private static string Url_machineStatusNG = localHost + "machineListNG.php";
         private static string Url_notiNG = localHost + "sendNotification";
+        private static string Url_notiCallMaterial = localHost + "sendCallMaterial";
         private static string responseString = string.Empty;
 
         private string path = "setting.bin";
@@ -29,15 +30,14 @@ namespace _4P_PROJECT.Control
         {
             if (System.IO.File.Exists(path))
             {
-                localHost = "https://" + System.IO.File.ReadAllText(path) + "/testPHP/";
-                Url_maintenance_plan = localHost + "machinePlan.php";
-                Url_spare_part = localHost + "sparePartPlan.php";
-                Url_delete_maintenance_plan = localHost + "deleteMachinePlan.php";
-                Url_delete_spare_part = localHost + "deleteSparePartPlan.php";
-                Url_machine = localHost + "machine.php";
-                string webSocketHost = "https://" + System.IO.File.ReadAllText(path) + "/WebSocket/";
-                Url_machineStatusNG = webSocketHost + "machineListNG.php";
-                Url_notiNG = "http://" + System.IO.File.ReadAllText(path) + "/api/sendNotification";
+                //localHost = "https://" + System.IO.File.ReadAllText(path) + "/testPHP/";
+
+                //Url_machine = localHost + "machine.php";
+                //string webSocketHost = "https://" + System.IO.File.ReadAllText(path) + "/WebSocket/";
+                //Url_machineStatusNG = webSocketHost + "machineListNG.php";
+                localHost = "https://" + System.IO.File.ReadAllText(path);
+                Url_notiNG = localHost + "/api/sendNotification";
+                Url_notiCallMaterial = localHost + "/api/sendCallMaterial";
             }
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -70,6 +70,7 @@ namespace _4P_PROJECT.Control
             SPARE_PART,
             MACHINE_LIST_NG,
             NOTI_NG,
+            NOTI_CALL_MATERIAL,
         };
         private async Task<string> get(TypeInfor type_plan, string tulaKey, string tulaData1 = null, string tulaData2 = null)
         {
@@ -175,6 +176,9 @@ namespace _4P_PROJECT.Control
             else if (type_plan == TypeInfor.NOTI_NG)
             {
                 Url = Url_notiNG;
+            } else if (type_plan == TypeInfor.NOTI_CALL_MATERIAL)
+            {
+                Url = Url_notiCallMaterial;
             }
             else
             {
@@ -287,6 +291,19 @@ namespace _4P_PROJECT.Control
         public string sendNotification(string machineJson)
         {
             Task<string> task = Task.Run<string>(async () => await set(TypeInfor.NOTI_NG, machineJson));
+            try
+            {
+                return task.Result;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        public string sendNotiCallMaterial(string textNotifi)
+        {
+            Task<string> task = Task.Run<string>(async () => await set(TypeInfor.NOTI_CALL_MATERIAL, textNotifi));
             try
             {
                 return task.Result;

@@ -17,12 +17,13 @@ namespace GiamSat.model
         public class HistoryNGData
         {
             public UInt64 historyNGID;   //tula_key
-            public int machineID;     //tula_1
-            public string historyID;  //tula_2
-            public string line;       //tula_3
-            public string lane;       //tula_4
-            public string time;       //tula_5
-            public string status;     //tula_6
+            public int machineID;        //tula_1
+            public string historyID;     //tula_2
+            public string line;          //tula_3
+            public string lane;          //tula_4
+            public string time;          //tula_5
+            public string status;        //tula_6
+            public string modeSystem;    //tula_7
         }
 
         private DataBase mMydatabase;
@@ -255,14 +256,14 @@ namespace GiamSat.model
             return ls;
         }
 
-        public bool add(int machineID, string historyID, string line, string lane, string time, string status)
+        public bool add(int machineID, string historyID, string line, string lane, string time, string status, string modeSystem)
         {
             bool res;
             if (status == "NG")
             {
                 status = "WarningNG";
             }
-            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table6, machineID.ToString(), historyID, line, lane, time, status);
+            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table6, machineID.ToString(), historyID, line, lane, time, status, modeSystem);
             return res;
         }
 

@@ -49,6 +49,7 @@ namespace _4P_PROJECT.DataBase
             tula_table11,  // Permission 
             tula_table12,  // Group_permission
             tula_table13,  // Categories
+            tula_table14,  // CallMaterial
         }
         public bool Connect()
         {
@@ -186,6 +187,11 @@ namespace _4P_PROJECT.DataBase
                 /* Categories */
                 CreateTable(TABLE_DB.tula_table13);
             }
+            if (!isTableExit(TABLE_DB.tula_table14))
+            {
+                /* CallMaterial */
+                CreateTable(TABLE_DB.tula_table14);
+            }
             return true;
         }
 
@@ -243,6 +249,10 @@ namespace _4P_PROJECT.DataBase
             else if (nameTable == TABLE_DB.tula_table13)
             {
                 table_name = "tula_table13";
+            }
+            else if (nameTable == TABLE_DB.tula_table14)
+            {
+                table_name = "tula_table14";
             }
             else
             {
@@ -444,6 +454,10 @@ namespace _4P_PROJECT.DataBase
                     command = "CREATE TABLE `tula_table13` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
                     cmd.ExecuteNonQuery();
                     break;
+                case TABLE_DB.tula_table14:
+                    command = "CREATE TABLE `tula_table14` (\r\n\t`tula_Key` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,\r\n\t`tula1` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula2` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula3` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula4` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula5` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula6` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula7` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula8` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula9` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula10` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula11` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula12` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula13` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula14` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula15` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula16` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula17` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula18` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula19` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\t`tula20` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',\r\n\tPRIMARY KEY (`tula_Key`) USING BTREE\r\n)\r\nCOLLATE='utf8mb4_general_ci'\r\nENGINE=InnoDB\r\nAUTO_INCREMENT=1\r\n;\r\n"; cmd = new MySqlCommand(command, myConnection);
+                    cmd.ExecuteNonQuery();
+                    break;
                 default:
                     break;
             }
@@ -451,7 +465,7 @@ namespace _4P_PROJECT.DataBase
 
         public bool AddNewData(TABLE_DB tableName, string tula1 = "", string tula2 = "", string tula3 = "", string tula4 = "", string tula5 = "", string tula6 = "", string tula7 = "", string tula8 = "", string tula9 = "",
                                          string tula10 = "", string tula11 = "", string tula12 = "", string tula13 = "", string tula14 = "", string tula15 = "", string tula16 = "", string tula17 = "", string tula18 = "", string tula19 = "", string tula20 = "",
-                                         string tula21 = "")
+                                         string tula21 = "", string tula22 = "", string tula23 = "", string tula24 = "", string tula25 = "")
         {
             string command = "";
             MySqlCommand cmd;
@@ -477,11 +491,11 @@ namespace _4P_PROJECT.DataBase
                     table_Name = "tula_table2";
                     
                     command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
-                                            "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20, tula21)" +
+                                            "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20, tula21, tula22, tula23, tula24, tula25)" +
                                             "\r\nVALUES ({1}, \'{2}\', \'{3}\', \'{4}\', \'{5}\', \'{6}\', \'{7}\',\'{8}\', \'{9}\', \'{10}\', " +
-                                            "\'{11}\', \'{12}\', \'{13}\', \'{14}\', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}')",
+                                            "\'{11}\', \'{12}\', \'{13}\', \'{14}\', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}','{24}', '{25}')",
                                             table_Name, Convert.ToInt32(tula1), tula2, tula3, tula4, tula5, tula6, tula7, tula8, tula9, tula10, tula11, tula12, tula13, tula14, tula15
-                                            , tula16, tula17, tula18, tula19, tula20, tula21);
+                                            , tula16, tula17, tula18, tula19, tula20, tula21, tula22, tula23, tula24, tula25);
                 }
                 else if (tableName == TABLE_DB.tula_table3)
                 {
@@ -574,6 +588,17 @@ namespace _4P_PROJECT.DataBase
                 else if (tableName == TABLE_DB.tula_table12)
                 {
                     table_Name = "tula_table12";
+
+                    command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
+                                            "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20)" +
+                                            "\r\nVALUES (\'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}\', \'{6}\', \'{7}\',\'{8}\', \'{9}\', \'{10}\', " +
+                                            "\'{11}\', \'{12}\', \'{13}\', \'{14}\', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}')",
+                                            table_Name, tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, tula9, tula10, tula11, tula12, tula13, tula14, tula15
+                                            , tula16, tula17, tula18, tula19, tula20);
+                }
+                else if (tableName == TABLE_DB.tula_table14)
+                {
+                    table_Name = "tula_table14";
 
                     command = string.Format("INSERT INTO {0} (tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8, " +
                                             "tula9, tula10, tula11, tula12, tula13, tula14, tula15, tula16, tula17, tula18, tula19, tula20)" +
@@ -1006,7 +1031,7 @@ namespace _4P_PROJECT.DataBase
             return table;
         }
 
-        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "")
+        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "", string value4 = "")
         {
             string command;
             string table_Name = null;
@@ -1072,6 +1097,12 @@ namespace _4P_PROJECT.DataBase
                 table_Name = "tula_table12";
 
                 condition = string.Format("WHERE " + "tula1 = \"{0}\"", value1);
+            }
+            else if (tableName == TABLE_DB.tula_table14)
+            {
+                table_Name = "tula_table14";
+
+                condition = string.Format("WHERE " + "tula1 = \"{0}\" AND " + "tula2 = \"{1}\" AND " + "tula3 = \"{2}\" AND " + "tula4 = \"{3}\"", value1, value2, value3, value4);
             }
 
             waitConnectFree();
@@ -1253,7 +1284,7 @@ namespace _4P_PROJECT.DataBase
         }
 
         /* Get tula_key from tula1*/
-        public UInt64 GetKey(TABLE_DB tableName, string tula1, string tula2 = null)
+        public UInt64 GetKey(TABLE_DB tableName, string tula1, string tula2 = null, string tula3 = null, string tula4 = null, string tula5 = null)
         {
             string command = "";
 
@@ -1313,6 +1344,10 @@ namespace _4P_PROJECT.DataBase
             else if (tableName == TABLE_DB.tula_table12)
             {
                 command = string.Format("SELECT tula_Key FROM tula_table12 WHERE tula1 = \"{0}\" AND tula2 = \"{1}\"", tula1, tula2);
+            }
+            else if (tableName == TABLE_DB.tula_table14)
+            {
+                command = string.Format("SELECT tula_Key FROM tula_table14 WHERE tula1 = \"{0}\" AND tula2 = \"{1}\" AND tula3 = \"{2}\" AND tula4 = \"{3}\" AND tula5 = \"{4}\"", tula1, tula2, tula3, tula4, tula5);
             }
             waitConnectFree();
             try

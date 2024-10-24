@@ -17,13 +17,13 @@ namespace SabanWi.Model
             public string machineCode;   // tula_1
             public string line;          // tula_2
             public string lane;          // tula_3
-            public string partNumber;    // tula_4
+            public string position;      // tula_4
             public string slot;          // tula_5
-            public string number;        // tula_6
-            public string level;         // tula_7
-            public string status;        // tula_8
-            public string time;          // tula_9
-            public string userCall;      // tula_10
+            public string urgent;        // tula_6
+            public string status;        // tula_7
+            public string time;          // tula_8
+            public string user;          // tula_9
+            public string note;          // tula_10
         }
         private DataBase mMydatabase;
 
@@ -38,24 +38,24 @@ namespace SabanWi.Model
                 mMydatabase = value;
             }
         }
-        public UInt64 add(string machineCode, string line, string lane, string partNumber, string slot, string number,string level, string status, string time, string userCall)
+        public UInt64 add(string machineCode, string line, string lane, string position, string slot, string urgent, string status, string time, string userID)
         {
             bool res;
             UInt64 callID;
-            string resStatus =  getStatus(machineCode, line, lane, partNumber);
+            string resStatus =  getStatus(machineCode, line, lane, position);
             if(resStatus != null)
             {
                 return 0;
             }    
-            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, partNumber, slot, number, level, status, time, userCall);
-            callID = mMydatabase.GetKey(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, partNumber, slot);
+            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot, urgent, status, time, userID);
+            callID = mMydatabase.GetKey(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position);
             return callID;
         }
 
-        public string getStatus(string machineCode, string line, string lane, string partNumber)
+        public string getStatus(string machineCode, string line, string lane, string position)
         {
             callMaterialData data = new callMaterialData();
-            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, partNumber);
+            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
@@ -64,13 +64,12 @@ namespace SabanWi.Model
                     data.machineCode = Convert.ToString(row["tula1"]);
                     data.line = Convert.ToString(row["tula2"]);
                     data.lane = Convert.ToString(row["tula3"]);
-                    data.partNumber = Convert.ToString(row["tula4"]);
+                    data.position = Convert.ToString(row["tula4"]);
                     data.slot = Convert.ToString(row["tula5"]);
-                    data.number = Convert.ToString(row["tula6"]);
-                    data.level = Convert.ToString(row["tula7"]);
-                    data.status = Convert.ToString(row["tula8"]);
-                    data.time = Convert.ToString(row["tula9"]);
-                    data.userCall = Convert.ToString(row["tula10"]);
+                    data.urgent = Convert.ToString(row["tula6"]);
+                    data.status = Convert.ToString(row["tula7"]);
+                    data.time = Convert.ToString(row["tula8"]);
+                    data.user = Convert.ToString(row["tula9"]);
                 }
             }
             else

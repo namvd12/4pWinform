@@ -19,6 +19,7 @@ using Org.BouncyCastle.Pqc.Crypto.Picnic;
 using System.Reflection;
 using Microsoft.VisualBasic.Logging;
 using MySqlX.XDevAPI.Common;
+using System.Text.RegularExpressions;
 
 
 namespace Giamsat.Control.Devices
@@ -153,10 +154,10 @@ namespace Giamsat.Control.Devices
             }
             return lsClient;
         }
-        private ItemHMI receiveHMIStatus(byte[] data)
+        private List<ItemHMI> receiveHMIStatus(byte[] data)
         {
             RF_HMI_Receive pkgRev = new RF_HMI_Receive();
-            ItemHMI itemHMI = new ItemHMI();
+            List<ItemHMI> listItemHMI = new List<ItemHMI>();
             Byte[] data_receive = new byte[64];
             Buffer.BlockCopy(data, 1, data_receive, 0, 64);
             if (data_receive.Length > 0)
@@ -177,6 +178,7 @@ namespace Giamsat.Control.Devices
                 var crcCheck = Crc16.ComputeChecksum(buffCheckCRC);
                 if(crcCheck == crc16Rev)
                 {
+                    ItemHMI itemHMI = new ItemHMI();
                     itemHMI.addrHMI = pkgRev.addr;
                     itemHMI.state = (hmiState)pkgRev.data.state;
                     itemHMI.cmd = (hmiResponseCmd)pkgRev.data.cmd;
@@ -191,12 +193,13 @@ namespace Giamsat.Control.Devices
                         {
                             try
                             {
-                                itemHMI.user = itemHMI.dataRev.Split((char)29)[0].Trim();
+                                itemHMI.username = itemHMI.dataRev.Split((char)29)[0].Trim();
                                 itemHMI.password = itemHMI.dataRev.Split((char)29)[1].Trim();
+                                listItemHMI.Add(itemHMI);  
                             }
                             catch (Exception)
                             {
-                                //throw;
+                                throw;
                                 return null;
                             }                           
                         }
@@ -209,57 +212,134 @@ namespace Giamsat.Control.Devices
                             return null;
                         }
                     }
-                    else if (itemHMI.state == hmiState.LOGED)
+                    else if (itemHMI.state == hmiState.LOGED && itemHMI.cmd == hmiResponseCmd.REQUEST)
                     {
-                        if(itemHMI.cmd == hmiResponseCmd.REQUEST)
+                        try
                         {
-                            try
+                            // parer data
+                            string pattern1 = @"\{([^}]*)\}";  // {}
+                            string pattern2 = @"\[([^\]]*)\]"; // []
+
+                            //string input = "{10;1;1;T}{[A;48;L][B;10;H][C;12;L][D;12;L][E;12;L][F;12;L]}";
+                            MatchCollection matches = Regex.Matches(itemHMI.dataRev, pattern1);
+                            List<string> listArray = new List<string>();
+                            List<string> listArrayCall = new List<string>();
+                            foreach (Match match in matches)
                             {
-                                itemHMI.machineCode = itemHMI.dataRev.Split((char)29)[0].Trim();
-                                itemHMI.line = itemHMI.dataRev.Split((char)29)[1].Trim();
-                                itemHMI.lane = itemHMI.dataRev.Split((char)29)[2].Trim();
-                                itemHMI.partNumber = itemHMI.dataRev.Split((char)29)[3].Trim();
-                                itemHMI.slot = itemHMI.dataRev.Split((char)29)[4].Trim();
-                                itemHMI.number = itemHMI.dataRev.Split((char)29)[5].Trim();
-                                itemHMI.level = itemHMI.dataRev.Split((char)29)[6].Trim();
-                                itemHMI.status = itemHMI.dataRev.Split((char)29)[7].Trim();
-                                itemHMI.user = itemHMI.dataRev.Split((char)29)[8].Trim();
-                                itemHMI.time = DateTime.Now;
+                                listArray.Add(match.Groups[1].Value);
                             }
-                            catch (Exception)
+                            if(listArray.Count == 2)
                             {
-                                //throw;
-                                return null;    
+                                var infor = listArray[0];
+                                var userID = infor.Split(';')[0];
+                                var line = infor.Split(';')[1];
+                                var land = infor.Split(';')[2];
+                                var position = infor.Split(';')[3];
+                                matches = Regex.Matches(listArray[1], pattern2);
+                                foreach (Match match in matches)
+                                {
+                                    listArrayCall.Add(match.Groups[1].Value);
+                                }
+
+                                // search listArrayCall
+                                foreach (var calls in listArrayCall)
+                                {
+                                    var machine = calls.Split(";")[0];
+                                    var slot = calls.Split(";")[1];
+                                    var urgent = calls.Split(";")[2];
+
+                                    itemHMI.machineCode = machine;
+                                    itemHMI.line = line;
+                                    itemHMI.lane = land;
+                                    itemHMI.position = position;
+                                    itemHMI.slot = slot;
+                                    itemHMI.urgent = urgent;
+                                    itemHMI.userID = userID;
+                                    itemHMI.time = DateTime.Now;
+                                    listItemHMI.Add(itemHMI);
+                                }                
                             }
-                        }
-                    }
-                    else if (itemHMI.state == hmiState.CHECKSTATUS)
-                    {
-                        if(itemHMI.cmd == hmiResponseCmd.UPDATE_STATUS)
-                        {
-                            try
-                            {
-                                itemHMI.machineCode = itemHMI.dataRev;
-                                itemHMI.machineCode = itemHMI.dataRev.Split((char)29)[0];
-                                itemHMI.line = itemHMI.dataRev.Split((char)29)[1];
-                                itemHMI.lane = itemHMI.dataRev.Split((char)29)[2];
-                                itemHMI.partNumber = itemHMI.dataRev.Split((char)29)[3];
-                            }
-                            catch (Exception)
+                            else
                             {
                                 return null;
-                                //throw;
                             }
                         }
+                        catch (Exception)
+                        {
+                            throw;
+                            return null;    
+                        }
+                    }
+                    else if (itemHMI.state == hmiState.CHECKSTATUS && itemHMI.cmd == hmiResponseCmd.UPDATE_STATUS)
+                    {
+                        try
+                        {
+                            // parer data
+                            string pattern1 = @"\{([^}]*)\}";  // {}
+                            string pattern2 = @"\[([^\]]*)\]"; // []
+
+                            //string input = "{10;1;1;T}{[A;48;L][B;10;H][C;12;L][D;12;L][E;12;L][F;12;L]}";
+                            MatchCollection matches = Regex.Matches(itemHMI.dataRev, pattern1);
+                            List<string> listArray = new List<string>();
+                            List<string> listArrayCall = new List<string>();
+                            foreach (Match match in matches)
+                            {
+                                listArray.Add(match.Groups[1].Value);
+                            }
+                            if (listArray.Count == 2)
+                            {
+                                var infor = listArray[0];
+                                var userID = infor.Split(';')[0];
+                                var line = infor.Split(';')[1];
+                                var land = infor.Split(';')[2];
+                                var position = infor.Split(';')[3];
+                                matches = Regex.Matches(listArray[1], pattern2);
+                                foreach (Match match in matches)
+                                {
+                                    listArrayCall.Add(match.Groups[1].Value);
+                                }
+
+                                // search listArrayCall
+                                foreach (var calls in listArrayCall)
+                                {
+                                    var machine = calls.Split(";")[0];
+                                    var slot = calls.Split(";")[1];
+                                    //var urgent = calls.Split(";")[2];
+
+                                    itemHMI.machineCode = machine;
+                                    itemHMI.line = line;
+                                    itemHMI.lane = land;
+                                    itemHMI.position = position;
+                                    itemHMI.slot = slot;
+                                    //itemHMI.urgent = urgent;
+                                    itemHMI.userID = userID;
+                                    itemHMI.time = DateTime.Now;
+
+                                    listItemHMI.Add(itemHMI);
+                                }
+                            }
+                            else
+                            {
+                                return null;
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        return null;
                     }
                 }   
                 else
                 {
                     return null;
                 }    
-
             }
-            return itemHMI;
+            return listItemHMI;
         }
         public bool connect()
         {
@@ -325,7 +405,7 @@ namespace Giamsat.Control.Devices
                 
             }
         }
-        private ItemHMI sendAndReceive(RF_HMI_Package_Send pkg)
+        private List<ItemHMI> sendAndReceive(RF_HMI_Package_Send pkg)
         {
             int totalByte = 64; // size of RF_HMI_Package_Send
             //int totalByte = 80; // size of RF_HMI_Package_Send
@@ -387,7 +467,7 @@ namespace Giamsat.Control.Devices
 
             return sendAndReceive(pkg);
         }
-        public ItemHMI send_HMI_cmd(uint addrHMI, sendToHmicmd cmd, string strSend)
+        public List< ItemHMI> send_HMI_cmd(uint addrHMI, sendToHmicmd cmd, string strSend)
         {
             RF_HMI_Package_Send pkg = new RF_HMI_Package_Send();
             byte[] bytesData;
@@ -412,6 +492,5 @@ namespace Giamsat.Control.Devices
             }
             return sendAndReceive(pkg);
         }
-
     }
 }

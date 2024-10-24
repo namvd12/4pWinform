@@ -37,9 +37,6 @@ namespace SabanWi.Control.Devices
         public hmiResponseCmd cmd;
         public string dataRev;
 
-        /* get user password form dataRev*/
-        public string user;
-        public string password;
 
         /* get data call material*/
 
@@ -47,13 +44,16 @@ namespace SabanWi.Control.Devices
         public string machineCode;
         public string line;
         public string lane;
-        public string partNumber;
+        public string position;
         public string slot;
-        public string number;
-        public string level;
+        public string urgent;
         public string status;
         public DateTime time;
 
+        /* get user password form dataRev*/
+        public string userID;
+        public string username;
+        public string password;
         /* response Status*/
 
         public string statusRes;

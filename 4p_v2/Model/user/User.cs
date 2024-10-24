@@ -228,7 +228,7 @@ namespace SabanWi.Model.user
             return mMydatabase.checkPermission(userName, permissionname);
         }
 
-        public bool checkUserLoginHMI(string userName, string password)
+        public string checkUserLoginHMI(string userName, string password)
         {
             //userHasPermission(userName, permissionname);
             List<UserData> listUser = SearchValue(userName);
@@ -241,20 +241,20 @@ namespace SabanWi.Model.user
                         var checkPass = BCrypt.Net.BCrypt.Verify(password, user.password);
                         if (checkPass == true)
                         {
-                            return true;
+                            return user.userID;
                         }
                         else
                         {
-                            return false;
+                            return null;
                         }
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        return null;
                     }
                 }
             }
-            return false;
+            return null;
         }
     }
 }

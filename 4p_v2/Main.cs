@@ -508,70 +508,87 @@ namespace GiamSat
 
         void updateHMI_status()
         {
-            ItemHMI itemHMI = new ItemHMI();
+            List<ItemHMI> listItemHMI = new List<ItemHMI>();
             uint addrHMI = 10;
-
-            itemHMI =  RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.GET_STATE, "GET STATE");
-            if(itemHMI != null)
+            uint cntListItemHMI = 0;
+            string arrayFeedBack = "";
+            listItemHMI =  RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.GET_STATE, "GET STATE");
+            if(listItemHMI != null)
             {
-                if(itemHMI.state == ItemHMI.hmiState.LOGOUT && itemHMI.cmd == ItemHMI.hmiResponseCmd.LOGIN)
-                {
-                    var status = userCurrent.checkUserLoginHMI(itemHMI.user, itemHMI.password);
-
-                    if(status)
+                foreach (var itemHMI in listItemHMI)
+                {           
+                    if (itemHMI.state == ItemHMI.hmiState.LOGOUT && itemHMI.cmd == ItemHMI.hmiResponseCmd.LOGIN)
                     {
-                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN,"OK");
-                    } 
+                        var userID = userCurrent.checkUserLoginHMI(itemHMI.username, itemHMI.password);
+
+                        if(userID != null)
+                        {
+                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN,"OK;"+ userID);
+                        } 
+                        else
+                        {
+                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN, "ERROR");
+                        }
+                    }
+                    else if (itemHMI.state == ItemHMI.hmiState.LOGED && itemHMI.cmd == ItemHMI.hmiResponseCmd.REQUEST)
+                    {
+                        Https https = new Https();
+                        var machineCode = itemHMI.machineCode;
+                        var line = itemHMI.line;
+                        var lane = itemHMI.lane;
+                        var position = itemHMI.position;
+                        var slot = itemHMI.slot;
+                        var urgent = itemHMI.urgent;
+                        var status = itemHMI.status;
+                        var time = itemHMI.time;
+                        var userID = itemHMI.userID;
+
+                        // add to database
+                        itemHMI.callID = callMaterial.add(machineCode, line, lane, position, slot, urgent, status, time.ToString("dd-MM-yyyy HH:mm"), userID);
+
+                        if (itemHMI.callID == 0)
+                        {
+                            // send back HMI status Error
+                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, "Error: duplicate call");
+                        }
+                        else
+                        {
+                            // noti only last item
+                            cntListItemHMI++;
+                            if(cntListItemHMI == listItemHMI.Count())
+                            {
+                                cntListItemHMI = 0;
+                                // update data call to database
+                                var jsonString = JsonConvert.SerializeObject(itemHMI);
+                                https.sendNotiCallMaterial(jsonString);
+
+                                // send back HMI status
+                                RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
+                            }
+                        }
+                    }
+                    else if (itemHMI.state == ItemHMI.hmiState.CHECKSTATUS && itemHMI.cmd == ItemHMI.hmiResponseCmd.UPDATE_STATUS)
+                    {
+                        var machineCode = itemHMI.machineCode;
+                        var line = itemHMI.line;
+                        var lane = itemHMI.lane;
+                        var position = itemHMI.position;
+                        var slot = itemHMI.slot;
+                        // noti only last item
+                        string status = callMaterial.getStatus(machineCode, line, lane, position);
+                        arrayFeedBack += string.Format("[{1};{2};{3}]", machineCode, slot, status);
+                        cntListItemHMI++;
+                        if (cntListItemHMI == listItemHMI.Count())
+                        {
+                            // send feedback only last item
+                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, arrayFeedBack);
+                        }
+                    }
                     else
                     {
-                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN, "ERROR");
+                        // do nothting
                     }
                 }
-                else if (itemHMI.state == ItemHMI.hmiState.LOGED && itemHMI.cmd == ItemHMI.hmiResponseCmd.REQUEST)
-                {
-                    Https https = new Https();
-                    var machineCode = itemHMI.machineCode;
-                    var line = itemHMI.line;
-                    var lane = itemHMI.lane;
-                    var partNumber = itemHMI.partNumber;
-                    var slot = itemHMI.slot;
-                    var number = itemHMI.number;
-                    var level = itemHMI.level;
-                    var status = itemHMI.status;
-                    var time = itemHMI.time;
-                    var userCall = itemHMI.user;
-
-                    // add to database
-                    itemHMI.callID = callMaterial.add(machineCode, line, lane, partNumber, slot, number, level, status, time.ToString("dd-MM-yyyy HH:mm"), userCall);
-
-                    if (itemHMI.callID == 0)
-                    {
-                        // send back HMI status Error
-                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, "Error: duplicate call");
-                    }
-                    else
-                    {
-                        // update data call to database
-                        var jsonString = JsonConvert.SerializeObject(itemHMI);
-                        https.sendNotiCallMaterial(jsonString);
-                        // send back HMI status
-                        RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
-                    }
-                }
-                else if (itemHMI.state == ItemHMI.hmiState.CHECKSTATUS && itemHMI.cmd == ItemHMI.hmiResponseCmd.UPDATE_STATUS)
-                {
-                    var machineCode = itemHMI.machineCode;
-                    var line = itemHMI.line;
-                    var lane = itemHMI.lane;
-                    var partNumber = itemHMI.partNumber;
-
-                    string status = callMaterial.getStatus(machineCode, line, lane, partNumber);
-                    RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
-                }
-                else
-                {
-                    // do nothting
-                }    
             }
             else
             {
@@ -579,8 +596,8 @@ namespace GiamSat
                 //Https https = new Https();
                 //itemHMI = new ItemHMI();
                 //itemHMI.callID = 43;
-                //itemHMI.machineCode = "XU123";
-                //itemHMI.partNumber = "ABHDX";
+                //itemHMI.machineCode = "X";
+                //itemHMI.slot = "48";
                 //itemHMI.user = "namvd";
                 //var jsonString = JsonConvert.SerializeObject(itemHMI);
                 //https.sendNotiCallMaterial(jsonString);

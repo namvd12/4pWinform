@@ -38,24 +38,26 @@ namespace SabanWi.Model
                 mMydatabase = value;
             }
         }
-        public UInt64 add(string machineCode, string line, string lane, string position, string slot, string urgent, string status, string time, string userID)
+        public UInt64 add(string machineCode, string line, string lane, string position, string slot, string urgent, string status, string time, string userKey)
         {
-            bool res;
             UInt64 callID;
-            string resStatus =  getStatus(machineCode, line, lane, position);
-            if(resStatus != null)
+            var callInfor = getCallInfor(machineCode, line, lane, position, slot);
+            if(callInfor.callID != 0 && callInfor.status != "OK")
             {
-                return 0;
+                mMydatabase.EditData(DataBase.TABLE_DB.tula_table14, (UInt64)callInfor.callID, machineCode, line, lane, position, slot, urgent, status, time, userKey);
+            } 
+            else
+            {
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot, urgent, status, time, userKey);
             }    
-            res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot, urgent, status, time, userID);
-            callID = mMydatabase.GetKey(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position);
+            callID = mMydatabase.GetKey(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot, urgent, status, time);
             return callID;
         }
 
-        public string getStatus(string machineCode, string line, string lane, string position)
+        public callMaterialData getCallInfor(string machineCode, string line, string lane, string position, string slot)
         {
             callMaterialData data = new callMaterialData();
-            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position);
+            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)
@@ -74,9 +76,9 @@ namespace SabanWi.Model
             }
             else
             {
-                return string.Empty;
+                return null;
             }    
-            return data.status;
+            return data;
         }
     }
 }

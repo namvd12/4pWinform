@@ -126,51 +126,57 @@ namespace GiamSat.View
             item.RatioHeight = (float)(mAppInstance.pb_lineLTE.Height) / (float)item.ButtonItem.Height;
             item.RatioImageWidth = (float)(mAppInstance.pb_lineLTE.Width) / (float)item.ButtonItem.Image.Width;
             item.RatioImageHeight = (float)(mAppInstance.pb_lineLTE.Height) / (float)item.ButtonItem.Image.Height;
-            if (line == 1)
+            if (line == 0)
             {
                 mAppInstance.pb_lineLTE.Controls.Add(item.ButtonItem);
+                item.ButtonItem.Parent = mAppInstance.pb_lineLTE;
+                item.ButtonItem.BackColor = Color.Transparent;
+            }
+            else if (line == 1)
+            {
+                mAppInstance.pb_line1.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line1;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 2)
             {
-                mAppInstance.pb_line1.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line2.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line2;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 3)
             {
-                mAppInstance.pb_line2.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line3.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line3;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 4)
             {
-                mAppInstance.pb_line3.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line4.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line4;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 5)
             {
-                mAppInstance.pb_line4.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line5.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line5;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 6)
             {
-                mAppInstance.pb_line5.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line6.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line6;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 7)
             {
-                mAppInstance.pb_line6.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line7.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line7;
                 item.ButtonItem.BackColor = Color.Transparent;
             }
             else if (line == 8)
             {
-                mAppInstance.pb_line7.Controls.Add(item.ButtonItem);
+                mAppInstance.pb_line8.Controls.Add(item.ButtonItem);
                 item.ButtonItem.Parent = mAppInstance.pb_line8;
                 item.ButtonItem.BackColor = Color.Transparent;
             }

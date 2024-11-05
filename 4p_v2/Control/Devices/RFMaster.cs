@@ -20,6 +20,7 @@ using System.Reflection;
 using Microsoft.VisualBasic.Logging;
 using MySqlX.XDevAPI.Common;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 
 namespace Giamsat.Control.Devices
@@ -183,34 +184,22 @@ namespace Giamsat.Control.Devices
                     itemHMI.state = (hmiState)pkgRev.data.state;
                     itemHMI.cmd = (hmiResponseCmd)pkgRev.data.cmd;
                     itemHMI.dataRev = Encoding.Default.GetString(pkgRev.data.data).Replace('\0', ' ').Trim();
-                    if (itemHMI.state == hmiState.START)
+
+                    Debug.WriteLine("Response[addrHMI " + itemHMI.addrHMI + "] " + itemHMI.state + " " + itemHMI.cmd + " "+ itemHMI.dataRev);
+
+                    if (itemHMI.state == hmiState.LOGOUT && itemHMI.cmd == hmiResponseCmd.LOGIN)
                     {
-                        // not doing
-                    }
-                    else if (itemHMI.state == hmiState.LOGOUT)
-                    {
-                        if(itemHMI.cmd == hmiResponseCmd.LOGIN)
+                        try
                         {
-                            try
-                            {
-                                itemHMI.username = itemHMI.dataRev.Split((char)29)[0].Trim();
-                                itemHMI.password = itemHMI.dataRev.Split((char)29)[1].Trim();
-                                listItemHMI.Add(itemHMI);  
-                            }
-                            catch (Exception)
-                            {
-                                throw;
-                                return null;
-                            }                           
+                            itemHMI.username = itemHMI.dataRev.Split(';')[0].Trim();
+                            itemHMI.password = itemHMI.dataRev.Split(';')[1].Trim();
+                            listItemHMI.Add(itemHMI);  
                         }
-                        else if (itemHMI.cmd == hmiResponseCmd.NON)
+                        catch (Exception)
                         {
+                            throw;
                             return null;
-                        }
-                        else
-                        {
-                            return null;
-                        }
+                        }                           
                     }
                     else if (itemHMI.state == hmiState.LOGED && itemHMI.cmd == hmiResponseCmd.REQUEST)
                     {
@@ -248,15 +237,20 @@ namespace Giamsat.Control.Devices
                                     var slot = calls.Split(";")[1];
                                     var urgent = calls.Split(";")[2];
 
-                                    itemHMI.machineCode = machine;
-                                    itemHMI.line = line;
-                                    itemHMI.lane = land;
-                                    itemHMI.position = position;
-                                    itemHMI.slot = slot;
-                                    itemHMI.urgent = urgent;
-                                    itemHMI.userID = userID;
-                                    itemHMI.time = DateTime.Now;
-                                    listItemHMI.Add(itemHMI);
+                                    ItemHMI itemHMIAdd = new ItemHMI();
+                                    itemHMIAdd.addrHMI = itemHMI.addrHMI;
+                                    itemHMIAdd.state = itemHMI.state;
+                                    itemHMIAdd.cmd = itemHMI.cmd;
+                                    itemHMIAdd.dataRev = itemHMI.dataRev;
+                                    itemHMIAdd.machineCode = machine;
+                                    itemHMIAdd.line = line;
+                                    itemHMIAdd.lane = land;
+                                    itemHMIAdd.position = position;
+                                    itemHMIAdd.slot = slot;
+                                    itemHMIAdd.urgent = urgent;
+                                    itemHMIAdd.userID = userID;
+                                    itemHMIAdd.time = DateTime.Now;
+                                    listItemHMI.Add(itemHMIAdd);
                                 }                
                             }
                             else
@@ -278,7 +272,6 @@ namespace Giamsat.Control.Devices
                             string pattern1 = @"\{([^}]*)\}";  // {}
                             string pattern2 = @"\[([^\]]*)\]"; // []
 
-                            //string input = "{10;1;1;T}{[A;48;L][B;10;H][C;12;L][D;12;L][E;12;L][F;12;L]}";
                             MatchCollection matches = Regex.Matches(itemHMI.dataRev, pattern1);
                             List<string> listArray = new List<string>();
                             List<string> listArrayCall = new List<string>();
@@ -306,16 +299,19 @@ namespace Giamsat.Control.Devices
                                     var slot = calls.Split(";")[1];
                                     //var urgent = calls.Split(";")[2];
 
-                                    itemHMI.machineCode = machine;
-                                    itemHMI.line = line;
-                                    itemHMI.lane = land;
-                                    itemHMI.position = position;
-                                    itemHMI.slot = slot;
-                                    //itemHMI.urgent = urgent;
-                                    itemHMI.userID = userID;
-                                    itemHMI.time = DateTime.Now;
-
-                                    listItemHMI.Add(itemHMI);
+                                    ItemHMI itemHMIAdd = new ItemHMI();
+                                    itemHMIAdd.addrHMI = itemHMI.addrHMI;
+                                    itemHMIAdd.state = itemHMI.state;
+                                    itemHMIAdd.cmd = itemHMI.cmd;
+                                    itemHMIAdd.dataRev = itemHMI.dataRev;
+                                    itemHMIAdd.machineCode = machine;
+                                    itemHMIAdd.line = line;
+                                    itemHMIAdd.lane = land;
+                                    itemHMIAdd.position = position;
+                                    itemHMIAdd.slot = slot;
+                                    itemHMIAdd.userID = userID;
+                                    itemHMIAdd.time = DateTime.Now;
+                                    listItemHMI.Add(itemHMIAdd);
                                 }
                             }
                             else
@@ -438,6 +434,7 @@ namespace Giamsat.Control.Devices
                 HidStream stream;
                 device.TryOpen(out stream);
                 stream.Write(sendBuff);
+                stream.ReadTimeout = 4000;
                 byte[] receiveData = stream.Read();
                 return receiveHMIStatus(receiveData);
             }

@@ -185,7 +185,7 @@
             cb_addr.Dock = DockStyle.Fill;
             cb_addr.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_addr.FormattingEnabled = true;
-            cb_addr.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" });
+            cb_addr.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40" });
             cb_addr.Location = new Point(131, 101);
             cb_addr.Name = "cb_addr";
             cb_addr.Size = new Size(592, 23);

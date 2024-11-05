@@ -663,6 +663,10 @@ namespace _4P_PROJECT.DataBase
             {
                 nameTable = "tula_table8";
             }
+            else if (tableName == TABLE_DB.tula_table14)
+            {
+                nameTable = "tula_table14";
+            }
             if (tula1 != null)
             {
                 tula1 = string.Format("tula1 = \"{0}\"", tula1);
@@ -1031,7 +1035,7 @@ namespace _4P_PROJECT.DataBase
             return table;
         }
 
-        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "", string value4 = "")
+        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "", string value4 = "", string value5 = "")
         {
             string command;
             string table_Name = null;
@@ -1102,7 +1106,7 @@ namespace _4P_PROJECT.DataBase
             {
                 table_Name = "tula_table14";
 
-                condition = string.Format("WHERE " + "tula1 = \"{0}\" AND " + "tula2 = \"{1}\" AND " + "tula3 = \"{2}\" AND " + "tula4 = \"{3}\"", value1, value2, value3, value4);
+                condition = string.Format("WHERE " + "tula1 = \"{0}\" AND " + "tula2 = \"{1}\" AND " + "tula3 = \"{2}\" AND " + "tula4 = \"{3}\" AND " + "tula5 = \"{4}\"", value1, value2, value3, value4, value5);
             }
 
             waitConnectFree();
@@ -1284,7 +1288,7 @@ namespace _4P_PROJECT.DataBase
         }
 
         /* Get tula_key from tula1*/
-        public UInt64 GetKey(TABLE_DB tableName, string tula1, string tula2 = null, string tula3 = null, string tula4 = null, string tula5 = null)
+        public UInt64 GetKey(TABLE_DB tableName, string tula1, string tula2 = null, string tula3 = null, string tula4 = null, string tula5 = null, string tula6 = null, string tula7 = null, string tula8 = null)
         {
             string command = "";
 
@@ -1347,7 +1351,7 @@ namespace _4P_PROJECT.DataBase
             }
             else if (tableName == TABLE_DB.tula_table14)
             {
-                command = string.Format("SELECT tula_Key FROM tula_table14 WHERE tula1 = \"{0}\" AND tula2 = \"{1}\" AND tula3 = \"{2}\" AND tula4 = \"{3}\" AND tula5 = \"{4}\"", tula1, tula2, tula3, tula4, tula5);
+                command = string.Format("SELECT tula_Key FROM tula_table14 WHERE tula1 = \"{0}\" AND tula2 = \"{1}\" AND tula3 = \"{2}\" AND tula4 = \"{3}\" AND tula5 = \"{4}\" AND tula6 = \"{5}\" AND tula7 = \"{6}\" AND tula8 = \"{7}\"", tula1, tula2, tula3, tula4, tula5, tula6, tula7, tula8);
             }
             waitConnectFree();
             try

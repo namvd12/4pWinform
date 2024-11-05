@@ -84,7 +84,7 @@
             // 
             cb_line.Dock = DockStyle.Fill;
             cb_line.FormattingEnabled = true;
-            cb_line.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" });
+            cb_line.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" });
             cb_line.Location = new Point(91, 3);
             cb_line.Name = "cb_line";
             cb_line.Size = new Size(320, 23);
@@ -94,7 +94,7 @@
             // 
             cb_region.Dock = DockStyle.Fill;
             cb_region.FormattingEnabled = true;
-            cb_region.Items.AddRange(new object[] { "Region1", "Region2", "Region3", "Region4", "Region5", "Region6", "Region7", "Region8", "Region9", "Region10", "Region11", "Region12", "Region13", "Region14", "Region15" });
+            cb_region.Items.AddRange(new object[] { "Region1", "Region2", "Region3", "Region4", "Region5", "Region6", "Region7", "Region8", "Region9", "Region10", "Region11", "Region12", "Region13", "Region14", "Region15", "Region16", "Region17" });
             cb_region.Location = new Point(91, 44);
             cb_region.Name = "cb_region";
             cb_region.Size = new Size(320, 23);

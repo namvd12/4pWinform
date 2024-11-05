@@ -61,7 +61,8 @@ namespace SabanWi.Model.user
                                                "View_device"     , "Edit_device"     , "Delete_device", 
                                                "View_devicePlan" , "Edit_devicePlan" , "Delete_devicePlan", 
                                                "View_sparePart"  , "Edit_sparePart"  , "Delete_sparePart",
-                                               "View_callMaterial"  , "Edit_callMaterial"  , "Delete_callMaterial",
+                                               "View_callMaterial"  , "Edit_callMaterial"  , "Delete_callMaterial", 
+                                               "Delete_history",
             };
             setGroup_Permission(groupName.admin, list_permission_admin);
 

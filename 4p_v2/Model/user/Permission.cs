@@ -113,6 +113,11 @@ namespace SabanWi.Model.user
                 mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table11, "Delete_devicePlan", "Delete devicePlan");
             }
 
+            if (getPermissionKeyByName("Delete_history") == 0)
+            {
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table11, "Delete_history", "Delete history");
+            }
+
             /* spare part*/
             if (getPermissionKeyByName("View_sparePart") == 0)
             { 

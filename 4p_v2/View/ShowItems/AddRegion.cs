@@ -89,7 +89,7 @@ namespace Giamsat.View.ShowItems
             if (!regionExit)
             {
                // mAppInstance.machineDb
-                addItems.LoadItem(machineID, "", regionName, 0, 0, "", "",10, 10, Convert.ToUInt16(cb_line.Text), 0,"", true);
+                addItems.LoadItem(machineID, "", regionName, 0, 0, "DIS", "",10, 10, Convert.ToUInt16(cb_line.Text), 0,"", true);
             }
         }
     }

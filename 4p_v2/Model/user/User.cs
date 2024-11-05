@@ -241,7 +241,7 @@ namespace SabanWi.Model.user
                         var checkPass = BCrypt.Net.BCrypt.Verify(password, user.password);
                         if (checkPass == true)
                         {
-                            return user.userID;
+                            return user.userKey.ToString();
                         }
                         else
                         {

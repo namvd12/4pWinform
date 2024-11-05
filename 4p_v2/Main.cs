@@ -578,7 +578,14 @@ namespace GiamSat
                         var slot = itemHMI.slot;
                         // noti only last item
                         var callInfor = callMaterial.getCallInfor(machineCode, line, lane, position, slot);
-                        arrayFeedBack += string.Format("[{0};{1};{2}]", machineCode, slot, callInfor.status);
+                        if(machineCode == null && line == null && lane ==null)
+                        {
+                            arrayFeedBack = "NON";
+                        }
+                        else
+                        {
+                            arrayFeedBack += string.Format("[{0};{1};{2}]", machineCode, slot, callInfor.status);
+                        }
                         cntListItemHMI++;
                         if (cntListItemHMI == listItemHMI.Count())
                         {
@@ -601,15 +608,7 @@ namespace GiamSat
             }
             else
             {
-                //// test
-                //Https https = new Https();
-                //itemHMI = new ItemHMI();
-                //itemHMI.callID = 43;
-                //itemHMI.machineCode = "X";
-                //itemHMI.slot = "48";
-                //itemHMI.user = "namvd";
-                //var jsonString = JsonConvert.SerializeObject(itemHMI);
-                //https.sendNotiCallMaterial(jsonString);
+
             }    
         }   
         private void updateRFStatus_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)

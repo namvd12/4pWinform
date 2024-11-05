@@ -289,32 +289,44 @@ namespace Giamsat.Control.Devices
                                 var land = infor.Split(';')[2];
                                 var position = infor.Split(';')[3];
                                 matches = Regex.Matches(listArray[1], pattern2);
-                                foreach (Match match in matches)
+                                if(matches.Count > 0)
                                 {
-                                    listArrayCall.Add(match.Groups[1].Value);
-                                }
+                                    foreach (Match match in matches)
+                                    {
+                                        listArrayCall.Add(match.Groups[1].Value);
+                                    }
 
-                                // search listArrayCall
-                                foreach (var calls in listArrayCall)
+                                    // search listArrayCall
+                                    foreach (var calls in listArrayCall)
+                                    {
+                                        var machine = calls.Split(";")[0];
+                                        var slot = calls.Split(";")[1];
+                                        //var urgent = calls.Split(";")[2];
+
+                                        ItemHMI itemHMIAdd = new ItemHMI();
+                                        itemHMIAdd.addrHMI = itemHMI.addrHMI;
+                                        itemHMIAdd.state = itemHMI.state;
+                                        itemHMIAdd.cmd = itemHMI.cmd;
+                                        itemHMIAdd.dataRev = itemHMI.dataRev;
+                                        itemHMIAdd.machineCode = machine;
+                                        itemHMIAdd.line = line;
+                                        itemHMIAdd.lane = land;
+                                        itemHMIAdd.position = position;
+                                        itemHMIAdd.slot = slot;
+                                        itemHMIAdd.userID = userID;
+                                        itemHMIAdd.time = DateTime.Now;
+                                        listItemHMI.Add(itemHMIAdd);
+                                    }
+                                } 
+                                else
                                 {
-                                    var machine = calls.Split(";")[0];
-                                    var slot = calls.Split(";")[1];
-                                    //var urgent = calls.Split(";")[2];
-
                                     ItemHMI itemHMIAdd = new ItemHMI();
                                     itemHMIAdd.addrHMI = itemHMI.addrHMI;
                                     itemHMIAdd.state = itemHMI.state;
                                     itemHMIAdd.cmd = itemHMI.cmd;
                                     itemHMIAdd.dataRev = itemHMI.dataRev;
-                                    itemHMIAdd.machineCode = machine;
-                                    itemHMIAdd.line = line;
-                                    itemHMIAdd.lane = land;
-                                    itemHMIAdd.position = position;
-                                    itemHMIAdd.slot = slot;
-                                    itemHMIAdd.userID = userID;
-                                    itemHMIAdd.time = DateTime.Now;
                                     listItemHMI.Add(itemHMIAdd);
-                                }
+                                }    
                             }
                             else
                             {

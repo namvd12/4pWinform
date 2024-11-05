@@ -364,7 +364,7 @@ namespace GiamSat
             /* check status RF master*/
             if (RFMaster.isConnect())
             {
-                var lsStatus = RFMaster.GetStatus(20);
+                var lsStatus = RFMaster.GetStatus(10);
                 if (lsStatus != null)
                 {
                     showMasterRFStatus("Master connected");
@@ -557,8 +557,9 @@ namespace GiamSat
                             cntListItemHMI = 0;
 
                             // send back HMI status
-                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
                             Debug.WriteLine("PC send status: " + status);
+                            Thread.Sleep(1);
+                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
                             // update data call to database
                             var jsonString = JsonConvert.SerializeObject(itemHMI);
                             var statusSV = https.sendNotiCallMaterial(jsonString);
@@ -581,8 +582,10 @@ namespace GiamSat
                         cntListItemHMI++;
                         if (cntListItemHMI == listItemHMI.Count())
                         {
+                            cntListItemHMI = 0;
                             // send feedback only last item
                             Debug.WriteLine("PC send status:" + arrayFeedBack);
+                            Thread.Sleep(1);
                             RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, arrayFeedBack);
                         }
                         else

@@ -28,6 +28,8 @@ namespace Giamsat.Control.Devices
     internal class RFMaster
     {
         private bool g_isConnect = false;
+
+        private static Mutex mutexUSB = new Mutex();
         public enum SendCommand
         {
            CMD_NONE,
@@ -429,13 +431,15 @@ namespace Giamsat.Control.Devices
 
             try
             {
+                mutexUSB.WaitOne();
                 var loader = new HidDeviceLoader();
                 var device = loader.GetDevices(0x4000, 0x5FFA).First();
                 HidStream stream;
                 device.TryOpen(out stream);
                 stream.Write(sendBuff);
-                stream.ReadTimeout = 4000;
+                stream.ReadTimeout = 1500;
                 byte[] receiveData = stream.Read();
+                mutexUSB.ReleaseMutex();
                 return receiveHMIStatus(receiveData);
             }
             catch (Exception)

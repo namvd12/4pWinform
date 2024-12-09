@@ -154,11 +154,13 @@ namespace SabanWi.Model.user
             {
                 return false;
             }
+            string hashPW = BCrypt.Net.BCrypt.HashPassword(password, 12);
+
             // get groupID by position
             var groupID = group.getGroupKeyByName(position);
             string topPicNoti = position;
             res = mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table8, userID, position, userName,
-                                        password, fullName, phone, email, "", groupID.ToString(), topPicNoti);
+                                        hashPW, fullName, phone, email, "", groupID.ToString(), topPicNoti);
             return res;
         }
 

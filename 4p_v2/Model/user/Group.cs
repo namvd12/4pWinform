@@ -17,6 +17,7 @@ namespace SabanWi.Model.user
         {
             public const string
             admin = "Admin",
+            superAdmin = "Super_admin",
             teamLeader = "Team_leader",
             partLeader = "Part_leader",
             engineer = "Engineer",
@@ -88,7 +89,11 @@ namespace SabanWi.Model.user
             /* Set default Group */
             if (getGroupKeyByName(groupName.admin) == 0)
             { 
-                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table10, groupName.admin, "admin all permission");
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table10, groupName.admin, "admin all permission without setting system");
+            }
+            if (getGroupKeyByName(groupName.superAdmin) == 0)
+            { 
+                mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table10, groupName.superAdmin, "super admin all permission");
             }
             if (getGroupKeyByName(groupName.teamLeader) == 0)
             { 

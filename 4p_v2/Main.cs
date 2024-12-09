@@ -69,7 +69,7 @@ namespace GiamSat
         private CultureInfo mEnglishCultureInfo;
         private CultureInfo mVietnameseCultureInfo;
 
-        /* database*/
+        /* Database*/
         public DataBase db = new DataBase();
         ClientRF clientDb = new ClientRF();
         History historyDb = new History();
@@ -83,8 +83,10 @@ namespace GiamSat
         Permission permission = new Permission();
         Group_permission group_Permission = new Group_permission();
 
+        /*List devices*/
         List<ClientData> Listclients = new List<ClientData>();
         List<machineData> ListMachine = new List<machineData>();
+
         /* Device*/
         RFMaster RFMaster = new RFMaster();
 
@@ -92,8 +94,8 @@ namespace GiamSat
 
         /*HTTP*/
         public HttpListener _httpListener = new HttpListener();
-        /*Back ground worker*/
 
+        /*Back ground worker*/
         private BackgroundWorker connectRFMaster = new BackgroundWorker();
 
         private BackgroundWorker connectDataBase = new BackgroundWorker();
@@ -231,6 +233,9 @@ namespace GiamSat
                     groupUser.setDefaultGroup();
                     permission.setDefaultPermission();
                     group_Permission.setDefaut_group_permission();
+
+                    // set default user
+                    db.setDefaultUserAdmin();
                     break;
                 }
             }
@@ -507,13 +512,13 @@ namespace GiamSat
             }
         }
 
-        void updateHMI_status()
+        void updateHMI_status(uint addrHMI, uint addModbus)
         {
             List<ItemHMI> listItemHMI = new List<ItemHMI>();
-            uint addrHMI = 100;
+            
             uint cntListItemHMI = 0;
             string arrayFeedBack = "";
-            listItemHMI =  RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.GET_STATE, "GET STATE");
+            listItemHMI =  RFMaster.send_HMI_cmd(addrHMI, addModbus,ItemHMI.sendToHmicmd.GET_STATE, "GET STATE");
             if(listItemHMI != null)
             {
                 foreach (var itemHMI in listItemHMI)
@@ -524,12 +529,12 @@ namespace GiamSat
                         Debug.WriteLine("Login:" +  itemHMI.username);
                         if(userKey != null)
                         {
-                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN,"OK;"+ userKey);
+                            RFMaster.send_HMI_cmd(addrHMI, addModbus, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN,"OK;"+ userKey);
                             Debug.WriteLine("PC: OK;" + userKey);
                         } 
                         else
                         {
-                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN, "ERROR");
+                            RFMaster.send_HMI_cmd(addrHMI, addModbus, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN, "ERROR");
                             Debug.WriteLine("PC: ERROR");
                         }
                     }
@@ -559,7 +564,7 @@ namespace GiamSat
                             // send back HMI status
                             Debug.WriteLine("PC send status: " + status);
                             Thread.Sleep(1);
-                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
+                            RFMaster.send_HMI_cmd(addrHMI, addModbus, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, status);
                             // update data call to database
                             var jsonString = JsonConvert.SerializeObject(itemHMI);
                             var statusSV = https.sendNotiCallMaterial(jsonString);
@@ -576,8 +581,9 @@ namespace GiamSat
                         var lane = itemHMI.lane;
                         var position = itemHMI.position;
                         var slot = itemHMI.slot;
+                        var userID = itemHMI.userID;
                         // noti only last item
-                        var callInfor = callMaterial.getCallInfor(machineCode, line, lane, position, slot);
+                        var callInfor = callMaterial.getCallInfor(machineCode, line, lane, position, slot, userID);
                         if(machineCode == null && line == null && lane ==null)
                         {
                             arrayFeedBack = "NON";
@@ -593,7 +599,7 @@ namespace GiamSat
                             // send feedback only last item
                             Debug.WriteLine("PC send status:" + arrayFeedBack);
                             Thread.Sleep(1);
-                            RFMaster.send_HMI_cmd(addrHMI, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, arrayFeedBack);
+                            RFMaster.send_HMI_cmd(addrHMI, addModbus, ItemHMI.sendToHmicmd.SET_STATUS_REQUEST, arrayFeedBack);
                         }
                         else
                         {
@@ -617,8 +623,11 @@ namespace GiamSat
             {
                 updateHistory();
                 updateHistoryNG();
-                updateHMI_status();
-                Thread.Sleep(500);
+                updateHMI_status(99,1);
+                Thread.Sleep(200);
+                updateHMI_status(99,2);
+                Thread.Sleep(200);
+
             }
         }
 
@@ -2268,11 +2277,6 @@ namespace GiamSat
         private void toolStripButtonAddImage_Click(object sender, EventArgs e)
         {
         }
-
-        #region Save&Load recent files
-
-
-        #endregion
 
         public bool ShowLoginDlgCheckPass(string permission)
         {

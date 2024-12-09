@@ -21,6 +21,7 @@ using Microsoft.VisualBasic.Logging;
 using MySqlX.XDevAPI.Common;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Security.Cryptography.Pkcs;
 
 
 namespace Giamsat.Control.Devices
@@ -80,8 +81,9 @@ namespace Giamsat.Control.Devices
         public class HMI_data  // total 60 byte
         {
             public byte state;  
-            public byte cmd;    
-            public byte []data = new byte[58];  
+            public byte cmd;
+            public byte addModbus;
+            public byte []data = new byte[57];  
         }
         public class client_Status
         {
@@ -427,8 +429,9 @@ namespace Giamsat.Control.Devices
             message[1] = pkg.addr;
             message[2] = pkg.data.state;
             message[3] = pkg.data.cmd;
+            message[4] = pkg.data.addModbus;
 
-            Buffer.BlockCopy(pkg.data.data, 0, message, 4, pkg.data.data.Length);
+            Buffer.BlockCopy(pkg.data.data, 0, message, 5, pkg.data.data.Length);
 
             // copy message to sendBuff
             Buffer.BlockCopy(message, 0, sendBuff, 1, message.Length);
@@ -480,7 +483,7 @@ namespace Giamsat.Control.Devices
 
             return sendAndReceive(pkg);
         }
-        public List< ItemHMI> send_HMI_cmd(uint addrHMI, sendToHmicmd cmd, string strSend)
+        public List< ItemHMI> send_HMI_cmd(uint addrHMI, uint addModbus, sendToHmicmd cmd, string strSend)
         {
             RF_HMI_Package_Send pkg = new RF_HMI_Package_Send();
             byte[] bytesData;
@@ -494,8 +497,9 @@ namespace Giamsat.Control.Devices
             }    
             pkg.cmd = (byte)SendCommand.CMD_WRITE_RF_HMI_CMD;
             pkg.addr = (byte)addrHMI;
-            pkg.data.cmd = (byte)cmd;            
-            if(bytesData.Length <= pkg.data.data.Length)
+            pkg.data.cmd = (byte)cmd;
+            pkg.data.addModbus = (byte)addModbus;
+            if (bytesData.Length <= pkg.data.data.Length)
             {
                 Buffer.BlockCopy(bytesData, 0, pkg.data.data, 0, bytesData.Length);
             }

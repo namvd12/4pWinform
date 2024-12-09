@@ -4,6 +4,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using Mysqlx;
 using SabanWi.Model;
+using SabanWi.Model.user;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,7 @@ using System.Xml.Linq;
 using static Mysqlx.Notice.Warning.Types;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using User = SabanWi.Model.user.User;
 
 namespace _4P_PROJECT.DataBase
 {
@@ -157,10 +159,14 @@ namespace _4P_PROJECT.DataBase
             {
                 /* User data*/
                 CreateTable(TABLE_DB.tula_table8);
-
+                Group group = new Group();
                 /* create account admin*/
                 string hashPW = BCrypt.Net.BCrypt.HashPassword("1234",12);
-                AddNewData(DataBase.TABLE_DB.tula_table8, "9999999", "Admin", "admin", hashPW, "admin", "", "","","1");
+                AddNewData(DataBase.TABLE_DB.tula_table8, "9999999", "Admin", "admin", hashPW, "admin", "", "","", group.getGroupKeyByName(Group.groupName.admin).ToString());            
+                
+                /* create account super admin*/
+                hashPW = BCrypt.Net.BCrypt.HashPassword("tula@123",12);
+                AddNewData(DataBase.TABLE_DB.tula_table8, "9999998", "tula", "super admin", hashPW, "super admin", "", "","", group.getGroupKeyByName(Group.groupName.superAdmin).ToString());
             }
             if (!isTableExit(TABLE_DB.tula_table9))
             {
@@ -1035,7 +1041,7 @@ namespace _4P_PROJECT.DataBase
             return table;
         }
 
-        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "", string value4 = "", string value5 = "")
+        public DataTable GetData(TABLE_DB tableName, string value1, string value2 = "", string value3 = "", string value4 = "", string value5 = "", string value6 = "")
         {
             string command;
             string table_Name = null;
@@ -1105,8 +1111,15 @@ namespace _4P_PROJECT.DataBase
             else if (tableName == TABLE_DB.tula_table14)
             {
                 table_Name = "tula_table14";
+                if(value6 == "")
+                {
+                    condition = string.Format("WHERE " + "tula1 = \"{0}\" AND " + "tula2 = \"{1}\" AND " + "tula3 = \"{2}\" AND " + "tula4 = \"{3}\" AND " + "tula5 = \"{4}\"", value1, value2, value3, value4, value5);
+                }   
+                else
+                {
+                    condition = string.Format("WHERE " + "tula1 = \"{0}\" AND " + "tula2 = \"{1}\" AND " + "tula3 = \"{2}\" AND " + "tula4 = \"{3}\" AND " + "tula5 = \"{4}\" AND " + "tula9 = \"{5}\"", value1, value2, value3, value4, value5, value6);
 
-                condition = string.Format("WHERE " + "tula1 = \"{0}\" AND " + "tula2 = \"{1}\" AND " + "tula3 = \"{2}\" AND " + "tula4 = \"{3}\" AND " + "tula5 = \"{4}\"", value1, value2, value3, value4, value5);
+                }
             }
 
             waitConnectFree();
@@ -1608,6 +1621,21 @@ namespace _4P_PROJECT.DataBase
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public void setDefaultUserAdmin()
+        {
+            if (isTableExit(TABLE_DB.tula_table8))
+            {
+                Group group = new Group();
+                group.database = this;
+                User user = new User();
+                user.database = this;
+                /* create account admin*/
+
+                user.add("9999999", Group.groupName.admin, "admin", "1234", "admin");
+                user.add("9999998", Group.groupName.superAdmin, "tula", "tula@123", "super admin");
             }
         }
     }

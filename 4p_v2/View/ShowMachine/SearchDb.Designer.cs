@@ -34,6 +34,7 @@
             tb_MachineSearch = new TextBox();
             label1 = new Label();
             btn_searchMachine = new Button();
+            btn_addNew = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -47,7 +48,6 @@
             btn_searchHistory = new Button();
             btn_searchforReport = new Button();
             panel3 = new Panel();
-            btn_addNew = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -129,6 +129,18 @@
             btn_searchMachine.Text = "Search";
             btn_searchMachine.UseVisualStyleBackColor = true;
             btn_searchMachine.Click += btn_search_Click;
+            // 
+            // btn_addNew
+            // 
+            btn_addNew.Dock = DockStyle.Fill;
+            btn_addNew.Location = new Point(455, 3);
+            btn_addNew.Name = "btn_addNew";
+            btn_addNew.Size = new Size(75, 33);
+            btn_addNew.TabIndex = 12;
+            btn_addNew.Text = "Add new";
+            btn_addNew.UseVisualStyleBackColor = true;
+            btn_addNew.Visible = false;
+            btn_addNew.Click += btn_addNew_Click;
             // 
             // panel1
             // 
@@ -282,17 +294,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1321, 633);
             panel3.TabIndex = 13;
-            // 
-            // btn_addNew
-            // 
-            btn_addNew.Dock = DockStyle.Fill;
-            btn_addNew.Location = new Point(455, 3);
-            btn_addNew.Name = "btn_addNew";
-            btn_addNew.Size = new Size(75, 33);
-            btn_addNew.TabIndex = 12;
-            btn_addNew.Text = "Add new";
-            btn_addNew.UseVisualStyleBackColor = true;
-            btn_addNew.Click += btn_addNew_Click;
             // 
             // SearchDb
             // 

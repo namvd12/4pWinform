@@ -57,15 +57,28 @@ namespace SabanWi.Model.user
 
         public void setDefaut_group_permission()
         {
-            string []list_permission_admin = { "View_user"       , "Edit_user"       , "Delete_user", 
+            /* admin*/
+            string[]list_permission_admin = { "View_user"       , "Edit_user"       , "Delete_user", 
                                                "View_device"     , "Edit_device"     , "Delete_device", 
                                                "View_devicePlan" , "Edit_devicePlan" , "Delete_devicePlan", 
                                                "View_sparePart"  , "Edit_sparePart"  , "Delete_sparePart",
                                                "View_callMaterial"  , "Edit_callMaterial"  , "Delete_callMaterial", 
                                                "Delete_history",
             };
-            setGroup_Permission(groupName.admin, list_permission_admin);
+            setGroup_Permission(groupName.admin, list_permission_admin);            
+            
+            /* super admin*/
+            string []list_permission_superAdmin = { "View_user"       , "Edit_user"       , "Delete_user", 
+                                               "View_device"     , "Edit_device"     , "Delete_device", 
+                                               "View_devicePlan" , "Edit_devicePlan" , "Delete_devicePlan", 
+                                               "View_sparePart"  , "Edit_sparePart"  , "Delete_sparePart",
+                                               "View_callMaterial"  , "Edit_callMaterial"  , "Delete_callMaterial", 
+                                               "Delete_history", "View_setupSystem", "Edit_setupSystem",
+                                               "Delete_setupSystem"
+            };
+            setGroup_Permission(groupName.superAdmin, list_permission_superAdmin);
 
+            /* leader, engineer, ...*/
             string[] list_permission_leader = {"View_device"     , "Edit_device"     , "Delete_device",
                                                "View_devicePlan" , "Edit_devicePlan" , "Delete_devicePlan",
                                                "View_sparePart"  , "Edit_sparePart"  , "Delete_sparePart"};

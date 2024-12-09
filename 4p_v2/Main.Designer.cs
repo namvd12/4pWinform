@@ -457,14 +457,14 @@
             // searchAndReportsToolStripMenuItem
             // 
             searchAndReportsToolStripMenuItem.Name = "searchAndReportsToolStripMenuItem";
-            searchAndReportsToolStripMenuItem.Size = new Size(180, 22);
+            searchAndReportsToolStripMenuItem.Size = new Size(172, 22);
             searchAndReportsToolStripMenuItem.Text = "Search and reports";
             searchAndReportsToolStripMenuItem.Click += searchAndReportsToolStripMenuItem_Click;
             // 
             // addNewToolStripMenuItem
             // 
             addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            addNewToolStripMenuItem.Size = new Size(180, 22);
+            addNewToolStripMenuItem.Size = new Size(172, 22);
             addNewToolStripMenuItem.Text = "Add new";
             addNewToolStripMenuItem.Click += addNewToolStripMenuItem_Click;
             // 
@@ -491,35 +491,35 @@
             // 
             visualReportingToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reportAllLineToolStripMenuItem, reportEachLineToolStripMenuItem, mTBFToolStripMenuItem, mTToolStripMenuItem });
             visualReportingToolStripMenuItem.Name = "visualReportingToolStripMenuItem";
-            visualReportingToolStripMenuItem.Size = new Size(180, 22);
+            visualReportingToolStripMenuItem.Size = new Size(157, 22);
             visualReportingToolStripMenuItem.Text = "Visual reporting";
             visualReportingToolStripMenuItem.Visible = false;
             // 
             // reportAllLineToolStripMenuItem
             // 
             reportAllLineToolStripMenuItem.Name = "reportAllLineToolStripMenuItem";
-            reportAllLineToolStripMenuItem.Size = new Size(180, 22);
+            reportAllLineToolStripMenuItem.Size = new Size(159, 22);
             reportAllLineToolStripMenuItem.Text = "Report all line";
             reportAllLineToolStripMenuItem.Click += reportAllLineToolStripMenuItem_Click;
             // 
             // reportEachLineToolStripMenuItem
             // 
             reportEachLineToolStripMenuItem.Name = "reportEachLineToolStripMenuItem";
-            reportEachLineToolStripMenuItem.Size = new Size(180, 22);
+            reportEachLineToolStripMenuItem.Size = new Size(159, 22);
             reportEachLineToolStripMenuItem.Text = "Report each line";
             reportEachLineToolStripMenuItem.Click += reportEachLineToolStripMenuItem_Click;
             // 
             // mTBFToolStripMenuItem
             // 
             mTBFToolStripMenuItem.Name = "mTBFToolStripMenuItem";
-            mTBFToolStripMenuItem.Size = new Size(180, 22);
+            mTBFToolStripMenuItem.Size = new Size(159, 22);
             mTBFToolStripMenuItem.Text = "MTTR";
             mTBFToolStripMenuItem.Click += mTBFToolStripMenuItem_Click;
             // 
             // mTToolStripMenuItem
             // 
             mTToolStripMenuItem.Name = "mTToolStripMenuItem";
-            mTToolStripMenuItem.Size = new Size(180, 22);
+            mTToolStripMenuItem.Size = new Size(159, 22);
             mTToolStripMenuItem.Text = "MTBF";
             mTToolStripMenuItem.Click += mTToolStripMenuItem_Click;
             // 

@@ -41,11 +41,11 @@ namespace SabanWi.Model
         public UInt64 add(string machineCode, string line, string lane, string position, string slot, string urgent, string status, string time, string userKey)
         {
             UInt64 callID;
-            var callInfor = getCallInfor(machineCode, line, lane, position, slot);
-            if(callInfor.callID != 0 && callInfor.status != "OK")
+            var callInfor = getCallInfor(machineCode, line, lane, position, slot, userKey);
+            if (callInfor.callID != 0 && callInfor.status != "OK")
             {
                 mMydatabase.EditData(DataBase.TABLE_DB.tula_table14, (UInt64)callInfor.callID, machineCode, line, lane, position, slot, urgent, status, time, userKey);
-            } 
+            }
             else
             {
                 mMydatabase.AddNewData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot, urgent, status, time, userKey);
@@ -54,10 +54,10 @@ namespace SabanWi.Model
             return callID;
         }
 
-        public callMaterialData getCallInfor(string machineCode, string line, string lane, string position, string slot)
+        public callMaterialData getCallInfor(string machineCode, string line, string lane, string position, string slot, string userKey = "")
         {
             callMaterialData data = new callMaterialData();
-            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot);
+            DataTable dt = mMydatabase.GetData(DataBase.TABLE_DB.tula_table14, machineCode, line, lane, position, slot, userKey);
             if (dt != null)
             {
                 foreach (DataRow row in dt.Rows)

@@ -233,6 +233,7 @@ namespace SabanWi.Model.user
         public string checkUserLoginHMI(string userName, string password)
         {
             //userHasPermission(userName, permissionname);
+
             List<UserData> listUser = SearchValue(userName);
             foreach (var user in listUser)
             {

@@ -452,7 +452,7 @@ namespace Giamsat.Control.Devices
                 HidStream stream;
                 device.TryOpen(out stream);
                 stream.Write(sendBuff);
-                stream.ReadTimeout = 1500;
+                stream.ReadTimeout = 3000;
                 byte[] receiveData = stream.Read();
                 mutexUSB.ReleaseMutex();
                 return receiveHMIStatus(receiveData);

@@ -525,7 +525,7 @@ namespace GiamSat
                 {           
                     if (itemHMI.state == ItemHMI.hmiState.LOGOUT && itemHMI.cmd == ItemHMI.hmiResponseCmd.LOGIN)
                     {
-                        var userKey = userCurrent.checkUserLoginHMI(itemHMI.username, itemHMI.password);
+                        var userKey = userCurrent.checkUserLoginHMI(itemHMI.username.ToLower(), itemHMI.password);
                         Debug.WriteLine("Login:" +  itemHMI.username);
                         if(userKey != null)
                         {
@@ -534,6 +534,7 @@ namespace GiamSat
                         } 
                         else
                         {
+                            Thread.Sleep(1);
                             RFMaster.send_HMI_cmd(addrHMI, addModbus, ItemHMI.sendToHmicmd.SET_STATUS_LOGIN, "ERROR");
                             Debug.WriteLine("PC: ERROR");
                         }
@@ -623,10 +624,10 @@ namespace GiamSat
             {
                 updateHistory();
                 updateHistoryNG();
-                updateHMI_status(99,1);
-                Thread.Sleep(200);
-                updateHMI_status(99,2);
-                Thread.Sleep(200);
+                updateHMI_status(99, 1);
+                Thread.Sleep(100);
+                updateHMI_status(99, 2);
+                Thread.Sleep(100);
 
             }
         }
